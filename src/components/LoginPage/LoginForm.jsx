@@ -11,6 +11,8 @@ import {
     createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 // import { GoogleAuthProvider } from "firebase/auth";
 
 
@@ -291,7 +293,13 @@ export default function LoginForm() {
     };
 
     return (
-        <>
+        <motion
+        initial={{ opacity: 0, x: "-1000px",  y: "-1000px"}}
+        animate={{ opacity: 1, x:"0", y: "0px" }}
+        exit={{ opacity: 1, x: "100px", y: "-1000px"}}
+        transition={{ duration: 0.5 }}
+        >
+
             <div className={Styles.container} id="container">
                 <div
                     className={`${Styles['form-container']} ${Styles['sign-up-container']}`}
@@ -302,7 +310,7 @@ export default function LoginForm() {
                     }
                 >
                     <div className={Styles.Login_cross2} onClick={closeForm}>
-                        &times;
+                        <Link to={'/'}>&times;</Link>
                     </div>
                     <div className={Styles.form}>
                         <h1 className={Styles.Login_h1}>Create Account</h1>
@@ -503,7 +511,7 @@ export default function LoginForm() {
                     }
                 >
                     <div className={Styles.Login_cross} onClick={closeForm}>
-                        &times;
+                        <Link to={'/'}>&times;</Link>
                     </div>
                  
                     <form
@@ -593,7 +601,7 @@ export default function LoginForm() {
                     </div>
                 </div>
             </div>
-        </>
+        </motion>
     );
 }
 // export {userid};

@@ -2,7 +2,7 @@ import styles from "./style";
 import { Business, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components/AlumniPage";
 import { useState } from "react";
 import { people01, people02, people03} from "./assets";
-
+import { motion } from "framer-motion";
 
 const AlumniApp = () =>{
   console.log(styles.boxWidth);
@@ -68,7 +68,12 @@ const AlumniApp = () =>{
   ]);
   return (
     
-  <div className="bg-primary w-full overflow-hidden">
+  <motion.div 
+  initial={{ opacity: 0, x: "-1000px",  y: "-1000px"}}
+    animate={{ opacity: 1, x:"0", y: "0px" }}
+    exit={{ opacity: 1, x: "100px", y: "-1000px"}}
+    transition={{ duration: 0.5 }}
+  className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
         <Navbar />
@@ -91,7 +96,7 @@ const AlumniApp = () =>{
         <Footer />
       </div>
     </div>
-  </div>
+  </motion.div>
   )
 
 }

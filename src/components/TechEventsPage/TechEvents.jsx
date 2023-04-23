@@ -1,24 +1,31 @@
 import React from "react";
-import Styles from "./TechEvents.module.css"
-import NavEvents from "./NavEvents";
+import "./TechEvents.css"
+// import NavEvents from "./NavEvents";
 import HeroEvents from "./HeroEvents";
 import Hero2Events from "./Hero2Events";
-
+import { motion } from "framer-motion";
 
 
 
 
 function TechEvents() {
   return (
-    <>
-    <NavEvents/>
+    <motion.div
+    initial={{ opacity: 0, x: "1000px",  y: "-1000px"}}
+    animate={{ opacity: 1, x:"0", y: "0px" }}
+    exit={{ opacity: 1, x: "100px", y: "-1000px"}}
+    transition={{ duration: 0.5 }}
+    >
+
+    
+    
     <HeroEvents/>
-    <div className={Styles.techEventsPage}>
-      <div className={Styles.divtop}>
+    <div className="techEventsPage">
+      <div className="divtop">
         <br /><br /><br /><br />
-        <div className={`${Styles.wrap} ${Styles.animate} ${Styles.pop}`}>
-          <div className={Styles.overlay}>
-            <div className={`${Styles[overlay-content]} ${Styles.animate}`}>" animate slide-left delay-2"
+        <div className="wrap animate pop">
+          <div className="overlay">
+            <div className="overlay-content animate slide-left delay-2">
               <h1 className="h1TagEvents_AK animate slide-left pop delay-4">FOSS-Weekend</h1>
               <p className="pTagEvents_AK animate slide-left pop delay-5" style={{ color: "white", marginBottom: "2.5rem" }}>
                 WING: <em>FOSS</em>
@@ -209,7 +216,7 @@ function TechEvents() {
         
     </div>
 
-    </>
+    </motion.div>
   );
 }
 
