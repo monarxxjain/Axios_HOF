@@ -23,11 +23,7 @@ const App = () => {
                 <CardList />
                 <Footer />
             
-            <NavbarHome />
-            <Background />
-            <Hero />
-            <CardList />
-            <Footer />
+            
             {/* <AlumniApp/> */}
             {/* <LoginForm/> */}
             {/* <FullScreenDialog/> */}
