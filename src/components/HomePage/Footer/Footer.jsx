@@ -1,14 +1,14 @@
 import React from "react";
-import "./Footer.css";
+import Styles from "./Footer.module.css";
 import { Fb, Tt, insta, ytube, Lkdin, phone, maiL, Locat } from "../../../assets/index";
 function Footer() {
     return (
-        <footer className="footer">
-            <div className="footer-container">
-                <div className="left-col">
-                    <div className="logo"></div>
-                    <div className="social-media  flex  ">
-                        <a href="#">
+        <footer className={Styles.footer}>
+            <div className={Styles["footer-container"]}>
+                <div className={Styles["left-col"]}>
+                    <div className={Styles.logo}></div>
+                    <div className={`${Styles["social-media"]} ${Styles.flex}`}>
+                        {/* <a href="#">
                             <img src={Fb} />
                         </a>
                         <a href="#">
@@ -22,7 +22,7 @@ function Footer() {
                         </a>
                         <a href="#">
                             <img src={Lkdin} />
-                        </a>
+                        </a> */}
                     </div>
                     <br />
                     <br />
@@ -36,24 +36,24 @@ function Footer() {
                     </p>
                     <br />
                     <p>
-                        <img src={phone} /> +91-1234-567-890
-                        <br />
-                        <img src={maiL} /> KAMPIV@gmail.com
+                        <img src={phone} /> +91-8112295450
+                        <br /><br />
+                        <img src={maiL} /> AXios@iiitl.ac.in
                     </p>
                 </div>
-                <div className="right-col">
+                <div className={Styles["right-col"]}>
                     <h1 style={{ color: "#fff" }}>Write To Us At</h1>
-                    <div className="border"></div>
+                    <div className={Styles.border}></div>
                     <br />
                     <p>Enter Your Email to get our News and updates.</p>
-                    <form className="newsletter-form">
+                    <form className={Styles["newsletter-form"]}>
                         <input
-                            className="txtb"
+                            className={Styles.textb}
                             type="email"
                             placeholder="Enter Your Email"
                         />
-                        <input className="btn" type="submit" value="Submit" />
                     </form>
+                        <input className={Styles.btn} type="submit" value="Submit" />
                 </div>
             </div>
         </footer>

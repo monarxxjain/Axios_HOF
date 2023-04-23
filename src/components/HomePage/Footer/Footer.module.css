@@ -52,10 +52,12 @@ footer .newsletter-form {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    height: 40px;
+    
 }
 
 footer input::placeholder {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
 }
 
 footer .txtb {
@@ -69,12 +71,12 @@ footer .txtb {
     border-radius: 5px;
     min-width: 260px;
     margin-top: 20px;
-    color: white;
+    color: rgb(2, 2, 2);
 }
 
 footer .btn {
     margin-top: 20px;
-    padding: 18px 40px;
+    padding: 10px 20px;
     font-size: 16px;
     color: #f1f1f1;
     background: linear-gradient(to right, #FA4B37, #DF2771);
