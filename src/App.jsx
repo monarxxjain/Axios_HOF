@@ -16,14 +16,14 @@ const App = () => {
         <>
             {/* <Navbar/> */}
             {/* <TechEvents/>    */}
-            {/* <NavbarHome /> */}
-            {/* <Background /> */}
-            {/* <Hero /> */}
-            {/* <CardList /> */}
-            {/* <Footer /> */}
+            <NavbarHome />
+            <Background />
+            <Hero />
+            <CardList />
+            <Footer />
             {/* <AlumniApp/> */}
             {/* <LoginForm/> */}
-            <FullScreenDialog/>
+            {/* <FullScreenDialog/> */}
         </>
     );
 };
