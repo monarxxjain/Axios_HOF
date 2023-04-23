@@ -80,7 +80,8 @@ import { useState, useEffect } from "react";
 
 
 
-import './Hero.css';
+
+import Styles from './Hero.module.css'
 import { Slideshow } from "./Carousel";
 
 
@@ -128,15 +129,15 @@ export const Hero = () => {
 
   return (
    
-    <section className="banner" id="home">
+    <section className={Styles.banner} id="home">
       <table>
-        <tr className="align-items-center">
+        <tr className={Styles["align-items-center"]}>
           <td>
       
               <div>
                 <h1>
-                  <div className="Tagline">Welcome to AXIOS</div>
-                  <div className="appearingText">{`Hello!`} <span className="txt-rotate"   data-rotate='[ "CREATOR", "DEVELOPER", "CODER" ]'><span className="wrap">{text}</span></span></div>
+                  <div className={Styles.Tagline}>Welcome to AXIOS</div>
+                  <div className={Styles.appearingText}>{`Hello!`} <span className={Styles["txt-rotate"]}   data-rotate='[ "CREATOR", "DEVELOPER", "CODER" ]'><span className={Styles.wrap}>{text}</span></span></div>
                 </h1>
                   <p>Welcome to Axios, the technical Society of IIIT Lucknow. Axios comprises seven wings encompassing all major technical domains. 
                   We are a group of highly motivated individuals with an excellent tech background.</p>
@@ -148,7 +149,7 @@ export const Hero = () => {
              
                 <div>
                   {/* <Slideshow/> */}
-                  <img className="heroImage" src="./src/assets/astro1.svg" alt="Header Img" height="400px" width="400px"/>
+                  <img className={Styles.heroImage} src="./src/assets/astro1.svg" alt="Header Img" height="400px" width="400px"/>
                 </div>
             
           </td>
