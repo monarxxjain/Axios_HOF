@@ -24,7 +24,12 @@
     "@types/three": "^0.150.1",
     "leva": "^0.9.34",
     "three": "^0.151.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.1",
+    "firebase": "^9.20.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

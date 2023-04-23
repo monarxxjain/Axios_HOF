@@ -6,16 +6,24 @@ import { Hero } from "./components/HomePage/HeroSection/Hero";
 import { CardList } from "./components/HomePage/Card/CardList";
 import Footer from "./components/HomePage/Footer/Footer";
 import NavbarHome from "./components/HomePage/HomeNavbar/NavbarHome";
+import TechEvents from "./components/TechEventsPage/TechEvents";
+import { Navbar } from "./components/AlumniPage";
+import LoginForm from "./components/LoginPage/LoginForm";
+import FullScreenDialog from "./components/FullScreenDialog/FullScreenDialog";
 
 const App = () => {
     return (
         <>
-            <NavbarHome />
+            {/* <Navbar/> */}
+            {/* <TechEvents/>    */}
+            {/* <NavbarHome /> */}
+            {/* <Background /> */}
+            {/* <Hero /> */}
+            {/* <CardList /> */}
+            {/* <Footer /> */}
             {/* <AlumniApp/> */}
-            <Background />
-            <Hero />
-            <CardList />
-            <Footer />
+            {/* <LoginForm/> */}
+            <FullScreenDialog/>
         </>
     );
 };
