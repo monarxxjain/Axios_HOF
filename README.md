@@ -1,3 +1,4 @@
+[HOF_PPT_CODE-oF-DUTY.pdf](https://github.com/monarxxjain/Axios_HOF/files/11313941/HOF_PPT_CODE-oF-DUTY.pdf)
 # xFOSS 
 ## Introduction:
 The xFOSS  is a project that aims to streamline the Eductaion processes of the college IIIT Lucknow, including student management, course management, and more. The project is designed to provide an efficient and user-friendly system for both seniors and juniors for the wing courses
