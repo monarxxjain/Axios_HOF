@@ -65,11 +65,11 @@ First, we created a Firebase project and initialized Firebase SDK in our React a
  ## Contributors:
 The xFOSS  project is maintained by the following contributors:
 
- Contributor 1:   https://github.com/monarxxjain
- Contributor 2:   https://github.com/KarthikAkshaj
- Contributor 3:   https://github.com/AkhileshJyotishi
- Contributor 4:   https://github.com/mohit07raghav19
- Contributor 5:   https://github.com/Harshit-Chordiya
+ 1. Contributor 1:   https://github.com/monarxxjain
+ 2. Contributor 2:   https://github.com/KarthikAkshaj
+ 3. Contributor 3:   https://github.com/AkhileshJyotishi
+ 4. Contributor 4:   https://github.com/mohit07raghav19
+ 5. Contributor 5:   https://github.com/Harshit-Chordiya
 
 
 
