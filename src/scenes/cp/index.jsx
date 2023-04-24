@@ -4,7 +4,7 @@ import { ColorModeContext, tokens, useMode } from "../../theme";
 import Header from "../../scenes/Header";
 import { useTheme } from "@mui/material";
 import Displayer, { Exporter } from "../../scenes/displayer";
-import Sidebar from "../../../../Dashboard-master/src/scenes/global/Sidebar";
+// import Sidebar from "../../../../Dashboard-master/src/scenes/global/Sidebar";
 import { useEffect, useState } from "react";
 
 const Cp = () => {
