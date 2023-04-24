@@ -27,19 +27,23 @@
 }
 .coloradd{
 	
-	background-color: #0f41f5;
+	background-color: #ffffff;
 	border-radius:50%;
+	color: #0f41f5;
+	cursor:pointer;
 
 }
 
 .ghost{
-	padding: 10px;
-	font-size: 100px;
+	padding: 5px 10px;
+	/* font-size: 100px; */
 }
 
 .Login_btn_tag{
 	color: #0f41f5;
-	padding: 10px;
+	/* padding: 10px; */
+	font-size: 16px;
+	border-radius: 30%;
 }
 
 /* ====================================
@@ -172,12 +176,12 @@ Styling For just CREATE ACCOUNT PART
 	background-color: #0f41f5;
 
 	color: #FFFFFF;
-	font-size: 33%;
-	font-weight: bold;
+	/* font-size: 33%; */
+	/* font-weight: bold; */
 	
 	margin-top: 9px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+	/* letter-spacing: 1px; */
+	/* text-transform: uppercase; */
 	transition: transform 80ms ease-in;
 }
 
@@ -605,3 +609,16 @@ form, .form {
 	height: 500px;
 	margin-right: 0px;
 } 
+.MainButtons{
+	color: #0f41f5;
+	padding: 2px 10px 3px 10px;
+	transition: background-color 0.15s, color 0.15s;
+}
+
+.MainButtons:hover{
+background-color: #0f41f5;
+color: white;
+}
+.signUp_Tabs{
+	border-radius: 10px;
+}

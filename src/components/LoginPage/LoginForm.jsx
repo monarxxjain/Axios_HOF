@@ -406,7 +406,7 @@ export default function LoginForm() {
                                                 </div>
                                                 <button
                                                     type="submit"
-                                                    className={Styles.button}
+                                                    className={`${Styles.button} ${Styles.MainButtons}`}
                                                     // value="Sign Up"
                                                     form="formdata"
                                                     name="submit"
@@ -491,7 +491,7 @@ export default function LoginForm() {
 
                                             <input
                                                 type="submit"
-                                                className={Styles.button}
+                                                className={`${Styles.button} ${Styles.MainButtons}`}
                                                 value="Sign Up"
                                                 form="my-form-signup2"
                                             />
@@ -554,11 +554,11 @@ export default function LoginForm() {
                         <a className={Styles.Login_a_tag} href="/">
                             Forgot your password?
                         </a>
-                        <button className={Styles.Login_btn_tag} type="submit" form="signinform">
+                        <button className={`${Styles.Login_btn_tag} ${Styles.MainButtons}`} type="submit" form="signinform">
                             Log In
                         </button>
                         <button
-                            className={`${Styles.reverseGhost} ${Styles.Login_btn_tag}`}
+                            className={`${Styles.reverseGhost} ${Styles.Login_btn_tag} `}
                             id="signUpOnLogin"
                             onClick={(e) => {
                                 setsLogin(!sLogin);
