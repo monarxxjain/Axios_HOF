@@ -16,6 +16,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 // import { userid } from "./Login";
 import { ref, push, child, update, set } from "firebase/database";
+import { Link } from "react-router-dom";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -70,10 +71,10 @@ export default function FullScreenDialog() {
 
     setOpen(false);
   };
-
+  // 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={handleClickOpen} id="autoclick2"  style={{display:'none'}}>
         Open full-screen dialog
       </Button>
       <Dialog
@@ -90,14 +91,15 @@ export default function FullScreenDialog() {
               onClick={handleClose}
               aria-label="close"
             >
-              <CloseIcon />
+              <span id="disable_mj" ><CloseIcon/></span>
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
               Sound
             </Typography>
+            <Link to="/dashboard">
             <Button autoFocus color="inherit" onClick={handleClose}>
               save
-            </Button>
+            </Button></Link>
           </Toolbar>
         </AppBar>
         <Accordion

@@ -4,7 +4,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import Styles from "./LoginForm.module.css";
 import { getAuth, signInWithRedirect } from "firebase/auth";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import FacebookIcon from "@mui/icons-material/Facebook"
 // const auth = getAuth();
 import {
     signInWithEmailAndPassword,
@@ -13,6 +13,7 @@ import {
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import FullScreenDialog from "../FullScreenDialog/FullScreenDialog";
 // import { GoogleAuthProvider } from "firebase/auth";
 
 
@@ -90,6 +91,11 @@ export default function LoginForm() {
                     // ...
                     console.log(user + "user created");
                     const close = document.getElementById("container");
+                   const a= document.getElementById("autoclick2")
+                //    const b= document.getElementById("disable_mj")
+                //    b.style.display="none"
+
+                   a.click();
                     setInterval(() => {
                         close.style.display = "none";
                     }, 150);
@@ -288,18 +294,18 @@ export default function LoginForm() {
     //! Handles the closing of login form
     const closeForm = () => {
         const close = document.getElementById("container");
-        setInterval(() => {
-            close.style.display = "none";
-        }, 150);
+        // setInterval(() => {
+        //     close.style.display = "none";
+        // }, 150);
         // window.close();
     };
 
     return (
         <motion
-        initial={{ opacity: 0, x: "-1000px",  y: "-1000px"}}
-        animate={{ opacity: 1, x:"0", y: "0px" }}
-        exit={{ opacity: 1, x: "100px", y: "-1000px"}}
-        transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: "-1000px", y: "-1000px" }}
+            animate={{ opacity: 1, x: "0", y: "0px" }}
+            exit={{ opacity: 1, x: "100px", y: "-1000px" }}
+            transition={{ duration: 0.5 }}
         >
 
             <div className={Styles.container} id="container">
@@ -321,7 +327,7 @@ export default function LoginForm() {
                                 {
                                     <div className={Styles.NewSignUp}>
                                         <input
-                                            className={Styles.Login_input_tag}  
+                                            className={Styles.Login_input_tag}
                                             type="radio"
                                             id="memberSignUp"
                                             name="tabby-tabs"
@@ -497,6 +503,7 @@ export default function LoginForm() {
                                                 value="Sign Up"
                                                 form="my-form-signup2"
                                             />
+                                            <FullScreenDialog/>
                                         </form>
                                     </div>
                                 </div>
@@ -515,7 +522,7 @@ export default function LoginForm() {
                     <div className={Styles.Login_cross} onClick={closeForm}>
                         <Link to={'/'}>&times;</Link>
                     </div>
-                 
+
                     <form
                         className={`${Styles.Login_form_tag} ${Styles.Login_login}`}
                         id="signinform"
@@ -571,7 +578,7 @@ export default function LoginForm() {
                             Sign Up
                         </button>
                     </form>
-                    <Link to="/dashboard" id="autoclick" style={{display:'none'}}>click me</Link>
+                    <Link to="/dashboard" id="autoclick" style={{ display: 'none' }}>click me</Link>
                 </div>
                 <div className={Styles["overlay-container"]}>
                     <div className={Styles.overlay}>
