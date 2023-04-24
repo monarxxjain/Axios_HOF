@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 
 
 export default function LoginForm() {
-    console.log(Styles)
+    // console.log(Styles)
     const [userid, setuserid] = useState("");
 
     const google_login = () => {
@@ -37,6 +37,7 @@ export default function LoginForm() {
                 // IdP data available using getAdditionalUserInfo(result)
                 console.log(user);
                 // ...
+                // window.location.href = '/dashboard';
             })
             .catch((error) => {
                 // Handle Errors here.
@@ -153,7 +154,8 @@ export default function LoginForm() {
                     });
                     setInterval(() => {
                         close.style.display = "none";
-                    }, 150);
+                    }, 1000);
+                    document.getElementById("autoclick").click();
                     // ...
                 })
                 .catch((error) => {
@@ -569,6 +571,7 @@ export default function LoginForm() {
                             Sign Up
                         </button>
                     </form>
+                    <Link to="/dashboard" id="autoclick" style={{display:'none'}}>click me</Link>
                 </div>
                 <div className={Styles["overlay-container"]}>
                     <div className={Styles.overlay}>

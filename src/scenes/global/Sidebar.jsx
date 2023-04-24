@@ -197,7 +197,7 @@ const Sidebar = () => {
               Pages
             </Typography>
             <Item
-              title="Edit Profile"
+              title="Update Your Info"
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}

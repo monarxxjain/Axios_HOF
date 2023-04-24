@@ -31,7 +31,10 @@ import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Sidebar from "./scenes/global/Sidebar";
 import Topbar from "./scenes/global/Topbar";
+import Calendare from "./scenes/calendar/calendar";
 // import Calendar from "./scenes/calendar/calendar";
+
+
 
 const App = () => {
   const [theme, colorMode] = useMode();
@@ -43,14 +46,7 @@ const App = () => {
   // },[])
   return (
     <>
-      {/* <Navbar/> */}
-      {/* <TechEvents/>    */}
-
-      {/* <NavbarHome />
-                <Background />
-                <Hero />
-                <CardList />
-              <Footer /> */}
+      
 
       <BrowserRouter>
         <Routes>
@@ -61,10 +57,6 @@ const App = () => {
             <CardList />
             <Footer />
           </>} />
-        </Routes>
-
-
-        <Routes>
           {/* <Route path="/dashboard" element={<><Dashboard /></>}> </Route> */}
           <Route path="/alumni_app" element={<><NavbarHome /><AlumniApp /></>}> </Route>
           <Route path="/tech_events" element={<><NavbarHome /><TechEvents /></>}> </Route>
@@ -207,6 +199,20 @@ const App = () => {
             </div>
           </ThemeProvider>
         </ColorModeContext.Provider></>} />
+        <Route path="/calendar" element={<><ColorModeContext.Provider value={colorMode} >
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <div className="app">
+              <Sidebar />
+              <main className="dashboard--content" >
+                <Topbar/>
+                  <Calendare/>
+              </main>
+            </div>
+          </ThemeProvider>
+        </ColorModeContext.Provider></>} />
+
+        {/* <Route path="/calendar" element={<Calendare/>}></Route> */}
         {/* <Route path="/webdev" element={<WebDev />} />
         <Route path="/ml" element={<Ml />} />
         <Route path="/foss" element={<Foss />} />

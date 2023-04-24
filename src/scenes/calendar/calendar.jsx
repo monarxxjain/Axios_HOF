@@ -1,9 +1,11 @@
-import { useState } from "react";
+import '@fullcalendar/react/dist/vdom';
 import FullCalendar, { formatDate } from "@fullcalendar/react";
+// import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
+import { useState } from "react";
 import {
   Box,
   List,
@@ -15,7 +17,8 @@ import {
 import Header from "../../scenes/Header";
 import { tokens } from "../../theme";
 
-const Calendar = () => {
+const Calendare = () => {
+  
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -173,4 +176,4 @@ const Calendar = () => {
   );
 };
 
-export default Calendar;
+export default Calendare;
