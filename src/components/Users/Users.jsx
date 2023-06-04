@@ -74,7 +74,7 @@ export default function Users() {
                     <article>
 
                         <section class="hero" id="home" aria-label="home">
-                            <div class="container">
+                            <div class="container1">
 
                                 <div class="hero-content">
 
@@ -129,9 +129,9 @@ export default function Users() {
 
 
                         <section class="topics" id="topics" aria-labelledby="topic-label">
-                            <div class="container">
+                            <div class="container1">
 
-                                <div class="card topic-card">
+                                <div class="card1 topic-card">
 
                                     <div class="card-content">
                                         <button class="btn1 btn1-primary" id="dataBtn" onclick="fetchData()">

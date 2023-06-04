@@ -216,7 +216,7 @@ body.nav-active {
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container {
+.container1 {
     padding-inline: 16px;
 }
 
@@ -246,6 +246,7 @@ body.nav-active {
 
 .headline {
     color: var(--text-columbia-blue);
+    text-align: left;
     line-height: var(--lineHeight-1);
 }
 
@@ -307,7 +308,7 @@ body.nav-active {
     width: 100%;
 }
 
-.card {
+.card1 {
     background-color: var(--bg-oxford-blue);
     border: 1px solid var(--border-prussian-blue);
 }
@@ -1145,7 +1146,7 @@ body.nav-active {
    * REUSED STYLE
    */
 
-    .container {
+    .container1 {
         max-width: 540px;
         width: 100%;
         margin-inline: auto;
@@ -1300,7 +1301,7 @@ body.nav-active {
    * REUSED STYLE
    */
 
-    .container {
+    .container1 {
         max-width: 720px;
     }
 
@@ -1330,7 +1331,7 @@ body.nav-active {
    * REUSED STYLE
    */
 
-    .container {
+    .container1 {
         max-width: 930px;
     }
 
@@ -1436,7 +1437,7 @@ body.nav-active {
    * REUSED STYLE
    */
 
-    .container {
+    .container1 {
         max-width: 1140px;
     }
 
@@ -1544,5 +1545,5 @@ footer {
     padding-top: 10px;
 }
 .usersPage{
-    height: 100vmin;
+    height: 100vh;
 }

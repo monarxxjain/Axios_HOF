@@ -436,8 +436,8 @@ export default function Goonj() {
                     </footer>
 
 
-                    <div id="progress">
-                        <span id="progress-value"><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
+                    <div id="progress" className={style.progress}>
+                        <span id="progress-value" className={style["progress-value"]}><i className={`fa fa-arrow-up`} aria-hidden="true"></i></span>
                     </div>
 
 

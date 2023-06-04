@@ -486,9 +486,9 @@ footer ul li a:hover {
 
 /* ====================== START OF SCROLL-TO-TOP BUTTON===================== */
 
-#progress {
+.progress {
     background-color: #023055;
-    position: sticky;
+    position: fixed;
     bottom: 0px;
     right: 35px;
     margin-bottom: 90px;
@@ -501,7 +501,7 @@ footer ul li a:hover {
     cursor: pointer;
 }
 
-#progress:hover {
+.progress:hover {
     background: transparent;
     background: #03e9f4;
     color: #fff;
@@ -512,7 +512,7 @@ footer ul li a:hover {
         0 0 100px #03e9f4;
 }
 
-#progress-value {
+.progress-value {
     display: block;
     position: sticky;
     bottom:0px;
@@ -768,8 +768,8 @@ body {
     margin-right: 10vmax;
 }
 
-.headin {
-    background: linear-gradient(to top, #6600ff 10%, #32d6ce 60%);
+.clubName {
+    background: linear-gradient(to top, #ffffff 10%, #32d6ce 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

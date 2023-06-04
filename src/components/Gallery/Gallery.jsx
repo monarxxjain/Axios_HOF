@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { estrella, zephyr, utkrisht, goonj, afterdark, crotonia, gal2, gal3 } from "../../assets/index";
-import './Gallery.css'
+import styl from './Gallery.module.css'
 import { motion } from "framer-motion";
 export default function Gallery() {
     var swiper = new Swiper(".mySwiper", {
@@ -262,7 +262,7 @@ export default function Gallery() {
             exit={{ opacity: 1, x: "100px", y: "-1000px" }}
             transition={{ duration: 0.5 }}
             className="bg-primary w-full overflow-hidden">
-        <div className='galPage'>
+        <div className={styl.galPage}>
             {/* <nav ref={nav}>
                 <div className="container nav__container grad">
                     <a href="index.html">
@@ -288,38 +288,36 @@ export default function Gallery() {
 
 
 
-            <section className="landingpg text-gray-400  body-font">
+            <section className={`${styl.landingpg} ${styl["text-gray-400"]} ${styl["body-font"]}`}>
 
-                <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                <div className={`${styl.container} mx-auto flex px-5 py-24 md:flex-row flex-col items-center`}>
                     <div
-                        className=" grad1 button  ml-96 pt-40  flex flex-col md:items-start md:text-left mb-16  items-center text-center">
-                        <h1 className="pge1 title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
+                        className={`${styl.grad1} ${styl.button} ml-96 pt-40  flex flex-col md:items-start md:text-left mb-16 items-center text-center`}>
+                        <h1 className={`${styl.pge1} ${styl["title-font"]} sm:text-4xl text-3xl mb-4 font-medium text-white`}>
                             <b> Exploring <br />
                                 <span>Campus Artistry</span>
-                                <br className="hidden lg:inline-block" />: A Gallery
+                                <br className={`hidden lg:inline-block`} />: A Gallery
                             </b>
                         </h1>
                         <h1>
-                            {/* style="font-size: 0.7em;" */}
-                            <span href="" className="typewrite" data-period="2000"
+                            <p href="" className="typewrite" data-period="2000"
                                 data-type='[ "Unforgettable College Moments.", "Timeless College Reminiscences.", "Artistic Campus Showcase."]'>
-                                <span className="wrap"></span>
-                            </span>
+                                <span className={styl.wrap}></span>
+                            </p>
                         </h1>
                     </div>
-                    <div className="grad1 xs:hidden xl:block button ml-40 pt-40 flex flex-col mb-16 mr-40 p-20 pb-40 items-center text-center">
-                        <img className="hero-right p-10 pb-20 ml-20" alt="hero" id="mygal" src={gal2} />
+                        <div className={`${styl.grad1} ${styl.button} xs:hidden xl:block button ml-40 pt-40 flex flex-col mb-16 mr-40 p-20 pb-40 items-center text-center`}>
+                        <img className={`${styl["hero-right"]} p-10 pb-20 ml-20`} alt="hero" id="mygal" src={gal2} />
                     </div>
                 </div>
-                <div className="social-menu">
+                <div className={styl["social-menu"]}>
                     <ul>
-                        {/* style="display: none;" */}
                         <li><a href="">
-                            <i className="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i className="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i className="fa fa-instagram"></i></a></li>
-                        <li><a href=""><i className="fa fa-youtube"></i></a></li>
-                        <li><a href=""><i className="fa fa-linkedin"></i></a></li>
+                            <i className={`${styl.fa1} fa fa-facebook`}></i></a></li>
+                            <li><a href=""><i className={`${styl.fa1} fa fa-twitter`}></i></a></li>
+                            <li><a href=""><i className={`${styl.fa1} fa fa-instagram`}></i></a></li>
+                            <li><a href=""><i className={`${styl.fa1} fa fa-youtube`}></i></a></li>
+                            <li><a href=""><i className={`${styl.fa1} fa fa-linkedin`}></i></a></li>
                     </ul>
                 </div>
             </section>
@@ -333,13 +331,13 @@ export default function Gallery() {
 
 
             <section id="about">
-                <div className="container about__achievements-container">
-                    <div className="about__achievements-left">
-                        <img className="grad2" id="mygal3" src={gal3} width="10vmin" />
+                <div className={`${styl.container} ${styl["about__achievements-container"]}`}>
+                        <div className={styl["about__achievements-left"]}>
+                        <img className={styl.grad2} id="mygal3" src={gal3} width="10vmin" />
                     </div>
 
-                    <div className="about__achievements-right ">
-                        <h1 className="vision grad3">College Life</h1>
+                        <div className={styl["about__achievements-right"]}>
+                        <h1 className={`${styl.vision} ${styl.grad3}`} >College Life</h1>
                         <p>
                             College life is a unique experience that is full of memories that can last a lifetime. It offers students the
                             opportunity to learn and grow, both academically and personally, while also making lasting connections with
@@ -373,10 +371,10 @@ export default function Gallery() {
 
 
 
-            <section className="achievement">
-                <div className="ach achievements__cards">
-                    <article className="achievement__card">
-                        <span className="achievement__icon">
+            <section className={styl.achievement}>
+                <div className={`${styl.ach} ${styl.achievements__cards}`}>
+                    <article className={styl.achievement__card}>
+                            <span className={styl.achievement__icon}>
                             <i className="uil uil-video"></i>
                         </span>
                         <h3><span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-once="true"
@@ -384,8 +382,8 @@ export default function Gallery() {
                         <p>Events</p>
                     </article>
 
-                    <article className="achievement__card">
-                        <span className="achievement__icon">
+                        <article className={styl.achievement__card}>
+                            <span className={styl.achievement__icon}>
                             <i className="uil uil-users-alt"></i>
                         </span>
                         <h3><span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-once="true"
@@ -393,8 +391,8 @@ export default function Gallery() {
                         <p>Students</p>
                     </article>
 
-                    <article className="achievement__card">
-                        <span className="achievement__icon">
+                        <article className={styl.achievement__card}>
+                            <span className={styl.achievement__icon}>
                             <i className="uil uil-trophy"></i>
                         </span>
                         <h3><span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-once="true"
@@ -413,121 +411,121 @@ export default function Gallery() {
 
 
 
-            <section className="courses" id="courses">
-                <h2 className="headingh2">College Cultural Clubs Gallery</h2>
-                <div className="w-4/6 container courses__container">
+                <section className={styl.courses} id="courses">
+                <h2 className={styl.headingh2}>College Cultural Clubs Gallery</h2>
+                    <div className={`${styl.container} ${styl.courses__container} w-4/6 `}>
 
-                    <article className="course">
-                        <div className="cont">
-                            <div className="course__image">
+                        <article className={styl.course}>
+                            <div className={styl.cont}>
+                                <div className={styl.course__image}>
                                 <img src={crotonia} height="10vmin" />
                             </div>
-                            <div className="course__info newclassName">
+                            <div className={`${styl.course__info} ${styl.newclassName}`}>
                                 <h2>Crotonia</h2>
                             </div>
                         </div>
-                        <div className="course__info">
+                            <div className={styl.course__info}>
                             <p>
                                 Crotonia, the literary club of the college, provides a platform for students to explore their love for
                                 literature and express themselves through creative writing.
 
                             </p>
-                            <Link to={'/gallery/crotonia'} className="btn btn-primary">Explore</Link>
+                            <Link to={'/gallery/crotonia'} className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
                         </div>
                     </article>
 
 
 
-                    <article className="course">
-                        <div className="cont">
-                            <div className="course__image">
+                        <article className={styl.course}>
+                            <div className={styl.cont}>
+                                <div className={styl.course__image}>
                                 <img src={zephyr} height="10vmin" />
                             </div>
-                            <div className="course__info newclassName">
+                                <div className={`${styl.course__info} ${styl.newclassName}`}>
                                 <h2>Zephyr</h2>
                             </div>
                         </div>
-                        <div className="course__info">
+                            <div className={styl.course__info}>
                             <p>
                                 Zephyr, the dance club of the college, promotes artistic expression and cultural diversity through various
                                 dance forms and performances.
                             </p>
-                            <Link to="/gallery/zephyr" className="btn btn-primary">Explore</Link>
+                                <Link to="/gallery/zephyr" className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
                         </div>
                     </article>
 
-                    <article className="course">
-                        <div className="cont">
-                            <div className="course__image">
+                        <article className={styl.course}>
+                        <div className={styl.cont}>
+                            <div className={styl.course__image}>
                                 <img src={afterdark} />
                             </div>
-                            <div className="course__info newclassName">
+                            <div className={`${styl.course__info} ${styl.newclassName}`}>
                                 <h2>AfterDark</h2>
                             </div>
                         </div>
-                        <div className="course__info">
+                        <div className={styl.course__info}>
                             <p>
                                 Afterdark, the photography club of the college, provides a space for students to learn and experiment with
                                 different photographic techniques and explore their creativity.
 
                             </p>
-                            <Link to="/gallery/afterdark" className="btn btn-primary">Explore</Link>
+                            <Link to="/gallery/afterdark" className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
                         </div>
                     </article>
 
-                    <article className="course">
-                        <div className="cont">
-                            <div className="course__image">
+                    <article className={styl.course}>
+                        <div className={styl.cont}>
+                            <div className={styl.course__image}>
                                 <img src={goonj} height="10vmin" />
                             </div>
-                            <div className="course__info newclassName">
+                            <div className={`${styl.course__info} ${styl.newclassName}`}>
                                 <h2>Goonj :)</h2>
                             </div>
                         </div>
-                        <div className="course__info">
+                        <div className={styl.course__info}>
                             <p>
                                 Goonj, the drama club of the college, provides a platform for students to showcase their acting skills and
                                 collaborate on theatrical productions that entertain and inspire audiences.
                             </p>
-                            <Link to="/gallery/goonj" className="btn btn-primary">Explore</Link>
+                            <Link to="/gallery/goonj" className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
                         </div>
                     </article>
 
 
 
-                    <article className="course">
-                        <div className="cont">
-                            <div className="course__image">
+                    <article className={styl.course}>
+                        <div className={styl.cont}>
+                            <div className={styl.course__image}>
                                 <img src={estrella} height="10vmin" />
                             </div>
-                            <div className="course__info newclassName">
+                            <div className={`${styl.course__info} ${styl.newclassName}`}>
                                 <h2>Estrella</h2>
                             </div>
                         </div>
-                        <div className="course__info">
+                        <div className={styl.course__info}>
                             <p>
                                 Estrlla, the music club of the college, is a vibrant community of musicians and music lovers who come together
                                 to learn, create,compose, generate and perform various genres of music.
                             </p>
-                            <Link to="/gallery/estrella" className="btn btn-primary">Explore</Link>
+                            <Link to="/gallery/estrella" className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
                         </div>
                     </article>
 
-                    <article className="course">
-                        <div className="cont">
-                            <div className="course__image">
+                    <article className={styl.course}>
+                        <div className={styl.cont}>
+                            <div className={styl.course__image}>
                                 <img src={utkrisht} height="10vmin" />
                             </div>
-                            <div className="course__info newclassName">
+                            <div className={`${styl.course__info} ${styl.newclassName}`}>
                                 <h2>Utkrisht</h2>
                             </div>
                         </div>
-                        <div className="course__info">
+                        <div className={styl.course__info}>
                             <p>
                                 Utkrisht, the art and crafts club of the college, encourages students to unleash their creativity and develop
                                 their artistic skills through various mediums such as painting, drawing, sculpture, and more.
                             </p>
-                            <Link to="/gallery/utkrisht" className="btn btn-primary">Explore</Link>
+                            <Link to="/gallery/utkrisht" className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
                         </div>
                     </article>
 
@@ -543,9 +541,9 @@ export default function Gallery() {
 
 
             <footer>
-                <div className="container footer__container">
-                    <div className="footer__1">
-                        <a href="index.html" className="footer__logo">
+                <div className={`${styl.container} ${styl.footer__container}`}>
+                        <div className={styl.footer__1}>
+                            <a href="index.html" className={styl.footer__logo}>
                             <h4>GALLERY</h4>
                         </a>
                         <p>
@@ -553,25 +551,25 @@ export default function Gallery() {
                         </p>
                     </div>
 
-                    <div className="footer__2">
+                        <div className={styl.footer__2}>
                         <h4>Gallery </h4>
-                        <ul className="permalinks">
+                        <ul className={styl.permalinks}>
                             <li><a href="/index">HOME</a></li>
                             <li><a href="/contactus">CONTACT US</a></li>
                             <li><a href="/aboutus">ABOUT US</a></li>
                         </ul>
                     </div>
 
-                    <div className="footer__3">
+                        <div className={styl.footer__3}>
                         <h4>Privacy</h4>
-                        <ul className="privacy">
+                        <ul className={styl.privacy}>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms and conditions</a></li>
                             <li><a href="#">Refund Policy</a></li>
                         </ul>
                     </div>
 
-                    <div className="footer__4">
+                        <div className={styl.footer__4}>
                         <h4>Contact Us</h4>
                         <div>
                             {/* style="color: white;" */}
@@ -580,7 +578,7 @@ export default function Gallery() {
                             <p><a href="mailto:abc@gmail.com" >abc@gmail.com</a></p>
                         </div>
 
-                        <ul className="footer__socials">
+                            <ul className={styl.footer__socials}>
                             <li>
                                 <a href="#"><i className="uil uil-facebook-f"></i></a>
                             </li>
@@ -600,9 +598,9 @@ export default function Gallery() {
             </footer>
 
 
-            <div ref={pro} id="progress">
-                <span id="progress-value"><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
-            </div>
+            <a href='#' ref={pro} id="progress" className={styl.progress}>
+                <span id="progress-value" className={styl["progress-value"]}><i className={`fa fa-arrow-up`} aria-hidden="true"></i></span>
+            </a>
 
         </div>
         </motion.div>
