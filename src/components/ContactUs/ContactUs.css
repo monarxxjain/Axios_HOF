@@ -204,6 +204,11 @@
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
   }
+  .contact_us_6{
+    background-color: #1d1d1d;
+    /* background-color: #071f30; */
+    height: 100vh;
+  }
   
   .contact_us_6 .form-box {
     z-index: 2;
@@ -211,6 +216,7 @@
     margin-right: 48px;
     margin-bottom: 0px;
     margin-left: 0px;
+    background-color: #76767600;
   }
   
   .contact_us_6 .text-blk.input-title {

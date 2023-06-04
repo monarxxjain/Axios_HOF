@@ -57,7 +57,7 @@ const AlumniForm = ({ setFeedback, feedback }) => {
   // console.log(addAlumni);
   console.log(styles);
   return (
-    <form onSubmit={handleSubmit} className={`${styles.flexStartLeft} flex-col p-20 max-w-xl border-y-2 bg-gray-900 border-white-700 rounded-3xl`}>
+    <form onSubmit={handleSubmit} className={`${styles.flexStartLeft} flex-col p-40 py-20 max-w-xl border-y-2 bg-gray-900 border-white-700 rounded-3xl`}>
 
       <label htmlFor="picture">
         <img src='/src/assets/profile.png'
@@ -74,11 +74,11 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         accept="image/*"
         value={photo}
         onChange={handlePhotoChange}
-        className="rounded-lg border-white text-black hidden"
+        className="rounded-lg border-white text-black hidden "
         required
       />
       <br />
-      <label htmlFor="name" className="font-poppins font-semibold text-white text-lg">
+      <label htmlFor="name" className="font-poppins font-semibold text-white text-3xl">
         Name:
       </label>
       <input
@@ -86,11 +86,11 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         type="text"
         value={name}
         onChange={handleNameChange}
-        className="mt-2 py-1 mb-6 px-4 rounded-lg border-2 border-white w-full text-black"
+        className="mt-2 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       />
       <br />
-      <label htmlFor="name" className="font-poppins font-semibold text-white text-lg">
+      <label htmlFor="name" className="font-poppins font-semibold text-white text-3xl">
         Email:
       </label>
       <input
@@ -98,10 +98,10 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         type="email"
         value={email}
         onChange={handleEmailChange}
-        className="mt-2 py-1 mb-8 px-4 rounded-lg border-2 border-white w-full text-black"
+        className="mt-2 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       /><br />
-      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-lg mt-4">
+      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-3xl ">
         Graduation Year:
       </label>
       <input
@@ -109,11 +109,11 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         type="number"
         value={gradYear}
         onChange={handleGradYearChange}
-        className="mt-2 mb-8 py-1 px-4 rounded-lg border-2 border-white w-full text-black"
+        className="mt-2 mb-6 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       />
 
-      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-lg mt-4">
+      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-3xl mt-4">
         Achievements:
       </label>
       <input
@@ -121,7 +121,7 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         type="text"
         value={sentences}
         onChange={handleAchievementChange}
-        className="mt-2 mb-4 py-1 px-4 rounded-lg border-2 border-white w-full text-black"
+        className="mt-2 mb-12 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       />
       <button type="submit"
@@ -146,7 +146,7 @@ const AlumniSection = ({ setFeedback, feedback }) => {
         className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow`}
       >
         <div className="flex-1 flex flex-col">
-          <h2 className={styles.heading2}>Add Alumnus :</h2>
+          <p className={styles.heading2}>Add Alumnus :</p>
           <p className={`${styles.paragraph} max-w-[490px] mt-5`}>
             Click on Add Alumni button, enter the details and Submit it. An Alumni will be added.
           </p>

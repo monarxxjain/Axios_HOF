@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 
 function ContactUs() {
 
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/63f249c931ebfa0fe7ee1c22/1gpl70eud';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/63f249c931ebfa0fe7ee1c22/1gpl70eud';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
     return (
         <motion.div
-        initial={{ opacity: 0, x: "-1000px",  y: "-1000px"}}
-        animate={{ opacity: 1, x:"0", y: "0px" }}
-        exit={{ opacity: 1, x: "100px", y: "-1000px"}}
-        transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: "0px", y: "-1000px" }}
+            animate={{ opacity: 1, x: "0", y: "0px" }}
+            exit={{ opacity: 1, x: "100px", y: "-1000px" }}
+            transition={{ duration: 0.5 }}
         >
             <div class="contact_us_6">
                 <div class="responsive-container-block container">
@@ -86,15 +86,22 @@ s0.parentNode.insertBefore(s1,s0);
                                 </a>
                             </div>
                             <div class=" container-block">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.2278200121605!2d81.02144971170861!3d26.800873664789428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9dd79cdeac7d8!2sIndian%20Institute%20of%20Information%20Technology%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1682262539630!5m2!1sen!2sin" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className='iframe-123'></iframe>
-                            </div>
+                            <motion.div
+                                initial={{ opacity: 0, x: "0px", y: "1000px" }}
+                                animate={{ opacity: 1, x: "0", y: "0px" }}
+                                exit={{ opacity: 1, x: "100px", y: "-1000px" }}
+                                transition={{ duration: 1.25 }}
+                                className=" w-full overflow-hidden">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.2278200121605!2d81.02144971170861!3d26.800873664789428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be37eb0826741%3A0x34d9dd79cdeac7d8!2sIndian%20Institute%20of%20Information%20Technology%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1682262539630!5m2!1sen!2sin" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" className='iframe-123'></iframe>
+                            </motion.div>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
         </motion.div>
     );
-   
+
 
 
 

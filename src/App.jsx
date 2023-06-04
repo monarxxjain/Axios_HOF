@@ -32,6 +32,14 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import Sidebar from "./scenes/global/Sidebar";
 import Topbar from "./scenes/global/Topbar";
 import Calendare from "./scenes/calendar/calendar";
+import Gallery from "./components/Gallery/Gallery";
+import Crotonia from "./components/Clubs/Crotonia";
+import Zephyr from "./components/Clubs/Zephyr";
+import Estrella from "./components/Clubs/Estrella";
+import Goonj from "./components/Clubs/Goonj";
+import AfterDark from "./components/Clubs/AfterDark";
+import Utkrisht from "./components/Clubs/Utkrisht";
+import Users from "./components/Users/Users";
 // import Calendar from "./scenes/calendar/calendar";
 
 
@@ -60,6 +68,14 @@ const App = () => {
           {/* <Route path="/dashboard" element={<><Dashboard /></>}> </Route> */}
           <Route path="/alumni_app" element={<><NavbarHome /><AlumniApp /></>}> </Route>
           <Route path="/tech_events" element={<><NavbarHome /><TechEvents /></>}> </Route>
+          <Route path="/gallery" element={<><NavbarHome /><Gallery/></>}> </Route>
+          <Route path="/gallery/crotonia" element={<><NavbarHome /><Crotonia/></>}> </Route>
+          <Route path="/gallery/zephyr" element={<><NavbarHome /><Zephyr/></>}> </Route>
+          <Route path="/gallery/estrella" element={<><NavbarHome /><Estrella/></>}> </Route>
+          <Route path="/gallery/goonj" element={<><NavbarHome /><Goonj/></>}> </Route>
+          <Route path="/gallery/afterdark" element={<><NavbarHome /><AfterDark/></>}> </Route>
+          <Route path="/gallery/utkrisht" element={<><NavbarHome /><Utkrisht/></>}> </Route>
+          <Route path="/users" element={<><NavbarHome /><Users/></>}> </Route>
           <Route path="/contact_us" element={<><NavbarHome /><ContactUs /></>}> </Route>
           <Route path="/login_signup" element={<><NavbarHome /><Background /><LoginForm /></>}> </Route>
         </Routes>

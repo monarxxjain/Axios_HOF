@@ -65,6 +65,24 @@ const AlumniApp = () =>{
       title: "Founder & Leader",
       img: people01,
     },
+    {
+      id: "feedback-7",
+      graduationYear: "Graduation Year : 2019",
+      ach: "Achievements : " ,
+      achievements: ["Opened a 50M$ startup Company","Big contribution in Machine Learning department"],
+      name: "Herman Jensen",
+      title: "Founder & Leader",
+      img: people01,
+    },
+    {
+      id: "feedback-8",
+      graduationYear: "Graduation Year : 2019",
+      ach: "Achievements : " ,
+      achievements: ["Opened a 50M$ startup Company","Big contribution in Machine Learning department"],
+      name: "Herman Jensen",
+      title: "Founder & Leader",
+      img: people01,
+    },
   ]);
   return (
     
@@ -81,7 +99,7 @@ const AlumniApp = () =>{
     </div>
 
     <div className={`bg-primary ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
+      <div className={`${styles.boxWidthMj}`}>
         <Hero />
       </div>
     </div>
@@ -90,9 +108,20 @@ const AlumniApp = () =>{
       <div className={`${styles.boxWidth}`}>
         <Stats />
         <Business />
+      </div>
+    </div>
+    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidthMj}`}>
         <Testimonials feedback={feedback}/>
-        {/* <Clients /> */}
+      </div>
+    </div>
+    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}>
         <CTA setFeedback={setFeedback} feedback={feedback}/>
+      </div>
+    </div>
+    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidthMj}`}>
         <Footer />
       </div>
     </div>

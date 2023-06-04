@@ -39,9 +39,48 @@ import Lkdin from "./linkedin.png";
 import phone from "./phone.png";
 import maiL from "./mail.png";
 import Locat from "./location.png"
-
+import estrella from "./Pics/estrella.jpg"
+import zephyr from "./Pics/zephyr.jpg"
+import goonj from "./Pics/goonj.jpg"
+import utkrisht from "./Pics/utkrist.jpg"
+import afterdark from "./Pics/afterdark.jpg"
+import crotonia from "./Pics/crotonia.jpg"
+import gal2 from "./Pics/2gal.png"
+import gal3 from "./Pics/3gal.png"
+import priyanshu from "./Pics/priyanshu.png"
+import shreya from "./Pics/shreya.jpg"
+import jatin from "./Pics/jatin.jpg"
+import pallavi from "./Pics/pallavi.jpg"
+import ash from "./Pics/ashley.png"
+import akshay from "./Pics/Bhatna.png"
+import ramanuj from "./Pics/ramanuj.jpg"
+import ashutosh from "./Pics/ashutosh.jpg"
+import aklavate from "./Pics/aklavate.jpg"
+import kumari from "./Pics/kumari.jpg"
+import mohit from "./Pics/mohit.jpg"
+import saniya from "./Pics/saniyamaheshwari.jpg"
+import pattern2 from "./Pics/pattern-2.svg"
+import pattern3 from "./Pics/pattern-3.svg"
+import shadow1 from "./Pics/shadow-1.svg"
+import shadow2 from "./Pics/shadow-2.svg"
 
 export {
+  pattern2,
+  pattern3,
+  shadow1,
+  shadow2,
+  priyanshu,
+  shreya,
+  jatin,
+  pallavi,
+  ash,
+  akshay,
+  ramanuj,
+  ashutosh,
+  aklavate,
+  kumari,
+  mohit,
+  saniya,
   airbnb,
   bill,
   binance,
@@ -82,5 +121,13 @@ export {
   Lkdin,
   phone,
   maiL,
-  Locat
+  Locat,
+  estrella,
+  zephyr,
+  utkrisht,
+  goonj,
+  afterdark,
+  crotonia,
+  gal2,
+  gal3
 };

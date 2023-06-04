@@ -1,16 +1,18 @@
 import styles from "../../style";
 import { discount, robot } from "../../assets";
 import GetStarted from "./GetStarted";
+import { logo } from "../../assets";
 
 const Hero = () => {
   return (
-    <section id="home" className={`flex md:flex-row flex-col `}>
+    <section id="home" className={`flex md:flex-row flex-col pt-15 mt-20`}>
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
-        <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
+        <img src={logo} alt="hoobank" className="w-[80px] h-[80px] mb-60 ml-80" />
+
+        <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2 ">
           <img src={discount} alt="discount" className="w-[32px] h-[32px]" />
-          <p className={`${styles.paragraph} ml-2`}>Let's
-            <span className="text-white"> Connect together</span> and become {" "}
-            <span className="text-white">Successful</span>
+          <p className={`${styles.paragraph} ml-5`}>
+            <span className="text-white">Let's Connect together and become Successful</span> 
           </p>
         </div>
 
