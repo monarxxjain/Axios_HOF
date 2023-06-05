@@ -54,9 +54,9 @@ const NavbarHome = () => {
                     <nav className={Styles.navbar} data-navbar>
 
                         <div className={Styles["navbar-top"]}>
-                            <a href="#" className={Styles.logo}>
+                            {/* <a href="#" className={Styles.logo}>
                                 <img src="./assets/images/logo.svg" width="119" height="37" alt="Wren logo" />
-                            </a>
+                            </a> */}
 
                             <button className={Styles["nav-close-btn"]} aria-label="close menu" data-nav-toggler>
                                 <ion-icon name="close-outline" aria-hidden="true"></ion-icon>

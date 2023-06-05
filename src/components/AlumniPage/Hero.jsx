@@ -5,7 +5,7 @@ import { logo } from "../../assets";
 
 const Hero = () => {
   return (
-    <section id="home" className={`flex md:flex-row flex-col pt-15 mt-20`}>
+    <section id="hom" className={`flex md:flex-row flex-col pt-0 mt-0`}>
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
         <img src={logo} alt="hoobank" className="w-[80px] h-[80px] mb-60 ml-80" />
 

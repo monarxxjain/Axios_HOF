@@ -128,14 +128,14 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             
-            <Typography
+            <Typography style={{"font-size":"25px"}}
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Wings
             </Typography>
-            <Item
+            <Item 
               title="Competitive Programming"
               to="/cp"
               icon={<ClosedCaptionOffIcon />}

@@ -71,42 +71,170 @@ export default function LoginForm() {
         ) {
             console.log("sent");
         } else {
-            var form = new FormData(e.target);
 
-            let arr = [];
-            var i = 0;
-            console.log(form.entries());
-            for (var pair of form.entries()) {
-                console.log(pair);
-                arr[i] = pair[1];
-                i++;
-                // console.log(form.values())
-            }
 
-            const auth = getAuth();
-            createUserWithEmailAndPassword(auth, arr[1], arr[2])
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-                    // ...
-                    console.log(user + "user created");
-                    const close = document.getElementById("container");
-                   const a= document.getElementById("autoclick2")
-                //    const b= document.getElementById("disable_mj")
-                //    b.style.display="none"
 
-                   a.click();
-                    setInterval(() => {
-                        close.style.display = "none";
-                    }, 150);
+            //Get the entire form fields
+            let form = e.currentTarget;
 
+            //Get URL for api endpoint
+            let url = form.action;
+
+            try {
+                //Form field instance
+                let formFields = new FormData(form);
+                // console.log(formFields)
+                let formDataObject = Object.fromEntries(formFields.entries());
+                console.log((formDataObject))
+
+
+                fetch("http://localhost:8080/post/form",{
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify(formDataObject)
                 })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    // ..
-                });
+                .then(()=>{
+                    console.log("New Student Added")
+                })
+
+
+
+                // Format the plain form data as JSON
+                // let formDataJsonString = JSON.stringify(formDataObject);
+                // console.log(typeof(formDataJsonString))
+
+
+                //Call the `postFormFieldsJson()` function
+                // let responseData = await postFormFieldsAsJson({ url, formFields });
+            } 
+            catch (error) {
+                // Handle the error here.
+                console.error(`An has occured ${error}`);
+            }
+        
+
+
+
+
+
+
+
+
+
+
+            // console.log(FormData);
+            // console.log(e.target.action);
+            // var form = new FormData(e.target);
+
+            // let arr = [];
+            // var i = 0;
+            // console.log(form.entries());
+            // for (var pair of form.entries()) {
+            //     // console.log(pair);
+            //     arr[i] = pair[1];
+            //     console.log(arr[i])
+            //     i++;
+            // }
+
+            // const auth = getAuth();
+            // createUserWithEmailAndPassword(auth, arr[1], arr[2])
+            //     .then((userCredential) => {
+            //         // Signed in
+            //         const user = userCredential.user;
+            //         // ...
+            //         console.log(user + "user created");
+            //         const close = document.getElementById("container");
+            //        const a= document.getElementById("autoclick2")
+            //     //    const b= document.getElementById("disable_mj")
+            //     //    b.style.display="none"
+
+            //        a.click();
+            //         setInterval(() => {
+            //             close.style.display = "none";
+            //         }, 150);
+
+            //     })
+            //     .catch((error) => {
+            //         const errorCode = error.code;
+            //         const errorMessage = error.message;
+            //         // ..
+            //     });
         }
+    };
+    const submitAdminform = async (e) => {
+        e.preventDefault();
+            let adform = e.currentTarget;
+
+            let url = adform.action;
+
+            try {
+                let adformFields = new FormData(adform);
+                let adformDataObject = Object.fromEntries(adformFields.entries());
+                console.log((adformDataObject))
+
+
+                fetch("http://localhost:8080/post/formadmin",{
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body:JSON.stringify(adformDataObject)
+                })
+                .then(()=>{
+                    console.log("New Admin Added")
+                })
+
+            } 
+            catch (error) {
+                console.error(`An Admin Level Error has occured : ${error}`);
+            }
+        
+
+
+
+
+
+
+
+
+
+
+            // console.log(FormData);
+            // console.log(e.target.action);
+            // var form = new FormData(e.target);
+
+            // let arr = [];
+            // var i = 0;
+            // console.log(form.entries());
+            // for (var pair of form.entries()) {
+            //     // console.log(pair);
+            //     arr[i] = pair[1];
+            //     console.log(arr[i])
+            //     i++;
+            // }
+
+            // const auth = getAuth();
+            // createUserWithEmailAndPassword(auth, arr[1], arr[2])
+            //     .then((userCredential) => {
+            //         // Signed in
+            //         const user = userCredential.user;
+            //         // ...
+            //         console.log(user + "user created");
+            //         const close = document.getElementById("container");
+            //        const a= document.getElementById("autoclick2")
+            //     //    const b= document.getElementById("disable_mj")
+            //     //    b.style.display="none"
+
+            //        a.click();
+            //         setInterval(() => {
+            //             close.style.display = "none";
+            //         }, 150);
+
+            //     })
+            //     .catch((error) => {
+            //         const errorCode = error.code;
+            //         const errorMessage = error.message;
+            //         // ..
+            //     });
+        
     };
 
     const loginner = async (e) => {
@@ -226,12 +354,27 @@ export default function LoginForm() {
 
     const [studentMessage, setstudentMessage] = useState("");
     const [submitStudentName, setsubmitStudentName] = useState(false);
+    const [submitStudentFavAnimal, setsubmitStudentFavAnimal] = useState(false);
     const [submitStudentEmail, setsubmitStudentEmail] = useState(false);
     const [submitStudentPass, setsubmitStudentPass] = useState(false);
+    const [submitStudentRepPass, setsubmitStudentRepPass] = useState(false);
 
     const valueOfStudentName = (event) => {
         const val = event.target.value;
         setsubmitStudentName(val);
+        const regex = /[^a-zA-Z\s]/;
+        console.log(val);
+        if (val.length > 0 && regex.test(val)) {
+            setstudentMessage("* Only alphabets allowed");
+            setsubmitStudentName(false);
+        } else {
+            setstudentMessage("");
+            setsubmitStudentName(true);
+        }
+    };
+    const valueOfFavouriteAnimal = (event) => {
+        const val = event.target.value;
+        setsubmitStudentFavAnimal(val);
         const regex = /[^a-zA-Z\s]/;
         console.log(val);
         if (val.length > 0 && regex.test(val)) {
@@ -257,10 +400,11 @@ export default function LoginForm() {
             setsubmitStudentEmail(true);
         }
     };
-
+    const [sgnUpPass,setSgnUpPass] = useState("")
     const valueOfStudentPassword = (event) => {
         const val = event.target.value;
         setsubmitStudentPass(val);
+        setSgnUpPass(val)
         const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
         // console.log(val);
         if (val.length < 8) {
@@ -279,6 +423,39 @@ export default function LoginForm() {
             }
         }
     };
+    const valueOfStudentRepPassword = (event) => {
+        const val = event.target.value;
+        setsubmitStudentRepPass(val);
+        const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+        if (val === sgnUpPass){
+            setstudentMessage("")
+            if (val.length < 8) {
+                setstudentMessage("* Password must be of at least 8 characters");
+                setsubmitStudentPass(false);
+            } else if (val.length > 20) {
+                setstudentMessage("* Password must be of at most 20 characters");
+                setsubmitStudentPass(false);
+            } else {
+                if (!regex.test(val)) {
+                    setstudentMessage("* Password must have 1 Capital & 1 special chars");
+                    setsubmitStudentPass(false);
+                } else {
+                    setstudentMessage("");
+                    setsubmitStudentPass(true);
+                }
+            }
+        }
+        else{
+            setstudentMessage("* Password NOT matching")
+            setsubmitStudentPass(false);
+        }
+    };
+
+
+
+
+
+
 
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -317,14 +494,14 @@ export default function LoginForm() {
                             : { display: sLogin ? "block" : "none" }
                     }
                 >
-                    <div className={Styles.Login_cross2} onClick={closeForm}>
+                    <div className={`${Styles.Login_cross2} ${Styles.crossSign}`} onClick={closeForm}>
                         <Link to={'/'}>&times;</Link>
                     </div>
                     <div className={Styles.form}>
                         <h1 className={Styles.Login_h1}>Create Account</h1>
                         <div className={Styles.createAccount}>
                             <div className={Styles.accountType}>
-                                {
+                                
                                     <div className={Styles.NewSignUp}>
                                         <input
                                             className={Styles.Login_input_tag}
@@ -333,14 +510,14 @@ export default function LoginForm() {
                                             name="tabby-tabs"
                                         />
                                         <label htmlFor="memberSignUp" className={Styles.signUp_Tabs}>
-                                            Others
+                                            Admin
                                         </label>
                                         <div className={`${Styles.member} ${Styles.content}`}>
                                             <form
                                                 className={`${Styles.memberForm} ${Styles.Login_form_tag}`}
                                                 id="formdata"
                                                 onSubmit={(e) => {
-                                                    submitform(e);
+                                                    submitAdminform(e);
                                                 }}
                                             >
                                                 <div className={Styles["social-container"]}>
@@ -365,7 +542,7 @@ export default function LoginForm() {
                                                     placeholder="Username"
                                                     id="name"
                                                     className={`${Styles.sUpUserName} ${Styles.Login_input_tag}`}
-                                                    name="name"
+                                                    name="adminName"
                                                     required
                                                 />
                                                 {/* <label htmlFor="name">Full name</label> */}
@@ -382,14 +559,14 @@ export default function LoginForm() {
                                                     placeholder="Email"
                                                     id="Email"
                                                     className={`${Styles.sUpUserEmail} ${Styles.Login_input_tag}`}
-                                                    name="Email"
+                                                    name="adminEmail"
                                                     required
                                                 />
                                                 <input
                                                     type="password"
                                                     placeholder="Password"
                                                     id="Password"
-                                                    name="Password"
+                                                    name="adminPassword"
                                                     className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                     required
                                                 />
@@ -397,16 +574,16 @@ export default function LoginForm() {
                                                     type="password"
                                                     placeholder="Retype Password"
                                                     id="Password"
-                                                    name="Password"
+                                                    name="adminPassword"
                                                     className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                     required
                                                 />
                                                 <input
                                                     type="text"
-                                                    placeholder="Favourite Animal"
+                                                    placeholder="Admin ID"
                                                     id="name"
                                                     className={`${Styles.sUpUserName} ${Styles.Login_input_tag}`}
-                                                    name="name"
+                                                    name="adminID"
                                                     required
                                                 />
                                                 {/* <select
@@ -428,19 +605,18 @@ export default function LoginForm() {
                                                 <div id="sUpMemberAlert" style={divStyle}>
                                                     <br />
                                                 </div>
-                                                <button
+                                                <input
                                                     type="submit"
                                                     className={`${Styles.button} ${Styles.MainButtons}`}
-                                                    // value="Sign Up"
+                                                    value="Sign Up"
                                                     form="formdata"
                                                     name="submit"
-                                                >
-                                                    Sign Up
-                                                </button>
+                                                />
+                                                    
                                             </form>
                                         </div>
                                     </div>
-                                }
+                                
 
                                 <div className={Styles.NewSignUp}>
                                     <input
@@ -484,7 +660,7 @@ export default function LoginForm() {
                                                 onChange={valueOfStudentName}
                                                 placeholder="Username"
                                                 id="studentName"
-                                                name="name"
+                                                name="userName"
                                                 className={`${Styles.sUpUserName} ${Styles.Login_input_tag}`}
                                                 required
                                             />
@@ -493,7 +669,7 @@ export default function LoginForm() {
                                                 placeholder="Email"
                                                 onChange={valueOfStudentEmail}
                                                 id="studentEmail"
-                                                name="Email"
+                                                name="emailId"
                                                 // defaultValue={user.Email}
                                                 className={`${Styles.sUpUserEmail} ${Styles.Login_input_tag}`}
                                                 required
@@ -504,24 +680,24 @@ export default function LoginForm() {
                                                 onChange={valueOfStudentPassword}
                                                 id="studentPassword"
                                                 // defaultValue={user.Password}
-                                                name="Password"
+                                                name="password"
                                                 className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                 required
                                             />
                                             <input
                                                 type="password"
                                                 placeholder="Retype Password"
-                                                onChange={valueOfStudentPassword}
+                                                onChange={valueOfStudentRepPassword}
                                                 id="studentPassword"
                                                 // defaultValue={user.Password}
-                                                name="Password"
+                                                name="password"
                                                 className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                 required
                                             />
                                             <input
                                                 type="text"
                                                 placeholder="Favourite Animal"
-                                                onChange={valueOfStudentPassword}
+                                                onChange={valueOfFavouriteAnimal}
                                                 id="fav_Animal"
                                                 // defaultValue={user.Password}
                                                 name="fav_animal"
@@ -555,7 +731,7 @@ export default function LoginForm() {
                             : { display: Login ? "block" : "block" }
                     }
                 >
-                    <div className={Styles.Login_cross} onClick={closeForm}>
+                    <div className={`${Styles.Login_cross} ${Styles.crossSign}`} onClick={closeForm}>
                         <Link to={'/'}>&times;</Link>
                     </div>
 

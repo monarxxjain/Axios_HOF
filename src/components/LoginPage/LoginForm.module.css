@@ -344,7 +344,7 @@ form, .form {
 	background: -webkit-linear-gradient(to right, #0f41f5, #4190ff);
 	background: linear-gradient(to right, #0f41f5, #4190ff); */
 	background-color: rgba(0, 0, 0, 0.222);
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(20px);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -642,4 +642,17 @@ color: white;
 
 .sUpfav_animal{
 	padding-bottom: 8px;
+}
+.MainButtons{
+	width: fit-content;
+	margin-top: 0;
+}
+.memberForm{
+	padding-bottom: 10px;
+}
+.crossSign {
+	border-radius: 50%;
+	height: 3vmin;
+	/* padding: 0vmin 1vmin; */
+	/* margin: 0.3vmin; */
 }
