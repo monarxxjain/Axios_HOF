@@ -18,7 +18,6 @@ import FullScreenDialog from "../FullScreenDialog/FullScreenDialog";
 
 
 export default function LoginForm() {
-    // console.log(Styles)
     const [userid, setuserid] = useState("");
 
     const google_login = () => {
@@ -54,7 +53,6 @@ export default function LoginForm() {
                 console.log(credential);
                 //
             });
-        //  signInWithRedirect(auth, provider);
         setTimeout(() => { }, 3000);
     };
     const [loginEmail, setLoginEmail] = useState("");
@@ -71,22 +69,14 @@ export default function LoginForm() {
         ) {
             console.log("sent");
         } else {
-
-
-
-            //Get the entire form fields
             let form = e.currentTarget;
 
-            //Get URL for api endpoint
             let url = form.action;
 
             try {
-                //Form field instance
                 let formFields = new FormData(form);
-                // console.log(formFields)
                 let formDataObject = Object.fromEntries(formFields.entries());
-                console.log((formDataObject))
-
+                console.log(formDataObject)
 
                 fetch("http://localhost:8080/post/form",{
                     method:"POST",
@@ -97,68 +87,11 @@ export default function LoginForm() {
                     console.log("New Student Added")
                 })
 
-
-
-                // Format the plain form data as JSON
-                // let formDataJsonString = JSON.stringify(formDataObject);
-                // console.log(typeof(formDataJsonString))
-
-
-                //Call the `postFormFieldsJson()` function
-                // let responseData = await postFormFieldsAsJson({ url, formFields });
             } 
             catch (error) {
-                // Handle the error here.
                 console.error(`An has occured ${error}`);
             }
-        
-
-
-
-
-
-
-
-
-
-
-            // console.log(FormData);
-            // console.log(e.target.action);
-            // var form = new FormData(e.target);
-
-            // let arr = [];
-            // var i = 0;
-            // console.log(form.entries());
-            // for (var pair of form.entries()) {
-            //     // console.log(pair);
-            //     arr[i] = pair[1];
-            //     console.log(arr[i])
-            //     i++;
-            // }
-
-            // const auth = getAuth();
-            // createUserWithEmailAndPassword(auth, arr[1], arr[2])
-            //     .then((userCredential) => {
-            //         // Signed in
-            //         const user = userCredential.user;
-            //         // ...
-            //         console.log(user + "user created");
-            //         const close = document.getElementById("container");
-            //        const a= document.getElementById("autoclick2")
-            //     //    const b= document.getElementById("disable_mj")
-            //     //    b.style.display="none"
-
-            //        a.click();
-            //         setInterval(() => {
-            //             close.style.display = "none";
-            //         }, 150);
-
-            //     })
-            //     .catch((error) => {
-            //         const errorCode = error.code;
-            //         const errorMessage = error.message;
-            //         // ..
-            //     });
+    
         }
     };
     const submitAdminform = async (e) => {
@@ -170,167 +103,84 @@ export default function LoginForm() {
             try {
                 let adformFields = new FormData(adform);
                 let adformDataObject = Object.fromEntries(adformFields.entries());
-                console.log((adformDataObject))
+                console.log(adformDataObject)
+                let name = adformDataObject.adminName;
+                let mail = adformDataObject.adminEmail;
+                let pas = adformDataObject.adminPassword;
+                let aid = adformDataObject.adminID;
+                let r1 = /[^a-zA-Z\s]/;
+                let r2 = /^[a-zA-Z]+@iiitl\.ac\.in$/;
+                let r3 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+                let r4 = /^[a-zA-Z]+@iiitl$/;
+                if (r1.test(name)){
+                    alert("Invalid Name");
+                    return;
+                }
+                else if (!r2.test(mail)){
+                    alert("Please Enter through College Mail Id");
+                    return;
+                }
+                else if (!r4.test(aid)){
+                    alert("Invalid College ID");
+                    return;
+                }
+                else if(!(pas.length >= 8 && pas.length <=16)){
+                    alert("password must be of length less than 16 and more than 8 chars");
+                    return;
+                }
+                else if(!r3.test(pas)){
+                    alert("Password must contain a special charactor and a capital letter.");
+                    return;
+                }
+                else{
+                    fetch("http://localhost:8080/post/formadmin",{
+                        method:"POST",
+                        headers:{"Content-Type":"application/json"},
+                        body:JSON.stringify(adformDataObject)
+                    })
+                    .then(()=>{
+                        console.log("New Admin Added")
+                    })
+                }
 
-
-                fetch("http://localhost:8080/post/formadmin",{
-                    method:"POST",
-                    headers:{"Content-Type":"application/json"},
-                    body:JSON.stringify(adformDataObject)
-                })
-                .then(()=>{
-                    console.log("New Admin Added")
-                })
 
             } 
             catch (error) {
                 console.error(`An Admin Level Error has occured : ${error}`);
             }
         
-
-
-
-
-
-
-
-
-
-
-            // console.log(FormData);
-            // console.log(e.target.action);
-            // var form = new FormData(e.target);
-
-            // let arr = [];
-            // var i = 0;
-            // console.log(form.entries());
-            // for (var pair of form.entries()) {
-            //     // console.log(pair);
-            //     arr[i] = pair[1];
-            //     console.log(arr[i])
-            //     i++;
-            // }
-
-            // const auth = getAuth();
-            // createUserWithEmailAndPassword(auth, arr[1], arr[2])
-            //     .then((userCredential) => {
-            //         // Signed in
-            //         const user = userCredential.user;
-            //         // ...
-            //         console.log(user + "user created");
-            //         const close = document.getElementById("container");
-            //        const a= document.getElementById("autoclick2")
-            //     //    const b= document.getElementById("disable_mj")
-            //     //    b.style.display="none"
-
-            //        a.click();
-            //         setInterval(() => {
-            //             close.style.display = "none";
-            //         }, 150);
-
-            //     })
-            //     .catch((error) => {
-            //         const errorCode = error.code;
-            //         const errorMessage = error.message;
-            //         // ..
-            //     });
-        
     };
 
     const loginner = async (e) => {
         e.preventDefault();
-        if (false) {
-        } else {
-            var form2 = new FormData(e.target);
-            console.log(e.target);
-            console.log(form2.entries());
-            let arr = [];
-            var i = 0;
+        let form = e.currentTarget;
+    
+        let formFields = new FormData(form);
+        let formDataObject = Object.fromEntries(formFields.entries());
 
-            console.log({ loginEmail, loginPassword });
+        let userName = formDataObject.loggerName;
+        let password = formDataObject.loggerPass;
+        console.log(userName);
+        console.log(password);
 
-            // for (var pair of form2.entries()) {
-            //   console.log(pair);
-            //   arr[i] = pair[1];
-            //   // console.log(arr[i])
-            //   i++;
-            //   console.log(i);
-            // }
 
-            form2.forEach((file) => {
-                console.log(file);
-            });
-            // console.log(arr)
-            const auth = getAuth();
-            signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-                    console.log(user + ".then method of signInWithEmailAndPassword");
-                    const close = document.getElementById("container");
-                    console.log(userCredential.uid)
-                    onAuthStateChanged(auth, (user) => {
-                        if (user) {
-                            // User is signed in, see docs for a list of available properties
-                            // https://firebase.google.com/docs/reference/js/firebase.User
-                            const uid = user.uid;
-                            // userid=user.uid;
-                            setuserid(user.uid)
-                            localStorage.setItem("uid", user.uid)
-
-                            console.log(uid + " onauthataechanged is working");
-                            // ...
-                        } else {
-                            // User is signed out
-                            // ...
-                            console.log("USER signed out onauthstatechanged");
-                        }
-                    });
-                    setInterval(() => {
-                        close.style.display = "none";
-                    }, 1000);
-                    document.getElementById("autoclick").click();
-                    // ...
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    console.log(errorCode + "of signInWithEmailAndPassword");
-                    const errorMessage = error.message;
-                    console.log(
-                        errorMessage + "of signInWithEmailAndPassword errormessage"
-                    );
-                });
-        }
-        // onAuthStateChanged(auth, (user) => {
-        //   if (user) {
-        //     // User is signed in, see docs for a list of available properties
-        //     // https://firebase.google.com/docs/reference/js/firebase.User
-        //     const uid = user.uid;
-        //     console.log(uid + "onauthataechanged is working");
-        //     // ...
-        //   } else {
-        //     // User is signed out
-        //     // ...
-        //     console.log("USER signed out onauthstatechanged");
-        //   }
-        // });
+        fetch(`http://localhost:8080/get/user/${userName}/${password}`,{
+            mode:"cors"
+        })
+        .then((res)=>{
+            // console.log(res);
+            return res.json();
+        })
+        .then((data)=>{
+            console.log(data)
+            if(data==true){
+                document.getElementById('autoclick').click();
+            }
+            else{
+                alert("User Do Not Exist");
+            }
+        })
     };
-
-    // useEffect(()=>{
-    //alert this may be harmful ,i added custom login but for now its a failure
-
-    //  const newPostKey = push(child(ref(database), 'users')).key;
-    //  // console.log(user)
-    //  const updates = {};
-    // updates['/users/' + newPostKey] = user
-    //  update(ref(database), updates).then(()=>{
-    //    const a=document.getElementById('container')
-    //    setTimeout(() => {
-    //      a.style.display="none";
-    //      console.log("done")
-    //    }, 4000);
-    //  })
-    //  })
 
     //! Handles the sliding of blue div
     const signUpButton = () => {
@@ -463,7 +313,6 @@ export default function LoginForm() {
     const [sLogin, setsLogin] = useState("true");
     const [Login, setLogin] = useState("true");
 
-    //// JADOO CODE ( COPYRIGHT MJ )
     setInterval(() => {
         setWidth(window.innerWidth);
     }, 900);
@@ -471,10 +320,7 @@ export default function LoginForm() {
     //! Handles the closing of login form
     const closeForm = () => {
         const close = document.getElementById("container");
-        // setInterval(() => {
-        //     close.style.display = "none";
-        // }, 150);
-        // window.close();
+
     };
 
     return (
@@ -545,15 +391,7 @@ export default function LoginForm() {
                                                     name="adminName"
                                                     required
                                                 />
-                                                {/* <label htmlFor="name">Full name</label> */}
-                                                {/* <input
-                                                    className="sUpUserName Login_input_tag"
-                                                    autoComplete="off"
-                                                    type="text"
-                                                    id="name"
-                                                    name="name"
-                                                    required
-                                                    /> */}
+                                               
                                                 <input
                                                     type="email"
                                                     placeholder="Email"
@@ -586,22 +424,6 @@ export default function LoginForm() {
                                                     name="adminID"
                                                     required
                                                 />
-                                                {/* <select
-                                                    name="Wing"
-                                                    id="Wing"
-                                                    placeholder="Select your Wing"
-                                                    className={Styles.sUpUserWing}
-                                                    required
-                                                >
-                                                    <option>Select your Wing</option>
-                                                    <option>Competitive Programming (CP)</option>
-                                                    <option>Machine Learning (ML)</option>
-                                                    <option>Blockchain</option>
-                                                    <option>Web Development</option>
-                                                    <option>App Development</option>
-                                                    <option>Design Wing</option>
-                                                    <option>infosec Wing</option>
-                                                </select> */}
                                                 <div id="sUpMemberAlert" style={divStyle}>
                                                     <br />
                                                 </div>
@@ -656,7 +478,6 @@ export default function LoginForm() {
                                             </span>
                                             <input
                                                 type="text"
-                                                // defaultValue={user.studentName}
                                                 onChange={valueOfStudentName}
                                                 placeholder="Username"
                                                 id="studentName"
@@ -670,7 +491,6 @@ export default function LoginForm() {
                                                 onChange={valueOfStudentEmail}
                                                 id="studentEmail"
                                                 name="emailId"
-                                                // defaultValue={user.Email}
                                                 className={`${Styles.sUpUserEmail} ${Styles.Login_input_tag}`}
                                                 required
                                             />
@@ -679,7 +499,6 @@ export default function LoginForm() {
                                                 placeholder="Password"
                                                 onChange={valueOfStudentPassword}
                                                 id="studentPassword"
-                                                // defaultValue={user.Password}
                                                 name="password"
                                                 className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                 required
@@ -689,7 +508,6 @@ export default function LoginForm() {
                                                 placeholder="Retype Password"
                                                 onChange={valueOfStudentRepPassword}
                                                 id="studentPassword"
-                                                // defaultValue={user.Password}
                                                 name="password"
                                                 className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                 required
@@ -699,7 +517,6 @@ export default function LoginForm() {
                                                 placeholder="Favourite Animal"
                                                 onChange={valueOfFavouriteAnimal}
                                                 id="fav_Animal"
-                                                // defaultValue={user.Password}
                                                 name="fav_animal"
                                                 className={`${Styles.sUpfav_animal} ${Styles.Login_input_tag}`}
                                                 required
@@ -738,9 +555,7 @@ export default function LoginForm() {
                     <form
                         className={`${Styles.Login_form_tag} ${Styles.Login_login}`}
                         id="signinform"
-                        onSubmit={(e) => {
-                            loginner(e);
-                        }}
+                        onSubmit={(e) => {loginner(e);}}
                     >
                         <h1 className={Styles.Login_h1}>Log In</h1>
                         <div className={Styles["social-container"]}>
@@ -760,24 +575,30 @@ export default function LoginForm() {
                         <span className={Styles.Login_span_tag}>or use your account</span>
                         <input
                             className={Styles.Login_input_tag}
-                            type="test"
+                            id="loginName"
+                            type="text"
+                            name="loggerName"
                             placeholder="User Name"
-                            value={loginEmail}
                             onChange={(e) => setLoginEmail(e.target.value)}
                         />
                         <input
                             className={Styles.Login_input_tag}
+                            id="loginPass"
                             type="password"
+                            name="loggerPass"
                             placeholder="Password"
-                            value={loginPassword}
                             onChange={(e) => setLoginPassword(e.target.value)}
                         />
                         <Link className={Styles.Login_a_tag} to="/forgotpass">
                             Forgot your password?
                         </Link>
-                        <button className={`${Styles.Login_btn_tag} ${Styles.MainButtons}`} type="submit" form="signinform">
-                            Log In
-                        </button>
+                        <input value="Log In" 
+                            className={`${Styles.Login_btn_tag} ${Styles.MainButtons}`} 
+                            type="submit" 
+                            form="signinform"
+                            name="submit"
+                        />
+                       
                         <button
                             className={`${Styles.reverseGhost} ${Styles.Login_btn_tag} `}
                             id="signUpOnLogin"
@@ -826,4 +647,3 @@ export default function LoginForm() {
         </motion.div>
     );
 }
-// export {userid};
