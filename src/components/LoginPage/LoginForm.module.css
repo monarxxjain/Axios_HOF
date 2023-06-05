@@ -151,6 +151,10 @@ Styling For just CREATE ACCOUNT PART
     margin-top: 20px;
 }
 
+form .Login_h1{
+	color: rgba(0, 0, 0, 0.874);
+}
+
 .Login_p_tag {
 	font-size: 14px;
 	font-weight: 100;
@@ -160,14 +164,18 @@ Styling For just CREATE ACCOUNT PART
 }
 
 .Login_span_tag {
-	font-size: 14px;
+	font-size: 17px;
 }
 
 .Login_a_tag {
 	color: #333;
-	font-size: 14px;
+	font-size: 18px;
 	text-decoration: none;
 	margin: 15px 0;
+}
+
+.Login_a_tag:hover{
+	text-decoration: underline;
 }
 
 .Login_btn_tag, .button {
@@ -622,4 +630,16 @@ color: white;
 }
 .signUp_Tabs{
 	border-radius: 10px;
+	color: black;
+}
+
+.form .Login_h1{
+	color: black;
+}
+.stSignUp{
+	width: fit-content;
+}
+
+.sUpfav_animal{
+	padding-bottom: 8px;
 }

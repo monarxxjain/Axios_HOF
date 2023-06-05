@@ -40,6 +40,8 @@ import Goonj from "./components/Clubs/Goonj";
 import AfterDark from "./components/Clubs/AfterDark";
 import Utkrisht from "./components/Clubs/Utkrisht";
 import Users from "./components/Users/Users";
+import FormNew from "./components/Form/FormNew";
+import ForgotPass from "./components/LoginPage/ForgotPass";
 // import Calendar from "./scenes/calendar/calendar";
 
 
@@ -77,7 +79,8 @@ const App = () => {
           <Route path="/gallery/utkrisht" element={<><NavbarHome /><Utkrisht/></>}> </Route>
           <Route path="/users" element={<><NavbarHome /><Users/></>}> </Route>
           <Route path="/contact_us" element={<><NavbarHome /><ContactUs /></>}> </Route>
-          <Route path="/login_signup" element={<><NavbarHome /><Background /><LoginForm /></>}> </Route>
+          <Route path="/login_signup" element={<><NavbarHome /><Background/><LoginForm/></>}> </Route>
+          <Route path="/forgotpass" element={<><NavbarHome /><Background/><ForgotPass/></>}> </Route>
         </Routes>
 
     <Routes>

@@ -301,9 +301,9 @@ export default function LoginForm() {
     };
 
     return (
-        <motion
-            initial={{ opacity: 0, x: "-1000px", y: "-1000px" }}
-            animate={{ opacity: 1, x: "0", y: "0px" }}
+        <motion.div
+            initial={{ opacity: 0, x: "1000px", y: "-470px" }}
+            animate={{ opacity: 1, x: "0", y: "-470px" }}
             exit={{ opacity: 1, x: "100px", y: "-1000px" }}
             transition={{ duration: 0.5 }}
         >
@@ -362,7 +362,7 @@ export default function LoginForm() {
                                                 </span>
                                                 <input
                                                     type="text"
-                                                    placeholder="Name"
+                                                    placeholder="Username"
                                                     id="name"
                                                     className={`${Styles.sUpUserName} ${Styles.Login_input_tag}`}
                                                     name="name"
@@ -370,13 +370,13 @@ export default function LoginForm() {
                                                 />
                                                 {/* <label htmlFor="name">Full name</label> */}
                                                 {/* <input
-              className="sUpUserName Login_input_tag"
-              autoComplete="off"
-              type="text"
-              id="name"
-              name="name"
-              required
-            /> */}
+                                                    className="sUpUserName Login_input_tag"
+                                                    autoComplete="off"
+                                                    type="text"
+                                                    id="name"
+                                                    name="name"
+                                                    required
+                                                    /> */}
                                                 <input
                                                     type="email"
                                                     placeholder="Email"
@@ -393,7 +393,23 @@ export default function LoginForm() {
                                                     className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                     required
                                                 />
-                                                <select
+                                                <input
+                                                    type="password"
+                                                    placeholder="Retype Password"
+                                                    id="Password"
+                                                    name="Password"
+                                                    className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
+                                                    required
+                                                />
+                                                <input
+                                                    type="text"
+                                                    placeholder="Favourite Animal"
+                                                    id="name"
+                                                    className={`${Styles.sUpUserName} ${Styles.Login_input_tag}`}
+                                                    name="name"
+                                                    required
+                                                />
+                                                {/* <select
                                                     name="Wing"
                                                     id="Wing"
                                                     placeholder="Select your Wing"
@@ -408,7 +424,7 @@ export default function LoginForm() {
                                                     <option>App Development</option>
                                                     <option>Design Wing</option>
                                                     <option>infosec Wing</option>
-                                                </select>
+                                                </select> */}
                                                 <div id="sUpMemberAlert" style={divStyle}>
                                                     <br />
                                                 </div>
@@ -466,7 +482,7 @@ export default function LoginForm() {
                                                 type="text"
                                                 // defaultValue={user.studentName}
                                                 onChange={valueOfStudentName}
-                                                placeholder="Name"
+                                                placeholder="Username"
                                                 id="studentName"
                                                 name="name"
                                                 className={`${Styles.sUpUserName} ${Styles.Login_input_tag}`}
@@ -492,6 +508,26 @@ export default function LoginForm() {
                                                 className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                 required
                                             />
+                                            <input
+                                                type="password"
+                                                placeholder="Retype Password"
+                                                onChange={valueOfStudentPassword}
+                                                id="studentPassword"
+                                                // defaultValue={user.Password}
+                                                name="Password"
+                                                className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
+                                                required
+                                            />
+                                            <input
+                                                type="text"
+                                                placeholder="Favourite Animal"
+                                                onChange={valueOfStudentPassword}
+                                                id="fav_Animal"
+                                                // defaultValue={user.Password}
+                                                name="fav_animal"
+                                                className={`${Styles.sUpfav_animal} ${Styles.Login_input_tag}`}
+                                                required
+                                            />
                                             <div id="sUpStudentAlert" style={divStyle}>
                                                 {studentMessage}
                                                 <br />
@@ -499,7 +535,7 @@ export default function LoginForm() {
 
                                             <input
                                                 type="submit"
-                                                className={`${Styles.button} ${Styles.MainButtons}`}
+                                                className={`${Styles.button} ${Styles.MainButtons} ${Styles.stSignUp}`}
                                                 value="Sign Up"
                                                 form="my-form-signup2"
                                             />
@@ -548,8 +584,8 @@ export default function LoginForm() {
                         <span className={Styles.Login_span_tag}>or use your account</span>
                         <input
                             className={Styles.Login_input_tag}
-                            type="email"
-                            placeholder="Email"
+                            type="test"
+                            placeholder="User Name"
                             value={loginEmail}
                             onChange={(e) => setLoginEmail(e.target.value)}
                         />
@@ -560,9 +596,9 @@ export default function LoginForm() {
                             value={loginPassword}
                             onChange={(e) => setLoginPassword(e.target.value)}
                         />
-                        <a className={Styles.Login_a_tag} href="/">
+                        <Link className={Styles.Login_a_tag} to="/forgotpass">
                             Forgot your password?
-                        </a>
+                        </Link>
                         <button className={`${Styles.Login_btn_tag} ${Styles.MainButtons}`} type="submit" form="signinform">
                             Log In
                         </button>
@@ -611,7 +647,7 @@ export default function LoginForm() {
                     </div>
                 </div>
             </div>
-        </motion>
+        </motion.div>
     );
 }
 // export {userid};
