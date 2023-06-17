@@ -6,6 +6,7 @@ const AlumniForm = ({ setFeedback, feedback }) => {
   console.log(styles);
   const [name, setName] = useState('');
   const [gradYear, setGradYear] = useState('');
+  const [curPos, setCurPos] = useState('');
   const [email, setEmail] = useState('');
   const [sentences, setSentences] = useState('');
   const [photo, setPhoto] = useState('');
@@ -16,6 +17,10 @@ const AlumniForm = ({ setFeedback, feedback }) => {
 
   const handleGradYearChange = (event) => {
     setGradYear(event.target.value);
+  };
+
+  const handleCurPosChange = (event) => {
+    setCurPos(event.target.value);
   };
 
   const handleEmailChange = (event) => {
@@ -90,7 +95,7 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         required
       />
       <br />
-      <label htmlFor="name" className="font-poppins font-semibold text-white text-3xl">
+      <label htmlFor="email" className="font-poppins font-semibold text-white text-3xl">
         Email:
       </label>
       <input
@@ -109,6 +114,17 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         type="number"
         value={gradYear}
         onChange={handleGradYearChange}
+        className="mt-2 mb-6 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
+        required
+      />
+      <label htmlFor="currentPos" className="font-poppins font-semibold text-white text-3xl ">
+        Current Position:
+      </label>
+      <input
+        id="currentPos"
+        type="text"
+        value={curPos}
+        onChange={handleCurPosChange}
         className="mt-2 mb-6 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       />

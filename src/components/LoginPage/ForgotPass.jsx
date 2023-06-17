@@ -16,6 +16,7 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import FullScreenDialog from "../FullScreenDialog/FullScreenDialog";
+import bcrypt from "bcryptjs-react"
 // import { GoogleAuthProvider } from "firebase/auth";
 
 
@@ -50,6 +51,8 @@ export default function ForgotPass() {
                 let formFields = new FormData(form);
                 let formDataObject = Object.fromEntries(formFields.entries());
                 console.log(formDataObject)
+                const hashedPass = bcrypt.hashSync(formDataObject.password, 10);
+                formDataObject.password = hashedPass;
 
                 fetch("http://localhost:8080/put/form", {
                     method: "PUT",

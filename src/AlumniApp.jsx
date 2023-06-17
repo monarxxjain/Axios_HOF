@@ -11,7 +11,7 @@ const AlumniApp = () =>{
       id: "feedback-1",
       graduationYear: "Graduation Year : 2019",
       ach: "Achievements : " ,
-      achievements: ["Opened a 50M$ startup Company","Big contribution in Machine Learning department"],
+      achievements: ["Opened a 50M$ startup Company, Big contribution in Machine Learning department"],
       name: "Herman Jensen",
       title: "Founder & Leader",
       img: people01,

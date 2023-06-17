@@ -1545,5 +1545,8 @@ footer {
     padding-top: 10px;
 }
 .usersPage{
-    height: 100vh;
+    height: fit-content;
+}
+#topics{
+    padding: 0;
 }

@@ -222,7 +222,7 @@ a {
 
 .grad2 {
 
-    background: radial-gradient(710px, #2f85f58c, transparent 35%);
+    /* background: radial-gradient(710px, #2f85f58c, transparent 35%); */
     height: 50vmin;
     width: 50vmin;
     padding: 5vmin;
@@ -236,7 +236,7 @@ a {
     background-image: linear-gradient(to right, #2f85f58c, transparent);
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-    padding-left: 1vmin;
+    padding: 1vmin;
     /* background: radial-gradient(600px, #2f85f58c, transparent 50%); */
 
 }
@@ -352,8 +352,8 @@ a {
 
 .social-menu ul {
     position: absolute;
-    top: 60%;
-    left: 33.5%;
+    top: 19%;
+    left: 25%;
     transform: translate(-50%, -50%);
     padding: 0;
     margin: 158px -65px 0px;
@@ -559,6 +559,10 @@ a {
 
 /* ==================== MEDIA QUERIES (TABLETS) ================= */
 @media screen and (max-width: 1024px) {
+
+    .social-menu{
+        display: none;
+    }
     .about__achievements {
         margin-top: 2rem;
     }
@@ -669,7 +673,7 @@ a {
 }
 
 .category p {
-    font-size: 0.85rem;
+    font-size: 13.6px;
 }
 
 
@@ -710,7 +714,7 @@ a {
     border-right: 2px solid;
     border-color: #0077B5;
     border-image: auto;
-
+    min-width: 300px;
 
 }
 
@@ -727,7 +731,7 @@ a {
 
 .course__info p {
     margin: 1.2rem 0 2rem;
-    font-size: 0.9rem;
+    font-size: 14.4rem;
 }
 
 /* =================== FAQs ===================== */
@@ -852,6 +856,17 @@ footer ul li a:hover {
 }
 
 /* ===================== MEDIA QUERIES (TABLETS) ==================== */
+@media screen and (max-width: 1300px) {
+    .courses {
+            margin-top: 0;
+    }
+    
+    .courses__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
 @media screen and (max-width: 1024px) {
     .container {
         width: var(--container-width-md);
@@ -968,13 +983,7 @@ footer ul li a:hover {
     }
 
     /* ====================== POPULAR COURSES ===================== */
-    .courses {
-        margin-top: 0;
-    }
-
-    .courses__container {
-        grid-template-columns: 1fr 1fr;
-    }
+    
 
     /* ====================== FAQs ===================== */
     .faqs__container {
@@ -1125,8 +1134,8 @@ footer ul li a:hover {
 }
 
 #mygal3 {
-    height: 60vmin;
-    width: 60vmin;
+    height: 240px;
+    width: 240px;
 }
 .wrap{
     border:none;
@@ -1141,7 +1150,7 @@ footer ul li a:hover {
     width: 400px;
 }
 .course__info p{
-    font-size: 1.7vmin;
+    font-size: 16px;
 }
 .newclassName{
     font-size: 24px;
@@ -1176,3 +1185,26 @@ footer ul li a:hover {
 .footer__4 h4{
     font-size: 24px;
 }
+
+
+#mygal{
+    height: 288px;
+}
+.hero-right {
+    height: 288px;
+}
+@media screen and (max-width: 1400px){
+    #rightDiv{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .courses {
+        margin-top: 0;
+    }
+
+    .courses__container {
+        grid-template-columns: 1fr;
+    }
+}   

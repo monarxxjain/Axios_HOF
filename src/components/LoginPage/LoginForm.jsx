@@ -14,6 +14,7 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import FullScreenDialog from "../FullScreenDialog/FullScreenDialog";
+import bcrypt from "bcryptjs-react"
 // import { GoogleAuthProvider } from "firebase/auth";
 
 
@@ -61,13 +62,13 @@ export default function LoginForm() {
 
 
     const submitform = async (e) => {
-        e.preventDefault();
         if (
             submitStudentName === false ||
             submitStudentEmail === false ||
             submitStudentPass === false
-        ) {
-            console.log("sent");
+            ) {
+            e.preventDefault();
+            console.log("Invalid Info");
         } else {
             let form = e.currentTarget;
 
@@ -76,8 +77,13 @@ export default function LoginForm() {
             try {
                 let formFields = new FormData(form);
                 let formDataObject = Object.fromEntries(formFields.entries());
-                console.log(formDataObject)
 
+                const hashedPass = bcrypt.hashSync(formDataObject.password, 10);
+                console.log(hashedPass)
+                formDataObject.password= hashedPass;
+                
+                // console.log(formDataObject);
+                
                 fetch("http://localhost:8080/post/form",{
                     method:"POST",
                     headers:{"Content-Type":"application/json"},
@@ -86,6 +92,7 @@ export default function LoginForm() {
                 .then(()=>{
                     console.log("New Student Added")
                 })
+                
 
             } 
             catch (error) {
@@ -95,7 +102,6 @@ export default function LoginForm() {
         }
     };
     const submitAdminform = async (e) => {
-        e.preventDefault();
             let adform = e.currentTarget;
 
             let url = adform.action;
@@ -133,6 +139,9 @@ export default function LoginForm() {
                     return;
                 }
                 else{
+                    console.log("object")
+                    const hashedPass = bcrypt.hashSync(adformDataObject.adminPassword, 10);
+                    adformDataObject.adminPassword = hashedPass;
                     fetch("http://localhost:8080/post/formadmin",{
                         method:"POST",
                         headers:{"Content-Type":"application/json"},
@@ -146,6 +155,7 @@ export default function LoginForm() {
 
             } 
             catch (error) {
+                e.preventDefault();
                 console.error(`An Admin Level Error has occured : ${error}`);
             }
         
@@ -213,7 +223,6 @@ export default function LoginForm() {
         const val = event.target.value;
         setsubmitStudentName(val);
         const regex = /[^a-zA-Z\s]/;
-        console.log(val);
         if (val.length > 0 && regex.test(val)) {
             setstudentMessage("* Only alphabets allowed");
             setsubmitStudentName(false);
@@ -226,7 +235,6 @@ export default function LoginForm() {
         const val = event.target.value;
         setsubmitStudentFavAnimal(val);
         const regex = /[^a-zA-Z\s]/;
-        console.log(val);
         if (val.length > 0 && regex.test(val)) {
             setstudentMessage("* Only alphabets allowed");
             setsubmitStudentName(false);
@@ -241,7 +249,6 @@ export default function LoginForm() {
         setsubmitStudentEmail(val);
         // const regex=/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
         const regex = /^[a-zA-Z]{3}20\d{2}\d{3}@iiitl\.ac\.in$/;
-        console.log(val);
         if (val.length > 0 && !regex.test(val)) {
             setstudentMessage("* Please Enter throughyour College Mail Id");
             setsubmitStudentEmail(false);
@@ -254,7 +261,6 @@ export default function LoginForm() {
     const valueOfStudentPassword = (event) => {
         const val = event.target.value;
         setsubmitStudentPass(val);
-        setSgnUpPass(val)
         const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
         // console.log(val);
         if (val.length < 8) {
@@ -386,7 +392,7 @@ export default function LoginForm() {
                                                 <input
                                                     type="text"
                                                     placeholder="Username"
-                                                    id="name"
+                                                    id="adname"
                                                     className={`${Styles.sUpUserName} ${Styles.Login_input_tag}`}
                                                     name="adminName"
                                                     required
@@ -411,7 +417,7 @@ export default function LoginForm() {
                                                 <input
                                                     type="password"
                                                     placeholder="Retype Password"
-                                                    id="Password"
+                                                    id="repPassword"
                                                     name="adminPassword"
                                                     className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                     required
@@ -507,7 +513,7 @@ export default function LoginForm() {
                                                 type="password"
                                                 placeholder="Retype Password"
                                                 onChange={valueOfStudentRepPassword}
-                                                id="studentPassword"
+                                                id="studentrepPassword"
                                                 name="password"
                                                 className={`${Styles.sUpUserPassword} ${Styles.Login_input_tag}`}
                                                 required

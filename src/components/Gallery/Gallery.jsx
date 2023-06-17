@@ -290,24 +290,18 @@ export default function Gallery() {
 
             <section className={`${styl.landingpg} ${styl["text-gray-400"]} ${styl["body-font"]}`}>
 
-                <div className={`${styl.container} mx-auto flex px-5 py-24 md:flex-row flex-col items-center`}>
+                <div className={`${styl.container} mx-auto flex px-5 py-24 items-center`}>
                     <div
-                        className={`${styl.grad1} ${styl.button} ml-96 pt-40  flex flex-col md:items-start md:text-left mb-16 items-center text-center`}>
+                        className={`${styl.grad1} ${styl.button} ml-60 pt-40  flex flex-col md:items-start md:text-left mb-16 items-center text-center`}>
                         <h1 className={`${styl.pge1} ${styl["title-font"]} sm:text-4xl text-3xl mb-4 font-medium text-white`}>
                             <b> Exploring <br />
                                 <span>Campus Artistry</span>
                                 <br className={`hidden lg:inline-block`} />: A Gallery
                             </b>
                         </h1>
-                        <h1>
-                            <p href="" className="typewrite" data-period="2000"
-                                data-type='[ "Unforgettable College Moments.", "Timeless College Reminiscences.", "Artistic Campus Showcase."]'>
-                                <span className={styl.wrap}></span>
-                            </p>
-                        </h1>
                     </div>
-                        <div className={`${styl.grad1} ${styl.button} xs:hidden xl:block button ml-40 pt-40 flex flex-col mb-16 mr-40 p-20 pb-40 items-center text-center`}>
-                        <img className={`${styl["hero-right"]} p-10 pb-20 ml-20`} alt="hero" id="mygal" src={gal2} />
+                    <div id="rightDiv" className={`${styl.grad1} ${styl.button} hidden  button ml-40 pt-40 lg:flex flex-col mb-16 mr-40 p-20 pb-40 items-center text-center`}>
+                        <img className={`${styl["hero-right"]} pl-2 pt-[65px]`} alt="hero" id="mygal" src={gal2} />
                     </div>
                 </div>
                 <div className={styl["social-menu"]}>
@@ -330,11 +324,11 @@ export default function Gallery() {
 
 
 
-            <section id="about">
+            <section id="about" className='p-0'>
                 <div className={`${styl.container} ${styl["about__achievements-container"]}`}>
                         <div className={styl["about__achievements-left"]}>
-                        <img className={styl.grad2} id="mygal3" src={gal3} width="10vmin" />
-                    </div>
+                            <img className={styl.grad2} id="mygal3" src={gal3} width="10vmin" />
+                        </div>
 
                         <div className={styl["about__achievements-right"]}>
                         <h1 className={`${styl.vision} ${styl.grad3}`} >College Life</h1>
@@ -418,21 +412,21 @@ export default function Gallery() {
                         <article className={styl.course}>
                             <div className={styl.cont}>
                                 <div className={styl.course__image}>
-                                <img src={crotonia} height="10vmin" />
+                                    <img src={crotonia} height="10vmin" />
+                                </div>
+                                <div className={`${styl.course__info} ${styl.newclassName}`}>
+                                    <h2>Crotonia</h2>
+                                </div>
                             </div>
-                            <div className={`${styl.course__info} ${styl.newclassName}`}>
-                                <h2>Crotonia</h2>
-                            </div>
-                        </div>
                             <div className={styl.course__info}>
-                            <p>
-                                Crotonia, the literary club of the college, provides a platform for students to explore their love for
-                                literature and express themselves through creative writing.
+                                <p>
+                                    Crotonia, the literary club of the college, provides a platform for students to explore their love for
+                                    literature and express themselves through creative writing.
 
-                            </p>
-                            <Link to={'/gallery/crotonia'} className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
-                        </div>
-                    </article>
+                                </p>
+                                <Link to={'/gallery/crotonia'} className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
+                            </div>
+                        </article>
 
 
 
