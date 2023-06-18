@@ -81,6 +81,7 @@ const App = () => {
           <Route path="/contact_us" element={<><NavbarHome /><ContactUs /></>}> </Route>
           <Route path="/login_signup" element={<><NavbarHome /><Background/><LoginForm/></>}> </Route>
           <Route path="/forgotpass" element={<><NavbarHome /><Background/><ForgotPass/></>}> </Route>
+          <Route path="/fullscreen" element={<><FullScreenDialog/></>}> </Route>
         </Routes>
 
     <Routes>

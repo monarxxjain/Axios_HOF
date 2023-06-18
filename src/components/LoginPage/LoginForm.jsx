@@ -261,8 +261,9 @@ export default function LoginForm() {
     const valueOfStudentPassword = (event) => {
         const val = event.target.value;
         setsubmitStudentPass(val);
+        setSgnUpPass(val);
         const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
-        // console.log(val);
+        console.log(val);
         if (val.length < 8) {
             setstudentMessage("* Password must be of at least 8 characters");
             setsubmitStudentPass(false);
@@ -282,6 +283,7 @@ export default function LoginForm() {
     const valueOfStudentRepPassword = (event) => {
         const val = event.target.value;
         setsubmitStudentRepPass(val);
+        console.log(val);
         const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
         if (val === sgnUpPass){
             setstudentMessage("")
