@@ -317,8 +317,9 @@ body.nav-active {
     aspect-ratio: var(--width) / var(--height);
     background-color: var(--bg-oxford-blue-2);
     overflow: hidden;
+    /* width: 200px; */
     --width: 507;
-    --height: 618;
+    /* --height: 618; */
     border-radius: var(--radius-8);
 }
 

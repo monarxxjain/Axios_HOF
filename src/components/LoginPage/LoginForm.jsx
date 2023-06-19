@@ -62,17 +62,15 @@ export default function LoginForm() {
 
 
     const submitform = async (e) => {
+        e.preventDefault();
         if (
             submitStudentName === false ||
             submitStudentEmail === false ||
             submitStudentPass === false
             ) {
-            e.preventDefault();
             console.log("Invalid Info");
         } else {
             let form = e.currentTarget;
-
-            let url = form.action;
 
             try {
                 let formFields = new FormData(form);
@@ -82,7 +80,7 @@ export default function LoginForm() {
                 // console.log(hashedPass)
                 formDataObject.password= hashedPass;
                 
-                // console.log(formDataObject);
+                console.log(formDataObject);
                 
                 fetch("http://localhost:8080/post/form",{
                     method:"POST",
@@ -184,7 +182,7 @@ export default function LoginForm() {
         .then((data)=>{
             // console.log(data)
             if(data==true){
-                document.getElementById('autoclick').click();
+                document.getElementById('autoclick').click();   
             }
             else{
                 alert("User Do Not Exist");
@@ -529,6 +527,14 @@ export default function LoginForm() {
                                                 className={`${Styles.sUpfav_animal} ${Styles.Login_input_tag}`}
                                                 required
                                             />
+                                            <input
+                                                className={Styles.Login_input_tag}
+                                                style={{ display: "none" }}
+                                                id="isLoggedInWhileSup"
+                                                type="number"
+                                                name="isLoggedInWhileSup"
+                                                value="0"
+                                            />
                                             <div id="sUpStudentAlert" style={divStyle}>
                                                 {studentMessage}
                                                 <br />
@@ -588,6 +594,14 @@ export default function LoginForm() {
                             name="loggerName"
                             placeholder="User Name"
                             onChange={(e) => setLoginEmail(e.target.value)}
+                        />
+                        <input
+                            className={Styles.Login_input_tag}
+                            style={{display: "none"}}
+                            id="isLoggedIn"
+                            type="number"
+                            name="isLoggedIn"
+                            value="0"
                         />
                         <input
                             className={Styles.Login_input_tag}
