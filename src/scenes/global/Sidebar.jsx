@@ -50,7 +50,23 @@ const Sidebar = () => {
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
-
+  // const [loggedUserName, setLoggedUserName] = useState("");
+  
+  const data = localStorage.getItem("userData");
+  const dashboardNameFinal = JSON.parse(data);
+  const userName = dashboardNameFinal.dashboardName;
+  // setLoggedUserName(dashboardNameFinal.dashboardName);
+  // fetch(`http://localhost:8080/get/usersName`, {
+  //   mode: "cors"
+  // })
+  // .then((res)=>{
+  //   // console.log(res)
+  //   return res.text();
+  // })
+  // .then((data)=>{
+  //   console.log(data);
+  //   setLoggedUserName(data);
+  // })
   return (
     <Box
       sx={{
@@ -117,7 +133,7 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Hack-o-fiesta
+                  {userName}
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   Welcome !

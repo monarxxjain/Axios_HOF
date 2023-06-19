@@ -182,6 +182,10 @@ export default function LoginForm() {
         .then((data)=>{
             // console.log(data)
             if(data==true){
+                const userData={
+                    dashboardName: userName
+                }
+                localStorage.setItem("userData", JSON.stringify(userData));
                 document.getElementById('autoclick').click();   
             }
             else{
