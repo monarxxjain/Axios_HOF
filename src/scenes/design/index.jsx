@@ -80,21 +80,7 @@ const Design = () => {
           components={{ Toolbar: GridToolbar }}
         />
       </Box>
-      <Box m="20px">
-      <Header
-        title="Roadmap and Resources "
-        subtitle="for procedural and planned structure"
-      /><ul>
-        <li> 
-          Learn about &nbsp; &nbsp;<a style={{textDecoration:"none",color:"green"}} href="https://www.youtube.com/">Color Theory</a> </li>
-        <li>
-          Get Inspiration from &nbsp;  <a style={{textDecoration:"none",color:"green"}} href='https://www.canva.com/'> Canva </a>and&nbsp;<a style={{textDecoration:"none",color:"green"}} href='https://www.dribble.com/'> Dribble </a> and Start your Design at Canva
-        </li>
-        <li>
-          If interested in designing UI/Ux .. Go to &nbsp;<a style={{textDecoration:"none",color:"green"}} href='https://www.figma.com/'> Figma </a>
-        </li>
-      </ul>
-      </Box>
+     
     </Box>
   );
 };

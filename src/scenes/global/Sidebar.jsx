@@ -152,7 +152,7 @@ const Sidebar = () => {
               Wings
             </Typography>
             <Item 
-              title="Competitive Programming"
+              title="Comp. Programming"
               to="/cp"
               icon={<ClosedCaptionOffIcon />}
               selected={selected}
@@ -166,7 +166,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Application Development"
+              title="App Development"
               to="/appdev"
               icon={<DeveloperModeIcon />}
               selected={selected}

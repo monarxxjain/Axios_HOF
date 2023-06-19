@@ -246,7 +246,7 @@ button.reverseGhost:hover{
 	color: #0f41f5;
 }   
 
-form, .form {
+.memberForm,.studentForm,.Login_form_tag,.form {
 	background-color: #FFFFFF;
 	display: flex;
 

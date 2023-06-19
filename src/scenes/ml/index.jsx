@@ -80,24 +80,7 @@ const Ml = () => {
           components={{ Toolbar: GridToolbar }}
         />
       </Box>
-      <Box m="20px">
-      <Header
-        title="Roadmap and Resources "
-        subtitle="for procedural and planned structure"
-      /><ul>
-        <li> 
-          Learning Python Language :  <a style={{textDecoration:"none",color:"green"}} href="https://www.youtube.com/@CodeWithHarry">    &nbsp; &nbsp; CODE with HARRY</a> </li>
-        <li>
-          Fundamental Libraries : <ul> <a style={{textDecoration:"none",color:"green"}} href="https://www.youtube.com/@CodeWithHarry"> &nbsp; Numpy , Pandas , MatplotLib ,Sklearn ,Cv2 </a></ul>
-        </li>
-        <li>
-          Create some Projects 
-        </li>
-        <li>
-          Learn about Data Training and required Maths. 
-        </li>
-      </ul>
-      </Box>
+     
     </Box>
   );
 };

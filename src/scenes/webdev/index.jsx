@@ -79,23 +79,7 @@ const WebDev = () => {
           components={{ Toolbar: GridToolbar }}
         />
       </Box>
-      <Box m="20px">
-      <Header
-        title="Roadmap and Resources "
-        subtitle="for procedural and planned structure"
-      /><ul>
-        <li> 
-          Learning a HTML , CSS , Bootstrap :  <a style={{textDecoration:"none",color:"green"}} href="https://www.w3schools.com">    &nbsp; &nbsp; W3Schools</a> </li>
-        <li>
-          Do some Simple Practice Projects 
-        </li>
-        <li>
-          Learn <a style={{textDecoration:"none",color:"green"}} href="https://www.theodinproject.com/paths">    &nbsp; &nbsp;JavaScript and Jquery </a> </li>
-          <li>
-          Learn <a style={{textDecoration:"none",color:"green"}} href="https://www.theodinproject.com/paths">    &nbsp; &nbsp;React and Nodejs / Nextjs and Database - MongoDb </a> 
-          </li>
-      </ul>
-      </Box>
+      
     </Box>
   );
 };

@@ -79,24 +79,7 @@ const InfoSec = () => {
           components={{ Toolbar: GridToolbar }}
         />
       </Box>
-      <Box m="20px">
-      <Header
-        title="Roadmap and Resources "
-        subtitle="for procedural and planned structure"
-      /><ul>
-        <li> 
-          Learning basics of <a style={{textDecoration:"none",color:"green"}} href="https://www.w3schools.com"> InfoSec. </a></li>
-        <li>
-          Get Familiar with <a style={{textDecoration:"none",color:"green"}} href='https://www.javatpoint.com/'>Shell Terminal </a>and Basic Commands
-        </li>
-        <li>
-          Learn about Encryption , Data Masking and other terms 
-        </li>
-        <li>
-          Do Some &nbsp; <a style={{textDecoration:"none",color:"green"}} href='https://www.picoctf.com/'>picoCTF </a> problems 
-        </li>
-      </ul>
-      </Box>
+     
     </Box>
   );
 };

@@ -80,21 +80,7 @@ const Blockchain = () => {
           components={{ Toolbar: GridToolbar }}
         />
       </Box>
-      <Box m="20px">
-      <Header
-        title="Roadmap and Resources "
-        subtitle="for procedural and planned structure"
-      /><ul>
-        <li> 
-          Learning Rust Language :  <a style={{textDecoration:"none",color:"green"}} href="https://www.youtube.com/@CodeWithHarry">    &nbsp; &nbsp; CODE with HARRY</a> </li>
-        <li>
-         Create your First Blockchain Project 
-        </li>
-        <li>
-          Create your own Project 
-        </li>
-      </ul>
-      </Box>
+      
     </Box>
   );
 };

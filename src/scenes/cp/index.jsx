@@ -104,25 +104,7 @@ const Cp = () => {
             getRowId={handleGetRowId}
           />
         </Box>
-        <Box m="20px">
-          <Header
-            title="Roadmap and Resources "
-            subtitle="for procedural and planned structure"
-          /><ul>
-            <li>
-              Learning a Programming Language :  <a style={{ textDecoration: "none", color: "green" }} href="https://www.youtube.com/@CodeWithHarry">    &nbsp; &nbsp; CODE with HARRY</a>
-              &nbsp; &nbsp;(recommended C++) </li>
-            <li>
-              Practice Questions : <ul> <a style={{ textDecoration: "none", color: "green" }} href='https://www.codechef.com/'> CodeChef</a></ul>
-              <ul> <a style={{ textDecoration: "none", color: "green" }} href='https://www.hackerrank.com/'> HackerRank</a></ul>
-              <ul> <a style={{ textDecoration: "none", color: "green" }} href='https://www.hackerearth.com/'> HackerEarth</a></ul>
-              <ul> <a style={{ textDecoration: "none", color: "green" }} href='https://www.codeforces.com/'> Codeforces</a></ul>
-            </li>
-            <li>
-              Learn DSA : <a style={{ textDecoration: "none", color: "green" }} href='https://www.youtube.com/@CodeHelp/about'> CodeHelp - by Babbar</a>
-            </li>
-          </ul>
-        </Box>
+        
       </Box>
     </>
   );

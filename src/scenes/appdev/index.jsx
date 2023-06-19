@@ -81,23 +81,7 @@ const AppDev = () => {
           components={{ Toolbar: GridToolbar }}
         />
       </Box>
-      <Box m="20px">
-      <Header
-        title="Roadmap and Resources "
-        subtitle="for procedural and planned structure"
-      /><ul>
-        <li> 
-          Learning a Language :  <a style={{textDecoration:"none",color:"green"}} href="https://www.youtube.com/@CodeWithHarry">    &nbsp; &nbsp; CODE with HARRY</a>
-          &nbsp; &nbsp;(recommended Flutter(Dart)) </li>
-        <li>
-          Do some Practice Projects : <ul> <a style={{textDecoration:"none",color:"green"}} href='https://www.flutter.com/'> Flutter </a></ul>
-        </li>
-        <li>
-          Create your own Project and Learn to Mix up with API
-          <a style={{textDecoration:"none",color:"green"}} href="https://www.youtube.com/@CodeWithHarry"> API </a>
-        </li>
-      </ul>
-      </Box>
+      
     </Box>
   );
 };
