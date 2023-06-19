@@ -573,7 +573,9 @@ body {
     min-height: 100vh;
     /* font-size: 1rem; */
     line-height: 1.25;
-    background-color: #18222d;
+}
+.clubGround{
+    background-color: #071f30;
 }
 
 .grid {

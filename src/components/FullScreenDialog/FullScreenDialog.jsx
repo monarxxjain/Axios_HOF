@@ -1,5 +1,5 @@
-import { database } from "../../../src/Firebase";
 import * as React from "react";
+
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import AppBar from "@mui/material/AppBar";
@@ -13,9 +13,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useState } from "react";
-// import { userid } from "./Login";
-import { ref, push, child, update, set } from "firebase/database";
+
+import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -37,44 +36,53 @@ export default function FullScreenDialog() {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+  
+  useEffect(()=>{
+    document.getElementById('autoclick2').click();
+  })
 
   const handleClickOpen = () => {
-    setOpen(true);
+    let mj=false;
+    if (window.location.href ==="http://localhost:5173/fullsc"){
+      mj=true
+    }
+    setOpen(mj);
   };
-
+  
   const handleClose = () => {
-    let arrgithubwebdev = githhubwebdev.split("\n");
-    let arrgithubappdev = githhubappdev.split("\n");
-    let arrgithubblockchain = githubblockchain.split("\n");
-    let arrgithubdesign = githubdesign.split("\n");
-    let arrgithubml = githubml.split("\n");
+    
     let obj = {
-      githhubwebdev: arrgithubwebdev,
-      githhubappdev: arrgithubappdev,
+      githhubwebdev: githhubwebdev,
+      githhubappdev: githhubappdev,
       githubownername,
       githubreponame,
-      githubblockchain: arrgithubblockchain,
-      githubdesign: arrgithubdesign,
-      githubml: arrgithubml,
+      githubblockchain: githubblockchain,
+      githubdesign: githubdesign,
+      githubml: githubml,
       codeforcesusername,
     };
-    const updates = {};
-    let uid = localStorage.getItem("uid");
-    const pinnedMessagesRef = ref(database, "users/" + uid);
-    console.log(uid);
-    // updates['/users/'+uid] = obj
-    //    update(ref(database), updates).then(
-    //     console.log("done")
-    //    )
-    set(pinnedMessagesRef, obj);
-    // console.log(obj)
 
-    setOpen(false);
+
+    try{
+      fetch("http://localhost:8080/post/info", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(obj)
+      })
+        .then(() => {
+          console.log("Info Sent")
+        })
+    }
+
+    catch(err){
+      console.log("Info NOT Sent")
+    }
+ 
   };
-  // 
+  
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen} id="autoclick2"  style={{display:'none'}}>
+      <Button variant="outlined" onClick={handleClickOpen} id="autoclick2" style={{display: "none"}}>
         Open full-screen dialog
       </Button>
       <Dialog
@@ -91,10 +99,10 @@ export default function FullScreenDialog() {
               onClick={handleClose}
               aria-label="close"
             >
-              <span id="disable_mj" ><CloseIcon/></span>
+              {/* <span id="disable_mj" ><CloseIcon/></span> */}
             </IconButton>
-            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Sound
+            <Typography sx={{ flex: 1 }} variant="h4" component="div">
+              User Details
             </Typography>
             <Link to="/dashboard">
             <Button autoFocus color="inherit" onClick={handleClose}>
@@ -308,7 +316,6 @@ export default function FullScreenDialog() {
           </AccordionDetails>
         </Accordion>
 
-        {/* <TextField label="GitHub link 2" fullWidth variant="outlined" /> */}
       </Dialog>
     </div>
   );

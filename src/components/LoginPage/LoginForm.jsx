@@ -79,7 +79,7 @@ export default function LoginForm() {
                 let formDataObject = Object.fromEntries(formFields.entries());
 
                 const hashedPass = bcrypt.hashSync(formDataObject.password, 10);
-                console.log(hashedPass)
+                // console.log(hashedPass)
                 formDataObject.password= hashedPass;
                 
                 // console.log(formDataObject);
@@ -109,7 +109,7 @@ export default function LoginForm() {
             try {
                 let adformFields = new FormData(adform);
                 let adformDataObject = Object.fromEntries(adformFields.entries());
-                console.log(adformDataObject)
+                // console.log(adformDataObject)
                 let name = adformDataObject.adminName;
                 let mail = adformDataObject.adminEmail;
                 let pas = adformDataObject.adminPassword;
@@ -139,7 +139,7 @@ export default function LoginForm() {
                     return;
                 }
                 else{
-                    console.log("object")
+                    // console.log("object")
                     const hashedPass = bcrypt.hashSync(adformDataObject.adminPassword, 10);
                     adformDataObject.adminPassword = hashedPass;
                     fetch("http://localhost:8080/post/formadmin",{
@@ -170,8 +170,8 @@ export default function LoginForm() {
 
         let userName = formDataObject.loggerName;
         let password = formDataObject.loggerPass;
-        console.log(userName);
-        console.log(password);
+        // console.log(userName);
+        // console.log(password);
 
 
         fetch(`http://localhost:8080/get/user/${userName}/${password}`,{
@@ -182,7 +182,7 @@ export default function LoginForm() {
             return res.json();
         })
         .then((data)=>{
-            console.log(data)
+            // console.log(data)
             if(data==true){
                 document.getElementById('autoclick').click();
             }
@@ -196,8 +196,8 @@ export default function LoginForm() {
     const signUpButton = () => {
         const container = document.getElementById("container");
         container.classList.add(Styles["right-panel-active"]);
-        console.log("sign up button clicked");
-        console.log(sLogin);
+        // console.log("sign up button clicked");
+        // console.log(sLogin);
     };
     const signInButton = () => {
         const container = document.getElementById("container");
@@ -263,7 +263,7 @@ export default function LoginForm() {
         setsubmitStudentPass(val);
         setSgnUpPass(val);
         const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
-        console.log(val);
+        // console.log(val);
         if (val.length < 8) {
             setstudentMessage("* Password must be of at least 8 characters");
             setsubmitStudentPass(false);
@@ -283,7 +283,7 @@ export default function LoginForm() {
     const valueOfStudentRepPassword = (event) => {
         const val = event.target.value;
         setsubmitStudentRepPass(val);
-        console.log(val);
+        // console.log(val);
         const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
         if (val === sgnUpPass){
             setstudentMessage("")
@@ -619,7 +619,7 @@ export default function LoginForm() {
                             Sign Up
                         </button>
                     </form>
-                    <Link to="/dashboard" id="autoclick" style={{ display: 'none' }}>click me</Link>
+                    <Link to="/fullsc" id="autoclick" style={{ display: 'none' }}>click me</Link>
                 </div>
                 <div className={Styles["overlay-container"]}>
                     <div className={Styles.overlay}>

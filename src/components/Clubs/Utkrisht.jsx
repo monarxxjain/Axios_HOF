@@ -47,7 +47,7 @@ export default function Utkrisht() {
             exit={{ opacity: 1, x: "100px", y: "-1000px" }}
             transition={{ duration: 0.5 }}
             className="bg-primary w-full overflow-hidden">
-            <div>
+            <div className={style.clubGround}>
                 <body id="clubBody">
                     <div className={`${style.container} ${style.grad1} grad1 mx-auto flex px-5 py-24 md:flex-row flex-col items-center mt-20`} >
                         <h1 className={`${style.pge1} flex title-font mb-4 font-medium text-white`} >

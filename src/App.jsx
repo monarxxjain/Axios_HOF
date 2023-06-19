@@ -9,7 +9,6 @@ import NavbarHome from "./components/HomePage/HomeNavbar/NavbarHome";
 import TechEvents from "./components/TechEventsPage/TechEvents";
 import { Navbar } from "./components/AlumniPage";
 import LoginForm from "./components/LoginPage/LoginForm";
-import FullScreenDialog from "./components/FullScreenDialog/FullScreenDialog";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ContactUs from "./components/ContactUs/ContactUs";
@@ -42,6 +41,7 @@ import Utkrisht from "./components/Clubs/Utkrisht";
 import Users from "./components/Users/Users";
 import FormNew from "./components/Form/FormNew";
 import ForgotPass from "./components/LoginPage/ForgotPass";
+import FullScreenDialog from "./components/FullScreenDialog/FullScreenDialog";
 // import Calendar from "./scenes/calendar/calendar";
 
 
@@ -81,7 +81,7 @@ const App = () => {
           <Route path="/contact_us" element={<><NavbarHome /><ContactUs /></>}> </Route>
           <Route path="/login_signup" element={<><NavbarHome /><Background/><LoginForm/></>}> </Route>
           <Route path="/forgotpass" element={<><NavbarHome /><Background/><ForgotPass/></>}> </Route>
-          <Route path="/fullscreen" element={<><FullScreenDialog/></>}> </Route>
+          <Route path="/fullsc" element={<><FullScreenDialog/></>}> </Route>
         </Routes>
 
     <Routes>
