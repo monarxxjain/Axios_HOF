@@ -1,23 +1,22 @@
-import { database } from "../Firebase";
-import { ref, push, child, update } from "firebase/database";
-// import { getDatabase, get } from "firebase/database";
 import React from "react";
 import axios from "axios";
-
-// import React from 'react'
-import { getDatabase, onValue } from "firebase/database";
-
 var gitExporter = [];
-
-const gitfetchData = async (username) => {
-  if (username === "") {
-    console.log("Empty user");
-    return;
-  }
+const gitfetchData = (username) => {
   axios
     .get(`https://api.github.com/users/${username}`)
     .then((response) => {
-      gitExporter.push(response.data);
+      let mj = 0;
+      gitExporter.forEach(element => {
+        if (element.login == username) {
+          mj = 1;
+        }
+      });
+      if (mj == 0) {
+        gitExporter = [...gitExporter, response.data];
+      }
+      else {
+        console.log("Extra Render")
+      }
     })
     .catch((error) => {
       console.log(error);
@@ -25,25 +24,25 @@ const gitfetchData = async (username) => {
 };
 
 function gitDisplayer() {
-  var databaser = {};
-  const db = getDatabase();
-  let arr = [];
-  const starCountRef = ref(db);
-  onValue(starCountRef, (snapshot) => {
-    databaser = snapshot.val();
-    console.log(Object.values(Object.values(databaser)[0]));
-    Object.values(Object.values(databaser)[0]).forEach((elem) => {
-      arr.push(elem.githubownername);
-    });
-    console.log(arr);
+  try {
+    fetch(`http://localhost:8080/get/gitUserName`, {
+      mode: "cors"
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((gitnms) => {
+        for (let i = 0; i < gitnms.length; i++) {
+          if(gitnms[i]!=""){
+            gitfetchData(gitnms[i]);
+          }
+        }
+      })
 
-    Object.values(Object.values(databaser)[0]).forEach((elem) => {
-      gitfetchData(elem.githubownername);
-    });
-
-  });
-
-  return <div></div>;
+  }
+  catch (err) {
+    console.log(err);
+  }
 }
 
 export default gitDisplayer;

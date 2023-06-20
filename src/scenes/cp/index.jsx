@@ -10,14 +10,11 @@ import { useEffect, useState } from "react";
 const Cp = () => {
   const [isSidebar, setIsSidebar] = useState(true);
   useEffect(() => {
-    // console.log(Exporter)
   }, [])
   Displayer();
-  // var iterator;
   const handleGetRowId = (e) => {
     return e.handle
   }
-  // console.log(Exporter)
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [

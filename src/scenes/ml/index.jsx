@@ -4,10 +4,11 @@ import { tokens } from "../../theme";
 
 import Header from "../../scenes/Header";
 import { useTheme } from "@mui/material";
-import { gitExporter } from "../../scenes/gitdisplayer";
+import gitDisplayer, { gitExporter } from "../../scenes/gitdisplayer";
 const Ml = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  gitDisplayer();
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
