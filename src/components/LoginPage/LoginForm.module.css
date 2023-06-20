@@ -656,3 +656,12 @@ color: white;
 	/* padding: 0vmin 1vmin; */
 	/* margin: 0.3vmin; */
 }
+
+.studentForm{
+	padding: 0;
+	padding-bottom: 10px;
+}
+.memberForm{
+	padding: 0;
+	padding-bottom: 12px;
+}

@@ -134,19 +134,9 @@ li {
     list-style: none;
 }
 
-a,
-img,
-span,
-input,
-button,
-ion-icon {
-    display: block;
-}
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+
+
 
 img {
     height: auto;
@@ -160,11 +150,6 @@ button {
     color: inherit;
 }
 
-input {
-    width: 100%;
-    outline: none;
-}
-
 button {
     cursor: pointer;
 }
@@ -173,14 +158,6 @@ ion-icon {
     pointer-events: none;
 }
 
-address {
-    font-style: normal;
-}
-
-html {
-    font-size: 10px;
-    scroll-behavior: smooth;
-}
 
 
 
@@ -188,7 +165,7 @@ body {
     /* background-color: var(--bg-oxford-blue-2); */
     color: var(--text-shadow-blue);
     font-family: var(--fontFamily-noto_sans);
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
     line-height: var(--lineHeight-4);
     overflow-y: overlay;
 }

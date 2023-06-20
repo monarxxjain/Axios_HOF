@@ -207,18 +207,20 @@ const App = () => {
             </div>
           </ThemeProvider>
         </ColorModeContext.Provider></>} />
-        <Route path="/faq" element={<><ColorModeContext.Provider value={colorMode} >
+        <Route path="/faq" element={<><div><ColorModeContext.Provider value={colorMode} >
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <div className="app">
               <Sidebar />
               <main className="dashboard--content" >
                 <Topbar/>
-                <FAQ />
+                <div style={{overflowY:"auto"}}>
+                  <FAQ />
+                </div>
               </main>
             </div>
           </ThemeProvider>
-        </ColorModeContext.Provider></>} />
+          </ColorModeContext.Provider></div></>} />
         <Route path="/calendar" element={<><ColorModeContext.Provider value={colorMode} >
           <ThemeProvider theme={theme}>
             <CssBaseline />

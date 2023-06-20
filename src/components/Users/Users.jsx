@@ -241,7 +241,7 @@ export default function Users() {
                                         smarter decision-making.
                                     </p>
 
-                                    <div className="input-wrapper">
+                                    <div className="input-wrapper flex justify-between">
 
                                         <input type="email" name="email_address" placeholder="Search by Username" required className="input-field"
                                             autoComplete="off" />

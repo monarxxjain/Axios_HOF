@@ -62,6 +62,8 @@ export default function FullScreenDialog() {
       codeforcesusername,
     };
 
+    // localStorage.setItem("userInfo", JSON.stringify(obj));
+
 
     try{
       fetch("http://localhost:8080/post/info", {
@@ -101,7 +103,7 @@ export default function FullScreenDialog() {
             >
               {/* <span id="disable_mj" ><CloseIcon/></span> */}
             </IconButton>
-            <Typography sx={{ flex: 1 }} variant="h4" component="div">
+            <Typography sx={{ flex: 1 }} variant="h5" component="div">
               User Details
             </Typography>
             <Link to="/dashboard">

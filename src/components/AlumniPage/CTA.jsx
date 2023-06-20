@@ -62,7 +62,7 @@ const AlumniForm = ({ setFeedback, feedback }) => {
   // console.log(addAlumni);
   console.log(styles);
   return (
-    <form onSubmit={handleSubmit} className={`${styles.flexStartLeft} flex-col p-40 py-20 max-w-xl border-y-2 bg-gray-900 border-white-700 rounded-3xl`}>
+    <form onSubmit={handleSubmit} className={`${styles.flexStartLeft} flex-col p-20 py-20 max-w-xl border-y-2 bg-gray-900 border-white-700 rounded-3xl`}>
 
       <label htmlFor="picture">
         <img src='/src/assets/profile.png'
@@ -79,11 +79,11 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         accept="image/*"
         value={photo}
         onChange={handlePhotoChange}
-        className="rounded-lg border-white text-black hidden "
+        className="rounded-lg border-white text-black hidden"
         required
       />
       <br />
-      <label htmlFor="name" className="font-poppins font-semibold text-white text-3xl">
+      <label htmlFor="name" className="font-poppins font-semibold text-white text-xl">
         Name:
       </label>
       <input
@@ -95,7 +95,8 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         required
       />
       <br />
-      <label htmlFor="email" className="font-poppins font-semibold text-white text-3xl">
+      <br />
+      <label htmlFor="email" className="font-poppins font-semibold text-white text-xl ">
         Email:
       </label>
       <input
@@ -106,7 +107,8 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         className="mt-2 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       /><br />
-      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-3xl ">
+      <br />
+      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-xl ">
         Graduation Year:
       </label>
       <input
@@ -117,7 +119,7 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         className="mt-2 mb-6 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       />
-      <label htmlFor="currentPos" className="font-poppins font-semibold text-white text-3xl ">
+      <label htmlFor="currentPos" className="font-poppins font-semibold text-white text-xl ">
         Current Position:
       </label>
       <input
@@ -129,7 +131,7 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         required
       />
 
-      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-3xl mt-4">
+      <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-xl mt-4">
         Achievements:
       </label>
       <input

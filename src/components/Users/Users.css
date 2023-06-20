@@ -195,6 +195,7 @@
 
 .section-title {
     margin-block-end: 10px;
+    font-size: 7vmin;
 }
 
 .headline .span {
@@ -223,7 +224,9 @@
 }
 
 .btn1-primary {
-    padding: 8px 16px;
+    padding: 4px 16px;
+    font-size: 20px;
+    font-weight: 150;
     border-radius: var(--radius-6);
 }
 
@@ -244,7 +247,7 @@
 .img-holder {
     aspect-ratio: var(--width) / var(--height);
     background-color: var(--bg-oxford-blue-2);
-    overflow: hidden;
+    /* overflow: hidden; */
     /* width: 200px; */
     --width: 507;
     /* --height: 618; */
@@ -436,7 +439,7 @@
 }
 
 .hero-subtitle {
-    font-size: var(--fontSize-6);
+    font-size: 2vmin;
     font-weight: var(--weight-bold);
 }
 
@@ -524,7 +527,7 @@
 
 .topic-card .card-text {
     color: var(--text-wild-blue-yonder);
-    font-size: var(--fontSize-6);
+    font-size: 14px;
     margin-block: 15px 20px;
 }
 
@@ -1470,7 +1473,7 @@
     padding-top: 10px;
 }
 .usersPage{
-    height: 100vmin;
+    height: 100vh;
 }
 #topics{
     padding: 0;

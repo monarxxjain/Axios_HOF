@@ -21,7 +21,7 @@ const FeatureCard = ({ icon, title, content, index }) => (
 const Business = () =>  (
   <section id="features" className={layout.section}>
     <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
+      <h2 className={`${styles.heading2} text-left`} >
         You do the projects, <br className="sm:block hidden" /> they’ll support you.
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>

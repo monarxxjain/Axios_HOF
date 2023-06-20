@@ -1,59 +1,50 @@
-import { database } from "../Firebase";
-import { ref, push, child, update } from "firebase/database";
-// import { getDatabase, get } from "firebase/database";
 import React from "react";
 import axios from "axios";
-
-// import React from 'react'
-import { getDatabase, onValue } from "firebase/database";
-
-var Exporter = [];
-const fetchData = async (username) => {
+let Exporter = [];
+const fetchData = (username) => {
   axios
     .get(`https://codeforces.com/api/user.info?handles=${username}`)
     .then((response) => {
-      Exporter = response.data.result.map((x) => x)
-      // console.log(response.data.result);
+      // Exporter=response.data.result.map((x)=>x);
+      let mj = 0;
+      Exporter.forEach(element => {
+        console.log(element.handle)
+        if(element.handle==username){
+          mj=1;
+        }
+      });
+      if(mj==0){
+
+        Exporter = [...Exporter,response.data.result[0]];
+      }
+      else{
+        console.log("error")
+      }
       // console.log(response.data.result)
-      // Exporter.map((item)=>{
-      // console.log(item.avatar)
-      // })
-      // console.log(Exporter)
     })
     .catch((error) => {
       console.log(error);
     });
 };
-
 function Displayer() {
-  var databaser = {};
-  const db = getDatabase();
-  // console.log("hello")
-  let arr = [];
-  const starCountRef = ref(db);
-  onValue(starCountRef, (snapshot) => {
-    databaser = snapshot.val();
-    // console.log(Object.values(Object.values(databaser)[0]))
-    Object.values(Object.values(databaser)[0]).forEach((elem) => {
-      arr.push(elem.codeforcesusername);
-    });
-    // console.log(arr)
-    let res = arr.join("; ");
-    console.log(res);
-    fetchData(res);
-    console.log(res)
-
-    // let a=Array.from(Object.values(Object.values(databaser)[0].codeforcesusername))
-    // console.log(res)
-
-    // Object.values(Object.values(databaser)[0]).forEach((elem)=>{
-    //   fetchData(elem.codeforcesusername)
-    // // console.log(elem.codeforcesusername)
-    // })
-    // console.log(data)
-    // updateStarCount(postElement, data);
-  });
+  try{
+    fetch(`http://localhost:8080/get/cfUserName`, {
+      mode: "cors"
+    })
+    .then((res)=>{  
+      return res.json();
+    })
+    .then((cfnms)=>{
+      
+      for(let i=0;i<cfnms.length;i++){
+        fetchData(cfnms[i]);
+      }
+    })
+    
+  }
+  catch(err){
+    console.log(err);
+  }
 }
-
 export default Displayer;
 export { Exporter };

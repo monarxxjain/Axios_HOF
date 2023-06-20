@@ -290,9 +290,9 @@ export default function Gallery() {
 
             <section className={`${styl.landingpg} ${styl["text-gray-400"]} ${styl["body-font"]}`}>
 
-                <div className={`${styl.container} mx-auto flex px-5 py-24 items-center`}>
+                <div className={`${styl.container} mx-auto flex px-5 py-24 justify-center items-center`}>
                     <div
-                        className={`${styl.grad1} ${styl.button} ml-60 pt-40  flex flex-col md:items-start md:text-left mb-16 items-center text-center`}>
+                        className={`${styl.grad1} ${styl.button} xl:ml-60  xl:pt-40  flex flex-col md:items-start md:text-left mb-16 items-center text-center `}>
                         <h1 className={`${styl.pge1} ${styl["title-font"]} sm:text-4xl text-3xl mb-4 font-medium text-white`}>
                             <b> Exploring <br />
                                 <span>Campus Artistry</span>
@@ -300,8 +300,8 @@ export default function Gallery() {
                             </b>
                         </h1>
                     </div>
-                    <div id="rightDiv" className={`${styl.grad1} ${styl.button} hidden  button ml-40 pt-40 lg:flex flex-col mb-16 mr-40 p-20 pb-40 items-center text-center`}>
-                        <img className={`${styl["hero-right"]} pl-2 pt-[65px]`} alt="hero" id="mygal" src={gal2} />
+                    <div id="rightDiv" className={`${styl.button} ${styl.riDiv} hidden button ml-40 pt-20 xl:flex flex-col mb-16 mr-40 p-20 pb-40 items-center text-center`}>
+                            <img className={`${styl["hero-right"]} ${styl.rDiv} pt-[85px]`} alt="hero" id="mygal" src={gal2} />
                     </div>
                 </div>
                 <div className={styl["social-menu"]}>
