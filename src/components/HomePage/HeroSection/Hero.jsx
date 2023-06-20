@@ -131,6 +131,7 @@ export const Hero = () => {
    
     <section className={Styles.banner} id="home">
       <table>
+        <tbody>
         <tr className={Styles["align-items-center"]}>
           <td>
       
@@ -145,8 +146,6 @@ export const Hero = () => {
             
           </td>
           <td>
-          
-             
                 <div>
                   {/* <Slideshow/> */}
                   <img className={Styles.heroImage} src="./src/assets/astro1.svg" alt="Header Img" height="400px" width="400px"/>
@@ -154,6 +153,7 @@ export const Hero = () => {
             
           </td>
         </tr>
+        </tbody>
       </table>
     </section>
     

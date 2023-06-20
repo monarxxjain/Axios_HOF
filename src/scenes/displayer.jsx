@@ -5,10 +5,8 @@ const fetchData = (username) => {
   axios
     .get(`https://codeforces.com/api/user.info?handles=${username}`)
     .then((response) => {
-      // Exporter=response.data.result.map((x)=>x);
       let mj = 0;
       Exporter.forEach(element => {
-        console.log(element.handle)
         if(element.handle==username){
           mj=1;
         }
@@ -20,10 +18,9 @@ const fetchData = (username) => {
       else{
         console.log("error")
       }
-      // console.log(response.data.result)
     })
     .catch((error) => {
-      console.log(error);
+      console.log("error");
     });
 };
 function Displayer() {

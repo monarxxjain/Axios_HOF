@@ -193,7 +193,7 @@ export default function Gallery() {
         separator: false,
     });
 
-    window.onscroll = calcScrollValue;
+    // window.onscroll = calcScrollValue;
     window.onload = calcScrollValue;
 
 

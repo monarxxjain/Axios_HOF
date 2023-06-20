@@ -42,6 +42,7 @@ import Users from "./components/Users/Users";
 import FormNew from "./components/Form/FormNew";
 import ForgotPass from "./components/LoginPage/ForgotPass";
 import FullScreenDialog from "./components/FullScreenDialog/FullScreenDialog";
+import NoMatch from "./components/NoMatch/NoMatch";
 // import Calendar from "./scenes/calendar/calendar";
 
 
@@ -82,9 +83,10 @@ const App = () => {
           <Route path="/login_signup" element={<><NavbarHome /><Background/><LoginForm/></>}> </Route>
           <Route path="/forgotpass" element={<><NavbarHome /><Background/><ForgotPass/></>}> </Route>
           <Route path="/fullsc" element={<><FullScreenDialog/></>}> </Route>
-        </Routes>
+          <Route path="*" element={<NoMatch/>}></Route>
+        {/* </Routes> */}
 
-    <Routes>
+    {/* <Routes> */}
       <Route path="/dashboard" element={<>
         
         <ColorModeContext.Provider value={colorMode} >
