@@ -62,12 +62,12 @@ export default function LoginForm() {
 
 
     const submitform = async (e) => {
-        e.preventDefault();
         if (
             submitStudentName === false ||
             submitStudentEmail === false ||
             submitStudentPass === false
             ) {
+                e.preventDefault();
             console.log("Invalid Info");
         } else {
             let form = e.currentTarget;

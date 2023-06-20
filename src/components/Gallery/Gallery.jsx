@@ -168,7 +168,9 @@ export default function Gallery() {
     }
 
 
+    useEffect(()=>{
 
+  
 
 
     //Pure counter
@@ -179,7 +181,7 @@ export default function Gallery() {
 
         start: 0,
         end: 100,
-        duration: 2,
+        duration: 5,
         delay: 10,
         once: true,
         pulse: false,
@@ -254,7 +256,7 @@ export default function Gallery() {
     };
 
 
-
+    }, [])
     return (
         <motion.div
             initial={{ opacity: 0, x: "1000px", y: "-1000px" }}
@@ -385,8 +387,8 @@ export default function Gallery() {
                         <p>Students</p>
                     </article>
 
-                        <article className={styl.achievement__card}>
-                            <span className={styl.achievement__icon}>
+                    <article className={styl.achievement__card}>
+                        <span className={styl.achievement__icon}>
                             <i className="uil uil-trophy"></i>
                         </span>
                         <h3><span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-once="true"
@@ -441,8 +443,8 @@ export default function Gallery() {
                         </div>
                             <div className={styl.course__info}>
                             <p>
-                                Zephyr, the dance club of the college, promotes artistic expression and cultural diversity through various
-                                dance forms and performances.
+                                Zephyr, the dance club of the college IIIT Lucknow, promotes artistic expression and cultural diversity through various
+                                dance forms, enthusiasm and performances.
                             </p>
                                 <Link to="/gallery/zephyr" className={`${styl.btn} ${styl["btn-primary"]}`}>Explore</Link>
                         </div>

@@ -701,8 +701,8 @@ section h2 {
 }
 
 .course__info {
-    padding: 2rem;
-
+    padding: 0 2rem;
+    padding-bottom: 2rem;
 
 }
 
@@ -1097,10 +1097,7 @@ footer ul li a:hover {
     width: 400px;
 }
 
-.cont {
-    display: flex;
-    align-items: center;
-}
+
 
 .newClass {
     padding-top: 7vmin;
@@ -1130,9 +1127,12 @@ footer ul li a:hover {
     font-size: 16px;
 }
 .newclassName{
-    font-size: 24px;
-    margin-left: 5vmin;
+    font-size: 30px;
+    margin-left: 3vmin;
     padding-top: 7vmin;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
 }
 .footer__logo h4{
     font-size: 24px;
@@ -1188,3 +1188,11 @@ footer ul li a:hover {
         grid-template-columns: 1fr;
     }
 }   
+.cont {
+    display: flex;
+    align-items: center;
+}
+
+.achievement__card h3{
+    font-size: 25px;
+}
