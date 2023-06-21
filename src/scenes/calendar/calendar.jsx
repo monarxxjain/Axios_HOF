@@ -5,7 +5,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   List,
@@ -16,9 +16,10 @@ import {
 } from "@mui/material";
 import Header from "../../scenes/Header";
 import { tokens } from "../../theme";
+import CalDisplayer, {initEvents} from '../CalDisplayer';
 
 const Calendare = () => {
-  
+  CalDisplayer();
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -26,15 +27,34 @@ const Calendare = () => {
   const handleDateClick = (selected) => {
     const title = prompt("Please enter a new title for your event");
     const calendarApi = selected.view.calendar;
-    console.log(selected.endStr);
-    console.log(selected.endStr.slice(0,19));
-    let dater1 = selected.endStr.slice(0,19);
-    console.log(dater1)
-    const sliced=dater1.slice(0,19)
+    // console.log(selected.endStr);
+    // console.log(selected.endStr.slice(0, 19));
+    let dater1 = selected.endStr.slice(0, 19);
+    // console.log(dater1)
+    const sliced = dater1.slice(0, 19)
     console.log(sliced)
     console.log(title);
-    localStorage.setItem("date", sliced);
-    localStorage.setItem("title", title);
+    const obj = {
+      userId: 100,
+      allDay: false,
+      start: sliced,
+      title: title
+    }
+    try{
+    fetch("http://localhost:8080/post/calendar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(obj)
+    })
+      .then(() => {
+        console.log("Class Scheduled")
+      })
+    }
+    catch(err){
+      console.log("Error")
+    }
+    // localStorage.setItem("date", sliced);
+    // localStorage.setItem("title", title);
     setCurrentEvents((olditem) => {
       return [
         ...olditem,
@@ -64,19 +84,37 @@ const Calendare = () => {
         `Are you sure you want to delete the event '${selected.event.title}'`
       )
     ) {
+      // console.log(selected.event.startStr)
+      let timeX = selected.event.startStr;
+      let timeDate = timeX.slice(0,19);
+      console.log(timeDate)
       selected.event.remove();
+
+      try {
+        fetch("http://localhost:8080/del/calendar", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: timeDate
+        })
+          .then(() => {
+            console.log("Class Scheduled")
+          })
+      }
+      catch (err) {
+        console.log("Error")
+      }
+      
+      
     }
   };
+
+
 
   return (
     <Box m="20px">
       <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
 
       <Box display="flex" justifyContent="space-between">
-        {/* CALENDAR SIDEBAR */}
-        {/*  */}
-
-        {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
             height="75vh"
@@ -99,76 +137,8 @@ const Calendare = () => {
             select={handleDateClick}
             eventClick={handleEventClick}
             eventsSet={(events) => setCurrentEvents(events)}
-            initialEvents={[
-              { title: "web dev", start: "2023-04-28T08:00:00", allDay: false },
-              { title: "app dev", start: "2023-04-27T09:00:00", allDay: false },
-              { title: "subj", start: "2023-04-26T05:00:00", allDay: false },
-              { title: "subj", start: "2023-04-23T11:00:00", allDay: false },
-              { title: "subj", start: "2023-04-23T12:00:00", allDay: false },
-              {
-                title: "blockchain",
-                start: "2023-04-28T13:00:00",
-                allDay: false,
-              },
-              { title: "subj", start: "2023-04-23T14:00:00", allDay: false },
-              {
-                title: "machine learning",
-                start: "2023-04-27T15:00:00",
-                allDay: false,
-              },
-              { title: "subj", start: "2023-04-28T05:00:00", allDay: false },
+            initialEvents={initEvents}
 
-              { title: "subj", start: "2023-04-26T19:00:00", allDay: false },
-              { title: "subj", start: "2023-04-29T21:00:00", allDay: false },
-              {
-                title: "Computer Architecture",
-                start: "2023-04-23T21:00:00",
-                allDay: false,
-              },
-              { title: "subj", start: "2023-04-23T22:00:00", allDay: false },
-              { title: "subj", start: "2023-04-25T23:00:00", allDay: false },
-              { title: "subj", start: "2023-04-23T08:00:00", allDay: false },
-
-              {
-                title: "Competitive Programming",
-                start: "2023-04-23T10:00:00",
-                allDay: false,
-              },
-              { title: "subj", start: "2023-04-23T11:00:00", allDay: false },
-
-              {
-                title: "Object-Oriented Programming",
-                start: "2023-04-29T13:00:00",
-                allDay: false,
-              },
-              { title: "subj", start: "2023-04-24T14:00:00", allDay: false },
-              {
-                title: "Competitive Programming",
-                start: "2023-04-23T15:00:00",
-                allDay: false,
-              },
-              { title: "subj", start: "2023-04-23T18:00:00", allDay: false },
-              {
-                title: "Competitive Programming",
-                start: "2023-04-24T07:00:00",
-                allDay: false,
-              },
-              {
-                title: "Object-Oriented Programming",
-                start: "2023-04-23T02:00:00",
-                allDay: false,
-              },
-              {
-                title: "Computer Architecture",
-                start: "2023-04-23T01:00:00",
-                allDay: false,
-              },
-              {
-                title: localStorage.getItem("title"),
-          start: localStorage.getItem("date"),
-          allDay: false,
-              },
-            ]}
           />
         </Box>
       </Box>

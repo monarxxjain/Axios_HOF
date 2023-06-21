@@ -63,8 +63,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<>
             <NavbarHome />
-            <Background />
-            <Hero />
+            <br /><br /><br /><br />
+            <div>This Is HOME PAGE</div>
+            {/* <Background /> */}
+            {/* <Hero /> */}
             <CardList />
             <Footer />
           </>} />
