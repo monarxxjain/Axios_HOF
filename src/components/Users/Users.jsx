@@ -227,14 +227,14 @@ export default function Users() {
 
                                 <div className="hero-content">
 
-                                    <p className="hero-subtitle">Presenting to you !</p>
+                                    <p className="hero-subtitle text-xl">Presenting to you !</p>
 
 
-                                    <h1 className="headline headline-1 section-title">
+                                    <h1 className="headline headline-1 section-title text-7xl">
                                         Our <span className="span">Users</span>
                                     </h1>
 
-                                    <p className="hero-text">
+                                    <p className="hero-text text-lg">
                                         Welcome to our user details page, where you can unlock the full potential of your data. Our intuitive
                                         platform allows you to easily visualize and analyze your information, giving you deep insights and
                                         enabling
@@ -292,7 +292,7 @@ export default function Users() {
                                             All Users
                                         </h2>
 
-                                        <p className="card-text">
+                                        <p className="card-text" style={{fontSize: "18px"}}>
                                             Visualize and analyze your information like
                                             never before...
                                         </p>

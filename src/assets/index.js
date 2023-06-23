@@ -77,6 +77,20 @@ import heroBanner from "./images/hero-banner.png"
 import auth1 from "./images/author-1.png"
 import feat1 from "./images/featured-1.png"
 import recPost1 from "./images/recent-post-1.jpg"
+import LMonark from "./MonarkLandscape.jpeg"
+import CMonark from "./MonarkCircle.png"
+import PMonark from "./MonarkPortrait.png"
+import SMonark from "./MonarkSquare.jpg"
+import IIITL from "./IIITL.png"
+import insta1 from "./insta1.png"
+import insta2 from "./insta2.png"
+import insta3 from "./insta3.png"
+import insta4 from "./insta4.png"
+import insta5 from "./insta5.png"
+import insta6 from "./insta6.png"
+import insta7 from "./insta7.png"
+import insta8 from "./insta8.png"
+import insta9 from "./insta9.png"
 
 
 export {
@@ -158,5 +172,19 @@ export {
   sh3,
   auth1,
   feat1,
-  recPost1
+  recPost1,
+  LMonark,
+  CMonark,
+  PMonark,
+  SMonark,
+  IIITL,
+  insta1,
+  insta2,
+  insta3,
+  insta4,
+  insta5,
+  insta6,
+  insta7,
+  insta8,
+  insta9
 };

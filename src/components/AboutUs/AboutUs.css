@@ -590,14 +590,14 @@ body.nav-active {
 }
 
 .hero .shape-1 {
-    top: 50px;
+    top: 0px;
     z-index: 0;
     right: 0px;
     height: 20px;
 }
 
 .hero .shape-2 {
-    bottom: 20px;
+    bottom: -40px;
     left: 24px;
 }
 
@@ -810,6 +810,11 @@ body.nav-active {
 }
 .tag-btn:hover .muiIcon{
     color: #0BD0D1;
+}
+.techTag:hover {
+    color: #0BD0D1;
+    /* border: 1px solid #0BD0D1; */
+    box-shadow: 0 0px 5px 1px #00ffff;
 }
 
 .tag-btn:is(:hover, :focus-visible) {

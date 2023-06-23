@@ -259,7 +259,7 @@ export default function Gallery() {
     }, [])
     return (
         <motion.div
-            initial={{ opacity: 0, x: "1000px", y: "-1000px" }}
+            initial={{ opacity: 0, x: "1000px", y: "0px" }}
             animate={{ opacity: 1, x: "0", y: "0px" }}
             exit={{ opacity: 1, x: "100px", y: "-1000px" }}
             transition={{ duration: 0.5 }}
@@ -373,8 +373,8 @@ export default function Gallery() {
                             <span className={styl.achievement__icon}>
                             <i className="uil uil-video"></i>
                         </span>
-                        <h3><span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-once="true"
-                            className="purecounter">0</span>+</h3>
+                        <h3 className='flex justify-center'><span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-once="true"
+                            className="purecounter">0</span><span> +</span></h3>
                         <p>Events</p>
                     </article>
 
@@ -382,8 +382,8 @@ export default function Gallery() {
                             <span className={styl.achievement__icon}>
                             <i className="uil uil-users-alt"></i>
                         </span>
-                        <h3><span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-once="true"
-                            className="purecounter">0</span>+</h3>
+                        <h3 className='flex justify-center'><span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-once="true"
+                                className="purecounter">0</span><span> +</span></h3>
                         <p>Students</p>
                     </article>
 
@@ -391,8 +391,8 @@ export default function Gallery() {
                         <span className={styl.achievement__icon}>
                             <i className="uil uil-trophy"></i>
                         </span>
-                        <h3><span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-once="true"
-                            className="purecounter">0</span>+</h3>
+                        <h3 className='flex justify-center'><span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-once="true"
+                                className="purecounter">0</span><span> +</span></h3>
                         <p>Award Cermonies</p>
                     </article>
                 </div>

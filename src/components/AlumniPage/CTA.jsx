@@ -95,7 +95,6 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         required
       />
       <br />
-      <br />
       <label htmlFor="email" className="font-poppins font-semibold text-white text-xl ">
         Email:
       </label>
@@ -107,7 +106,6 @@ const AlumniForm = ({ setFeedback, feedback }) => {
         className="mt-2 py-1 px-4 rounded-lg border-2 border-white bg-white w-full text-black"
         required
       /><br />
-      <br />
       <label htmlFor="gradYear" className="font-poppins font-semibold text-white text-xl ">
         Graduation Year:
       </label>

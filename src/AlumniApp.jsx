@@ -87,7 +87,7 @@ const AlumniApp = () =>{
   return (
     
   <motion.div 
-  initial={{ opacity: 0, x: "-1000px",  y: "-1000px"}}
+  initial={{ opacity: 0, x: "1000px",  y: "0px"}}
     animate={{ opacity: 1, x:"0", y: "0px" }}
     exit={{ opacity: 1, x: "100px", y: "-1000px"}}
     transition={{ duration: 0.5 }}

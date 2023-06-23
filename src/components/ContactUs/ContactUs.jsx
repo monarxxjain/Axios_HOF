@@ -88,7 +88,7 @@ function ContactUs() {
                                 
                         </div>
                     </form>
-                    <div className="responsive-cell-block wk-desk-7 wk-ipadp-12 wk-tab-12 wk-mobile-12" id="i772w">
+                    <div className="responsive-cell-block wk-desk-7 pl-40 wk-ipadp-12 wk-tab-12 wk-mobile-12" id="i772w">
                         <div className="map-part">
                             <p className="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
                                 Reach Us At

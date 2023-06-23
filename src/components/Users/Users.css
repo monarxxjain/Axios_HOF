@@ -654,6 +654,7 @@
 }
 .usersPage{
     height: 100vh;
+    background-color: #0b101d;
 }
 #topics{
     padding: 0;
