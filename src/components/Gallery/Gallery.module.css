@@ -936,7 +936,7 @@ footer ul li a:hover {
 
     /* ====================== HEADER ===================== */
     header {
-        height: 52vh;
+        /* height: 52vh; */
         margin-bottom: 4rem;
     }
 
@@ -991,7 +991,7 @@ footer ul li a:hover {
 
     /* ====================== HEADER ===================== */
     header {
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     .header__container {

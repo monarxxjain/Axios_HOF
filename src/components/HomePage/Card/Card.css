@@ -69,23 +69,7 @@
     text-overflow: ellipsis;
     text-align: left;
   }
-  @media (max-width: 1400px) {
-    .cards--list {
-      display: grid;
-      padding: 3rem;
-      grid-column-start: auto;
-      grid-template-columns: auto auto auto;
-      gap: 4rem;
-      
-    }
-    .card {
-      width: 20%;
-      font-size: 2rem;
-      display: grid;
-      flex-direction: column;
-      position: relative;
-    }
-  }
+
   @media (max-width: 1100px) {
     .cards--list {
       padding: 3rem;

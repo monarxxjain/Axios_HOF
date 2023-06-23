@@ -63,6 +63,21 @@ import pattern2 from "./Pics/pattern-2.svg"
 import pattern3 from "./Pics/pattern-3.svg"
 import shadow1 from "./Pics/shadow-1.svg"
 import shadow2 from "./Pics/shadow-2.svg"
+import topic1 from "./images/topic-1.png"
+import topic2 from "./images/topic-2.png"
+import topic3 from "./images/topic-3.png"
+import topic4 from "./images/topic-4.png"
+import topic5 from "./images/topic-5.png"
+import pat2 from "./images/pattern-2.svg"
+import pat3 from "./images/pattern-3.svg"
+import sh1 from "./images/shadow-1.svg"
+import sh2 from "./images/shadow-2.svg"
+import sh3 from "./images/shadow-3.svg"
+import heroBanner from "./images/hero-banner.png"
+import auth1 from "./images/author-1.png"
+import feat1 from "./images/featured-1.png"
+import recPost1 from "./images/recent-post-1.jpg"
+
 
 export {
   pattern2,
@@ -129,5 +144,19 @@ export {
   afterdark,
   crotonia,
   gal2,
-  gal3
+  gal3,
+  topic1,
+  topic2,
+  topic3,
+  topic4,
+  topic5,
+  heroBanner,
+  pat2,
+  pat3,
+  sh1,
+  sh2,
+  sh3,
+  auth1,
+  feat1,
+  recPost1
 };

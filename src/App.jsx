@@ -43,6 +43,8 @@ import FormNew from "./components/Form/FormNew";
 import ForgotPass from "./components/LoginPage/ForgotPass";
 import FullScreenDialog from "./components/FullScreenDialog/FullScreenDialog";
 import NoMatch from "./components/NoMatch/NoMatch";
+import AboutUs from "./components/AboutUs/AboutUs";
+import NavLatest from "./components/HomePage/HomeNavbar/NavLatest";
 // import Calendar from "./scenes/calendar/calendar";
 
 
@@ -62,7 +64,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<>
-            <NavbarHome />
+            {/* <NavLatest/> */}
+            <NavLatest/>
             <br /><br /><br /><br />
             <div>This Is HOME PAGE</div>
             {/* <Background /> */}
@@ -71,19 +74,20 @@ const App = () => {
             <Footer />
           </>} />
           {/* <Route path="/dashboard" element={<><Dashboard /></>}> </Route> */}
-          <Route path="/alumni_app" element={<><NavbarHome /><AlumniApp /></>}> </Route>
-          <Route path="/tech_events" element={<><NavbarHome /><TechEvents /></>}> </Route>
-          <Route path="/gallery" element={<><NavbarHome /><Gallery/></>}> </Route>
-          <Route path="/gallery/crotonia" element={<><NavbarHome /><Crotonia/></>}> </Route>
-          <Route path="/gallery/zephyr" element={<><NavbarHome /><Zephyr/></>}> </Route>
-          <Route path="/gallery/estrella" element={<><NavbarHome /><Estrella/></>}> </Route>
-          <Route path="/gallery/goonj" element={<><NavbarHome /><Goonj/></>}> </Route>
-          <Route path="/gallery/afterdark" element={<><NavbarHome /><AfterDark/></>}> </Route>
-          <Route path="/gallery/utkrisht" element={<><NavbarHome /><Utkrisht/></>}> </Route>
-          <Route path="/users" element={<><NavbarHome /><Users/></>}> </Route>
-          <Route path="/contact_us" element={<><NavbarHome /><ContactUs /></>}> </Route>
-          <Route path="/login_signup" element={<><NavbarHome /><Background/><LoginForm/></>}> </Route>
-          <Route path="/forgotpass" element={<><NavbarHome /><Background/><ForgotPass/></>}> </Route>
+          <Route path="/alumni_app" element={<><NavLatest/><AlumniApp /></>}> </Route>
+          <Route path="/tech_events" element={<><NavLatest/><TechEvents /></>}> </Route>
+          <Route path="/gallery" element={<><NavLatest/><Gallery/></>}> </Route>
+          <Route path="/gallery/crotonia" element={<><NavLatest/><Crotonia/></>}> </Route>
+          <Route path="/gallery/zephyr" element={<><NavLatest/><Zephyr/></>}> </Route>
+          <Route path="/gallery/estrella" element={<><NavLatest/><Estrella/></>}> </Route>
+          <Route path="/gallery/goonj" element={<><NavLatest/><Goonj/></>}> </Route>
+          <Route path="/gallery/afterdark" element={<><NavLatest/><AfterDark/></>}> </Route>
+          <Route path="/gallery/utkrisht" element={<><NavLatest/><Utkrisht/></>}> </Route>
+          <Route path="/users" element={<><NavLatest/><Users/></>}> </Route>
+          <Route path="/about_us" element={<><NavLatest/><AboutUs/></>}> </Route>
+          <Route path="/contact_us" element={<><NavLatest/><ContactUs /></>}> </Route>
+          <Route path="/login_signup" element={<><NavLatest/><Background/><LoginForm/></>}> </Route>
+          <Route path="/forgotpass" element={<><NavLatest/><Background/><ForgotPass/></>}> </Route>
           <Route path="/fullsc" element={<><FullScreenDialog/></>}> </Route>
           <Route path="*" element={<NoMatch/>}></Route>
         {/* </Routes> */}
