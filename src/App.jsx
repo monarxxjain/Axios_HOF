@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css'
 import AlumniApp from "./AlumniApp";
 import Background from "./components/HomePage/Backround3JS/Background";
@@ -45,12 +45,18 @@ import FullScreenDialog from "./components/FullScreenDialog/FullScreenDialog";
 import NoMatch from "./components/NoMatch/NoMatch";
 import AboutUs from "./components/AboutUs/AboutUs";
 import NavLatest from "./components/HomePage/HomeNavbar/NavLatest";
+import StudentCalendar from "./scenes/calendar/studentCalendar";
 // import Calendar from "./scenes/calendar/calendar";
+import { checkerMj } from "./components/LoginPage/LoginForm";
 
 
 
 const App = () => {
   const [theme, colorMode] = useMode();
+  const [checker,setChecker] = useState(0)
+  function handleCheckerIncrement(){
+    setChecker(1);
+  }
   // const [isSidebar, setIsSidebar]=useState(true);
   // useEffect(()=>{
   //   Displayer(); 
@@ -59,13 +65,13 @@ const App = () => {
   // },[])
   return (
     <>
-      
+
 
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<>
             {/* <NavLatest/> */}
-            <NavLatest/>
+            <NavLatest />
             <br /><br /><br /><br />
             <div>This Is HOME PAGE</div>
             {/* <Background /> */}
@@ -74,176 +80,191 @@ const App = () => {
             <Footer />
           </>} />
           {/* <Route path="/dashboard" element={<><Dashboard /></>}> </Route> */}
-          <Route path="/alumni_app" element={<><NavLatest/><AlumniApp /></>}> </Route>
-          <Route path="/tech_events" element={<><NavLatest/><TechEvents /></>}> </Route>
-          <Route path="/gallery" element={<><NavLatest/><Gallery/></>}> </Route>
-          <Route path="/gallery/crotonia" element={<><NavLatest/><Crotonia/></>}> </Route>
-          <Route path="/gallery/zephyr" element={<><NavLatest/><Zephyr/></>}> </Route>
-          <Route path="/gallery/estrella" element={<><NavLatest/><Estrella/></>}> </Route>
-          <Route path="/gallery/goonj" element={<><NavLatest/><Goonj/></>}> </Route>
-          <Route path="/gallery/afterdark" element={<><NavLatest/><AfterDark/></>}> </Route>
-          <Route path="/gallery/utkrisht" element={<><NavLatest/><Utkrisht/></>}> </Route>
-          <Route path="/users" element={<><NavLatest/><Users/></>}> </Route>
-          <Route path="/about_us" element={<><NavLatest/><AboutUs/></>}> </Route>
-          <Route path="/contact_us" element={<><NavLatest/><ContactUs /></>}> </Route>
-          <Route path="/login_signup" element={<><NavLatest/><Background/><LoginForm/></>}> </Route>
-          <Route path="/forgotpass" element={<><NavLatest/><Background/><ForgotPass/></>}> </Route>
-          <Route path="/fullsc" element={<><FullScreenDialog/></>}> </Route>
-          <Route path="*" element={<NoMatch/>}></Route>
-        {/* </Routes> */}
+          <Route path="/alumni_app" element={<><NavLatest /><AlumniApp /></>}> </Route>
+          <Route path="/tech_events" element={<><NavLatest /><TechEvents /></>}> </Route>
+          <Route path="/gallery" element={<><NavLatest /><Gallery /></>}> </Route>
+          <Route path="/gallery/crotonia" element={<><NavLatest /><Crotonia /></>}> </Route>
+          <Route path="/gallery/zephyr" element={<><NavLatest /><Zephyr /></>}> </Route>
+          <Route path="/gallery/estrella" element={<><NavLatest /><Estrella /></>}> </Route>
+          <Route path="/gallery/goonj" element={<><NavLatest /><Goonj /></>}> </Route>
+          <Route path="/gallery/afterdark" element={<><NavLatest /><AfterDark /></>}> </Route>
+          <Route path="/gallery/utkrisht" element={<><NavLatest /><Utkrisht /></>}> </Route>
+          <Route path="/users" element={<><NavLatest /><Users /></>}> </Route>
+          <Route path="/about_us" element={<><NavLatest /><AboutUs /></>}> </Route>
+          <Route path="/contact_us" element={<><NavLatest /><ContactUs /></>}> </Route>
+          <Route path="/login_signup" element={<><NavLatest /><Background /><LoginForm checker={checker} increment={handleCheckerIncrement} /></>}> </Route>
+          <Route path="/forgotpass" element={<><NavLatest /><Background /><ForgotPass /></>}> </Route>
+          <Route path="/fullsc" element={<><FullScreenDialog /></>}> </Route>
+          <Route path="*" element={<NoMatch />}></Route>
+          {/* </Routes> */}
 
-    {/* <Routes> */}
-      <Route path="/dashboard" element={<>
-        
-        <ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar /> 
-              <main className="dashboard--content" >
-              <Topbar/>
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider>
-        </>}/>
-        <Route path="/cp" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <Cp/>
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/appdev" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <AppDev />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/webdev" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <WebDev />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/ml" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <Ml />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/foss" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <Foss />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/design" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <Design />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/infosec" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <InfoSec />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/blockchain" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <Blockchain />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/form" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <Form />
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
-        <Route path="/faq" element={<><div><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                <div style={{overflowY:"auto"}}>
-                  <FAQ />
+          {/* <Routes> */}
+          <Route path="/dashboard" element={<>
+
+            <ColorModeContext.Provider value={colorMode} >
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <div className="app">
+                  <Sidebar />
+                  <main className="dashboard--content" >
+                    <Topbar />
+                  </main>
                 </div>
-              </main>
-            </div>
-          </ThemeProvider>
+              </ThemeProvider>
+            </ColorModeContext.Provider>
+          </>} />
+          <Route path="/cp" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <Cp />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/appdev" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <AppDev />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/webdev" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <WebDev />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/ml" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <Ml />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/foss" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <Foss />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/design" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <Design />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/infosec" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <InfoSec />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/blockchain" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <Blockchain />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/form" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <Form />
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/faq" element={<><div><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <div style={{ overflowY: "auto" }}>
+                    <FAQ />
+                  </div>
+                </main>
+              </div>
+            </ThemeProvider>
           </ColorModeContext.Provider></div></>} />
-        <Route path="/calendar" element={<><ColorModeContext.Provider value={colorMode} >
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <div className="app">
-              <Sidebar />
-              <main className="dashboard--content" >
-                <Topbar/>
-                  <Calendare/>
-              </main>
-            </div>
-          </ThemeProvider>
-        </ColorModeContext.Provider></>} />
+          <Route path="/calendar" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  {console.log(checkerMj)}
+                  {checker==1 ? <StudentCalendar/> : <Calendare/>}
+                  
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
+          <Route path="/studentCalendar" element={<><ColorModeContext.Provider value={colorMode} >
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                <Sidebar />
+                <main className="dashboard--content" >
+                  <Topbar />
+                  <StudentCalendar/>
+                </main>
+              </div>
+            </ThemeProvider>
+          </ColorModeContext.Provider></>} />
 
-        {/* <Route path="/calendar" element={<Calendare/>}></Route> */}
-        {/* <Route path="/webdev" element={<WebDev />} />
+
+          {/* <Route path="/calendar" element={<Calendare/>}></Route> */}
+          {/* <Route path="/webdev" element={<WebDev />} />
         <Route path="/ml" element={<Ml />} />
         <Route path="/foss" element={<Foss />} />
         <Route path="/design" element={<Design />} />
@@ -252,7 +273,7 @@ const App = () => {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/form" element={<Form />} />
         <Route path="/faq" element={<FAQ />} /> */}
-    </Routes>
+        </Routes>
       </BrowserRouter>
 
       {/* <AlumniApp/> */}

@@ -91,6 +91,7 @@ import insta6 from "./insta6.png"
 import insta7 from "./insta7.png"
 import insta8 from "./insta8.png"
 import insta9 from "./insta9.png"
+import defaultPic from "./profile.png"
 
 
 export {
@@ -186,5 +187,6 @@ export {
   insta6,
   insta7,
   insta8,
-  insta9
+  insta9,
+  defaultPic
 };

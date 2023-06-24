@@ -17,8 +17,9 @@ import FullScreenDialog from "../FullScreenDialog/FullScreenDialog";
 import bcrypt from "bcryptjs-react"
 // import { GoogleAuthProvider } from "firebase/auth";
 
+let checkerMj = 0;
 
-export default function LoginForm() {
+export default function LoginForm({checker , increment}) {
     const [userid, setuserid] = useState("");
 
     const google_login = () => {
@@ -168,6 +169,9 @@ export default function LoginForm() {
 
         let userName = formDataObject.loggerName;
         let password = formDataObject.loggerPass;
+
+        let adminName = formDataObject.loggerName;
+        let adminPassword = formDataObject.loggerPass;
         // console.log(userName);
         // console.log(password);
 
@@ -185,11 +189,37 @@ export default function LoginForm() {
                 const userData={
                     dashboardName: userName
                 }
+                console.log(checkerMj);
                 localStorage.setItem("userData", JSON.stringify(userData));
+                checkerMj++;
+                increment();
+                console.log(checkerMj);
                 document.getElementById('autoclick').click();   
             }
             else{
-                alert("User Do Not Exist");
+                // alert("User Do Not Exist");
+                fetch(`http://localhost:8080/get/admin/${adminName}/${adminPassword}`, {
+                    mode: "cors"
+                })
+                    .then((response) => {
+                        // console.log(res);
+                        return response.json();
+                    })
+                    .then((adData)=>{
+                        console.log(adData)
+                        if(adData==true){
+                            const adminData = {
+                                dashboardName: adminName
+                            }
+                            localStorage.setItem("userData", JSON.stringify(adminData));
+                            document.getElementById('jugaad2').click();   
+                           
+                        }
+                        else{
+                            alert("User do not exist");
+                        }
+
+                    })
             }
         })
     };
@@ -639,6 +669,7 @@ export default function LoginForm() {
                     </form>
                     <Link to="/fullsc" id="autoclick" style={{ display: 'none' }}>click me</Link>
                 </div>
+                    <Link to="/dashboard" id="jugaad2" style={{ display: 'none' }}>click me</Link>
                 <div className={Styles["overlay-container"]}>
                     <div className={Styles.overlay}>
                         <div className={`${Styles["overlay-panel"]} ${Styles["overlay-left"]}`}>
@@ -673,3 +704,5 @@ export default function LoginForm() {
         </motion.div>
     );
 }
+
+export { checkerMj };
