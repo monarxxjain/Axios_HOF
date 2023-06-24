@@ -78,9 +78,7 @@ const Form = () => {
               />
             </Box>
             <Box  display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained">
-                Edit Wing details
-              </Button>
+           
               <Button type="submit" color="secondary" variant="contained">
                 Update Personal Info
               </Button></Box>

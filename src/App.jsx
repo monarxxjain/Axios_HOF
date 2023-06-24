@@ -48,6 +48,7 @@ import NavLatest from "./components/HomePage/HomeNavbar/NavLatest";
 import StudentCalendar from "./scenes/calendar/studentCalendar";
 // import Calendar from "./scenes/calendar/calendar";
 import { checkerMj } from "./components/LoginPage/LoginForm";
+import StudentFAQ from "./scenes/faq/StudentFaq";
 
 
 
@@ -229,7 +230,7 @@ const App = () => {
                 <main className="dashboard--content" >
                   <Topbar />
                   <div style={{ overflowY: "auto" }}>
-                    <FAQ />
+                    {checker == 1 ? <StudentFAQ /> : <FAQ />}
                   </div>
                 </main>
               </div>
@@ -242,9 +243,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  {console.log(checkerMj)}
                   {checker==1 ? <StudentCalendar/> : <Calendare/>}
-                  
                 </main>
               </div>
             </ThemeProvider>
