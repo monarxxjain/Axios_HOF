@@ -31,6 +31,7 @@ export default function FullScreenDialog() {
   const [githubblockchain, setgithubblockchain] = React.useState("");
   const [githubdesign, setgithubdesign] = React.useState("");
   const [githubml, setgithubml] = React.useState("");
+  const [githubinfosec, setgithubinfosec] = React.useState("");
   const [codeforcesusername, setcodeforcesusername] = useState("");
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -64,6 +65,7 @@ export default function FullScreenDialog() {
       appscore: 0,
       blockchainscore: 0,
       mlscore: 0,
+      infosecscore: 0,
       designscore: 0,
     };
 
@@ -318,6 +320,32 @@ export default function FullScreenDialog() {
               variant="outlined"
               onChange={(e) => {
                 setgithubml(e.target.value);
+              }}
+            />
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === "panel9"}
+          onChange={handleChange("panel9")}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel9bh-content"
+            id="panel9bh-header"
+          >
+            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+              Information Security
+            </Typography>
+            <Typography sx={{ color: "text.secondary" }}>Infosec Projects</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <TextField
+              label="Link to Github projects"
+              multiline
+              fullWidth
+              variant="outlined"
+              onChange={(e) => {
+                setgithubinfosec(e.target.value);
               }}
             />
           </AccordionDetails>

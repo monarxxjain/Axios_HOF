@@ -69,10 +69,10 @@ const InfoSec = () => {
     console.log(gitName)
     const nameScore = {
       githubownername: gitName.login,
-      webscore: gitName.webscore
+      infosecscore: gitName.infosecscore
     }
 
-    fetch("http://localhost:8080/put/webscore", {
+    fetch("http://localhost:8080/put/infosecscore", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nameScore)
@@ -116,7 +116,7 @@ const InfoSec = () => {
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "webscore", headerName: "Score", editable: "true", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
+    { field: "infosecscore", headerName: "Score", editable: "true", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
     { field: "login", headerName: "Username" },
     {
       field: "public_repos",

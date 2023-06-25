@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 var gitExporter = [];
 var gitScore=0;
-const gitfetchData = (username, webScore, appScore, bcScore, mlScore, designScore) => {
+const gitfetchData = (username, webScore, appScore, bcScore, mlScore, designScore, infosecScore) => {
   axios
     .get(`https://api.github.com/users/${username}`)
     .then((response) => {
@@ -18,6 +18,7 @@ const gitfetchData = (username, webScore, appScore, bcScore, mlScore, designScor
         response.data.bcscore = bcScore;
         response.data.mlscore = mlScore;
         response.data.designscore = designScore;
+        response.data.infosecscore = infosecScore;
         gitExporter = [...gitExporter, response.data];
       }
       // else {
@@ -41,7 +42,7 @@ function gitDisplayer() {
         for (let i = 0; i < gitnms.length; i++) {
           if(gitnms[i].githubownername!=""){
             console.log(gitnms[i].githubownername)
-            gitfetchData(gitnms[i].githubownername, gitnms[i].webscore, gitnms[i].appscore, gitnms[i].bcscore, gitnms[i].mlscore, gitnms[i].designscore);
+            gitfetchData(gitnms[i].githubownername, gitnms[i].webscore, gitnms[i].appscore, gitnms[i].bcscore, gitnms[i].mlscore, gitnms[i].designscore, gitnms[i].infosecscore);
           }
         }
       })
