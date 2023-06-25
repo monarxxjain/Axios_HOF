@@ -35,7 +35,8 @@ function gitDisplayer() {
       })
       .then((gitnms) => {
         for (let i = 0; i < gitnms.length; i++) {
-          if(gitnms[i]!=""){
+          if(gitnms[i].githubownername!=""){
+            console.log(gitnms[i].githubownername)
             gitfetchData(gitnms[i].githubownername, gitnms[i].score);
           }
         }

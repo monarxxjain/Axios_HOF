@@ -50,6 +50,12 @@ import StudentCalendar from "./scenes/calendar/studentCalendar";
 import { checkerMj } from "./components/LoginPage/LoginForm";
 import StudentFAQ from "./scenes/faq/StudentFaq";
 import StudentBlockchain from "./scenes/blockchain/StudentBlockchain";
+import StudentApp from "./scenes/appdev/StudentApp";
+import StudentWebDev from "./scenes/webdev/StudentWebDev";
+import StudentML from "./scenes/ml/StudentML";
+import StudentFoss from "./scenes/foss/StudentFoss";
+import StudentDesign from "./scenes/design/StudentDesign";
+import StudentInfosec from "./scenes/infosec/StudentInfosec";
 
 
 
@@ -134,7 +140,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  <AppDev />
+                  {checker == 1 ? <StudentApp/> : <AppDev />}
                 </main>
               </div>
             </ThemeProvider>
@@ -146,7 +152,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  <WebDev />
+                  {checker == 1 ? <StudentWebDev /> : <WebDev />}
                 </main>
               </div>
             </ThemeProvider>
@@ -158,7 +164,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  <Ml />
+                  {checker == 1 ? <StudentML /> : <Ml />}
                 </main>
               </div>
             </ThemeProvider>
@@ -170,7 +176,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  <Foss />
+                  {checker == 1 ? <StudentFoss /> : <Foss />}
                 </main>
               </div>
             </ThemeProvider>
@@ -182,7 +188,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  <Design />
+                  {checker == 1 ? <StudentDesign /> : <Design />}
                 </main>
               </div>
             </ThemeProvider>
@@ -194,7 +200,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  <InfoSec />
+                  {checker == 1 ? <StudentInfosec /> : <InfoSec />}
                 </main>
               </div>
             </ThemeProvider>
