@@ -11,9 +11,10 @@ const StudentBlockchain = () => {
     gitDisplayer();
 
     const columns = [
-        { field: "id", headerName: "ID", flex: 0.5 },
-        { field: "bcscore", headerName: "Score", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
-        { field: "login", headerName: "Username" },
+        { field: "id", headerName: "ID", flex: 0.2 },
+        { field: "login", headerName: "Username", cellClassName: "name-column--cell", flex: 0.3 },
+        { field: "blockchainscore", headerName: "Score", type: "number", headerAlign: "left", align: "left" },
+        { field: "githubblockchain", headerName: "RepoNames", headerAlign: "left", align: "left", cellClassName: "name-column--cell", flex: 0.5 },
         {
             field: "public_repos",
             headerName: "Repositories",
@@ -33,6 +34,8 @@ const StudentBlockchain = () => {
             headerName: "Profile Link",
             flex: 1,
             cellClassName: "name-column--cell",
+            headerAlign: "center",
+            align: "center",
         },
 
     ];

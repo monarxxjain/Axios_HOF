@@ -69,10 +69,10 @@ const Foss = () => {
     console.log(gitName)
     const nameScore = {
       githubownername: gitName.login,
-      webscore: gitName.webscore
+      fossscore: gitName.fossscore
     }
 
-    fetch("http://localhost:8080/put/webscore", {
+    fetch("http://localhost:8080/put/fossscore", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nameScore)
@@ -115,9 +115,10 @@ const Foss = () => {
 
 
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "webscore", headerName: "Score", editable: "true", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
-    { field: "login", headerName: "Username" },
+    { field: "id", headerName: "ID", flex: 0.2 },
+    { field: "login", headerName: "Username", cellClassName: "name-column--cell", flex: 0.3 },
+    { field: "fossscore", headerName: "Score", editable: "true", type: "number", headerAlign: "left", align: "left" },
+    { field: "githubreponame", headerName: "Contribution", headerAlign: "left", align: "left", cellClassName: "name-column--cell", flex: 0.5 },
     {
       field: "public_repos",
       headerName: "Repositories",
@@ -137,6 +138,8 @@ const Foss = () => {
       headerName: "Profile Link",
       flex: 1,
       cellClassName: "name-column--cell",
+      headerAlign: "center",
+      align: "center",
     },
 
   ];

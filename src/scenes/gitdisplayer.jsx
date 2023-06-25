@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 var gitExporter = [];
 var gitScore=0;
-const gitfetchData = (username, webScore, appScore, bcScore, mlScore, designScore, infosecScore) => {
+const gitfetchData = (username, githubContributionRepo, mlProjects, designProjects, bcProjects, appProjects, webProjects, webScore, appScore, bcScore, mlScore, designScore, infosecScore, fossScore) => {
   axios
     .get(`https://api.github.com/users/${username}`)
     .then((response) => {
@@ -15,10 +15,20 @@ const gitfetchData = (username, webScore, appScore, bcScore, mlScore, designScor
       if (mj == 0) {
         response.data.webscore = webScore;
         response.data.appscore = appScore;
-        response.data.bcscore = bcScore;
+        response.data.blockchainscore = bcScore;
         response.data.mlscore = mlScore;
         response.data.designscore = designScore;
         response.data.infosecscore = infosecScore;
+        response.data.fossscore = fossScore;
+
+        response.data.githhubwebdev = webProjects;
+        response.data.githhubappdev = appProjects;
+        response.data.githubblockchain = bcProjects;
+        response.data.githubdesign = designProjects;
+        response.data.githubml = mlProjects;
+
+        response.data.githubreponame = githubContributionRepo;
+
         gitExporter = [...gitExporter, response.data];
       }
       // else {
@@ -41,8 +51,8 @@ function gitDisplayer() {
       .then((gitnms) => {
         for (let i = 0; i < gitnms.length; i++) {
           if(gitnms[i].githubownername!=""){
-            console.log(gitnms[i].githubownername)
-            gitfetchData(gitnms[i].githubownername, gitnms[i].webscore, gitnms[i].appscore, gitnms[i].bcscore, gitnms[i].mlscore, gitnms[i].designscore, gitnms[i].infosecscore);
+            console.log(gitnms[i].blockchainscore)
+            gitfetchData(gitnms[i].githubownername, gitnms[i].githubreponame, gitnms[i].githubml, gitnms[i].githubdesign, gitnms[i].githubblockchain, gitnms[i].githhubappdev, gitnms[i].githhubwebdev, gitnms[i].webscore, gitnms[i].appscore, gitnms[i].blockchainscore, gitnms[i].mlscore, gitnms[i].designscore, gitnms[i].infosecscore, gitnms[i].fossscore);
           }
         }
       })

@@ -67,6 +67,7 @@ export default function FullScreenDialog() {
       mlscore: 0,
       infosecscore: 0,
       designscore: 0,
+      fossscore: 0
     };
 
     // localStorage.setItem("userInfo", JSON.stringify(obj));
