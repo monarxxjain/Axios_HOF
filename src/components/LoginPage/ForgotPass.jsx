@@ -60,7 +60,8 @@ export default function ForgotPass() {
                     body: JSON.stringify(formDataObject)
                 })
                     .then(() => {
-                        console.log("New Student Added")
+                        console.log("Password Changed")
+                        document.getElementById('autoclick').click();
                     })
 
             }
@@ -271,7 +272,7 @@ export default function ForgotPass() {
                           <br />
                       </div>
               </form>
-              <Link to="/dashboard" id="autoclick" style={{ display: 'none' }}>click me</Link>
+                  <Link to="/login_signup" id="autoclick" style={{ display: 'none' }}>click me</Link>
           </div>
     </div>
     </motion.div>
