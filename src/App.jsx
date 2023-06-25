@@ -49,6 +49,7 @@ import StudentCalendar from "./scenes/calendar/studentCalendar";
 // import Calendar from "./scenes/calendar/calendar";
 import { checkerMj } from "./components/LoginPage/LoginForm";
 import StudentFAQ from "./scenes/faq/StudentFaq";
+import StudentBlockchain from "./scenes/blockchain/StudentBlockchain";
 
 
 
@@ -205,7 +206,7 @@ const App = () => {
                 <Sidebar />
                 <main className="dashboard--content" >
                   <Topbar />
-                  <Blockchain />
+                  {checker == 1 ? <StudentBlockchain /> : <Blockchain />}
                 </main>
               </div>
             </ThemeProvider>

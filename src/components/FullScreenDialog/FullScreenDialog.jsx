@@ -60,6 +60,7 @@ export default function FullScreenDialog() {
       githubdesign: githubdesign,
       githubml: githubml,
       codeforcesusername,
+      score: 0,
     };
 
     // localStorage.setItem("userInfo", JSON.stringify(obj));

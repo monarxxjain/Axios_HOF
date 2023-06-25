@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 var gitExporter = [];
-const gitfetchData = (username) => {
+var gitScore=0;
+const gitfetchData = (username, githubScore) => {
   axios
     .get(`https://api.github.com/users/${username}`)
     .then((response) => {
@@ -12,11 +13,12 @@ const gitfetchData = (username) => {
         }
       });
       if (mj == 0) {
+        response.data.score = githubScore;
         gitExporter = [...gitExporter, response.data];
       }
-      else {
-        console.log("Extra Render")
-      }
+      // else {
+      //   console.log("Extra Render")
+      // }
     })
     .catch((error) => {
       console.log(error);
@@ -25,7 +27,7 @@ const gitfetchData = (username) => {
 
 function gitDisplayer() {
   try {
-    fetch(`http://localhost:8080/get/gitUserName`, {
+    fetch(`http://localhost:8080/get/gitUserData`, {
       mode: "cors"
     })
       .then((res) => {
@@ -34,7 +36,7 @@ function gitDisplayer() {
       .then((gitnms) => {
         for (let i = 0; i < gitnms.length; i++) {
           if(gitnms[i]!=""){
-            gitfetchData(gitnms[i]);
+            gitfetchData(gitnms[i].githubownername, gitnms[i].score);
           }
         }
       })
@@ -46,4 +48,4 @@ function gitDisplayer() {
 }
 
 export default gitDisplayer;
-export { gitExporter };
+export { gitExporter,gitScore };
