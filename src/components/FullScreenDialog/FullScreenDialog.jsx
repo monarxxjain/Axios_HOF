@@ -120,6 +120,31 @@ export default function FullScreenDialog() {
             </Button></Link>
           </Toolbar>
         </AppBar>
+        
+        <Accordion
+          expanded={expanded === "panel0"}
+          onChange={handleChange("panel0")}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel0bh-content"
+            id="panel1bh-header"
+          >
+            <Typography sx={{ width: "33%", flexShrink: 0 }}>Github</Typography>
+            <Typography sx={{ color: "text.secondary" }}>
+              Enter your Github Username
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <TextField
+              label="Enter Github UserName"
+              onChange={(e) => {
+                setcodeforcesusername(e.target.value);
+              }}
+              variant="outlined"
+            />
+          </AccordionDetails>
+        </Accordion>
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
@@ -157,12 +182,12 @@ export default function FullScreenDialog() {
               Web Dev
             </Typography>
             <Typography sx={{ color: "text.secondary" }}>
-              Seperate links by hitting enter
+              Enter your Web Dev Project Repo Names
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <TextField
-              label="Link to Github projects"
+              label="Github Web projects"
               multiline
               fullWidth
               variant="outlined"
@@ -184,11 +209,11 @@ export default function FullScreenDialog() {
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
               App Dev
             </Typography>
-            <Typography sx={{ color: "text.secondary" }}>Appdevtext</Typography>
+            <Typography sx={{ color: "text.secondary" }}>Enter your App Dev Project Repo Names</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <TextField
-              label="Link to Github projects"
+              label="Github App projects"
               multiline
               fullWidth
               variant="outlined"
@@ -198,26 +223,7 @@ export default function FullScreenDialog() {
             />
           </AccordionDetails>
         </Accordion>
-        {/* <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            Cybersecurity
-          </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
-            CyberSectext
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
-        </AccordionDetails>
-      </Accordion> */}
+        
         <Accordion
           expanded={expanded === "panel5"}
           onChange={handleChange("panel5")}
@@ -228,18 +234,12 @@ export default function FullScreenDialog() {
             id="panel5bh-header"
           >
             <Typography sx={{ width: "33%", flexShrink: 0 }}>Foss</Typography>
-            <Typography sx={{ color: "text.secondary" }}>Fosstext</Typography>
+            <Typography sx={{ color: "text.secondary" }}>Showcase your Contributions</Typography>
           </AccordionSummary>
           <AccordionDetails>
+            
             <TextField
-              label="Enter Github OwnerName"
-              variant="outlined"
-              onChange={(e) => {
-                setgithubownername(e.target.value);
-              }}
-            />
-            <TextField
-              label="Enter Github RepoName"
+              label="Enter Contributed RepoName"
               variant="outlined"
               onChange={(e) => {
                 setgithubreponame(e.target.value);
@@ -261,11 +261,11 @@ export default function FullScreenDialog() {
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
               BlockChain
             </Typography>
-            <Typography sx={{ color: "text.secondary" }}>BCtext</Typography>
+            <Typography sx={{ color: "text.secondary" }}>Decentralize your projects here</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <TextField
-              label="Link to Github projects"
+              label="Github Blockchain projects"
               multiline
               fullWidth
               variant="outlined"
@@ -285,11 +285,11 @@ export default function FullScreenDialog() {
             id="panel7bh-header"
           >
             <Typography sx={{ width: "33%", flexShrink: 0 }}>Design</Typography>
-            <Typography sx={{ color: "text.secondary" }}>Designtext</Typography>
+            <Typography sx={{ color: "text.secondary" }}>Showcase your Designing Skills</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <TextField
-              label="Link to Github projects"
+              label="Github Design projects"
               multiline
               fullWidth
               variant="outlined"
@@ -311,11 +311,11 @@ export default function FullScreenDialog() {
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
               Machine Learning
             </Typography>
-            <Typography sx={{ color: "text.secondary" }}>MLtext</Typography>
+            <Typography sx={{ color: "text.secondary" }}>Reveal your Magic with ML</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <TextField
-              label="Link to Github projects"
+              label="Github ML projects"
               multiline
               fullWidth
               variant="outlined"
