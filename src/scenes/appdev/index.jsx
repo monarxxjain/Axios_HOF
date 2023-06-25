@@ -69,10 +69,10 @@ const AppDev = () => {
     console.log(gitName)
     const nameScore = {
       githubownername: gitName.login,
-      score: gitName.score
+      appscore: gitName.appscore
     }
 
-    fetch("http://localhost:8080/put/score", {
+    fetch("http://localhost:8080/put/appscore", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nameScore)
@@ -116,7 +116,7 @@ const AppDev = () => {
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "score", headerName: "Score", editable: "true", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
+    { field: "appscore", headerName: "Score", editable: "true", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
     { field: "login", headerName: "Username" },
     {
       field: "public_repos",

@@ -12,7 +12,7 @@ const StudentApp = () => {
 
     const columns = [
         { field: "id", headerName: "ID", flex: 0.5 },
-        { field: "score", headerName: "Score", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
+        { field: "appscore", headerName: "Score", type: "number", headerAlign: "left", align: "left", flex: 0.5 },
         { field: "login", headerName: "Username" },
         {
             field: "public_repos",
