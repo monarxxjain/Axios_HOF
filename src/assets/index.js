@@ -92,6 +92,17 @@ import insta7 from "./insta7.png"
 import insta8 from "./insta8.png"
 import insta9 from "./insta9.png"
 import defaultPic from "./profile.png"
+import BRaghu from "./raghu31.png"
+import SRaghu from "./raghu11.png"
+import BAarjav from "./AARJAV31.jpeg"
+import BDhruv from "./DHRUV31.jpeg"
+import BAkshat from "./AKSHAT31.jpeg"
+import BAyush from "./AYUSH31.jpeg"
+import SAyush from "./AYUSH11.jpeg"
+import SAarjav from "./AARJAV11.jpeg"
+import SDhruv from "./DHRUV11.jpeg"
+import SAkshat from "./AKSHAT11.jpeg"
+
 
 
 export {
@@ -188,5 +199,15 @@ export {
   insta7,
   insta8,
   insta9,
-  defaultPic
-};
+  defaultPic,
+  BRaghu,
+  SRaghu,
+  BAarjav,
+  BDhruv,
+  BAkshat,
+  BAyush,
+  SAyush,
+  SAarjav,
+  SDhruv,
+  SAkshat
+}

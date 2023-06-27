@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 
 
 
-import { topic1, topic2, topic3, topic4, topic5, pat2, pat3, sh1, sh2, sh3, heroBanner, auth1, feat1, recPost1, LMonark, CMonark, PMonark, SMonark, IIITL, insta1, insta2, insta3, insta4, insta5, insta6, insta7, insta8, insta9 } from "../../assets/index";
+import { topic1, topic2, topic3, topic4, topic5, pat2, pat3, sh1, sh2, sh3, heroBanner, auth1, feat1, recPost1, LMonark, CMonark, PMonark, SMonark, IIITL, insta1, insta2, insta3, insta4, insta5, insta6, insta7, insta8, insta9, BRaghu, SRaghu, BAarjav, BDhruv, BAkshat, BAyush, SAarjav, SAyush, SDhruv, SAkshat } from "../../assets/index";
 import './AboutUs.css'
 import { Groups2Outlined } from '@mui/icons-material';
 const AboutUs = () => {
@@ -214,7 +214,7 @@ const AboutUs = () => {
                                             <li className="slider-item">
                                                 <a href="#" className="slider-card">
                                                     <figure className="slider-banner img-holder" >
-                                                        <img src={topic3} width="507" height="618" loading="lazy" alt="Design"
+                                                        <img src={BAkshat} width="507" height="618" loading="lazy" alt="Design"
                                                             className="img-cover" />
                                                     </figure>
 
@@ -229,7 +229,7 @@ const AboutUs = () => {
                                             <li className="slider-item">
                                                 <a href="#" className="slider-card">
                                                     <figure className="slider-banner img-holder" >
-                                                        <img src={topic2} width="507" height="618" loading="lazy" alt="Travel"
+                                                        <img src={BAarjav} width="507" height="618" loading="lazy" alt="Travel"
                                                             className="img-cover" />
                                                     </figure>
 
@@ -241,12 +241,44 @@ const AboutUs = () => {
 
                                                 </a>
                                             </li>
+                                            <li className="slider-item">
+                                                <a href="#" className="slider-card">
+                                                    <figure className="slider-banner img-holder" >
+                                                        <img src={BDhruv} width="507" height="618" loading="lazy" alt="Lifestyle"
+                                                            className="img-cover" />
+                                                    </figure>
+
+                                                    <div className="slider-content">
+                                                        <span className="slider-title" style={{ fontSize: "18px" }}>Dhruv Bharuka</span>
+
+                                                        <p className="slider-subtitle" style={{ fontSize: "14px" }}>25 Commits</p>
+                                                    </div>
+
+                                                </a>
+                                            </li>
+
+
 
 
                                             <li className="slider-item">
                                                 <a href="#" className="slider-card">
                                                     <figure className="slider-banner img-holder" >
-                                                        <img src={topic4} width="507" height="618" loading="lazy" alt="Movie"
+                                                        <img src={BRaghu} width="507" height="618" loading="lazy" alt="Lifestyle"
+                                                            className="img-cover" />
+                                                    </figure>
+
+                                                    <div className="slider-content">
+                                                        <span className="slider-title" style={{ fontSize: "18px" }}>Raghunandan</span>
+
+                                                        <p className="slider-subtitle" style={{ fontSize: "14px" }}>15 Commits</p>
+                                                    </div>
+
+                                                </a>
+                                            </li>
+                                            <li className="slider-item">
+                                                <a href="#" className="slider-card">
+                                                    <figure className="slider-banner img-holder" >
+                                                        <img src={BAyush} width="507" height="618" loading="lazy" alt="Movie"
                                                             className="img-cover" />
                                                     </figure>
 
@@ -259,37 +291,7 @@ const AboutUs = () => {
                                                 </a>
                                             </li>
 
-                                            <li className="slider-item">
-                                                <a href="#" className="slider-card">
-                                                    <figure className="slider-banner img-holder" >
-                                                        <img src={topic5} width="507" height="618" loading="lazy" alt="Lifestyle"
-                                                            className="img-cover" />
-                                                    </figure>
 
-                                                    <div className="slider-content">
-                                                        <span className="slider-title" style={{ fontSize: "18px" }}>Raghunandan</span>
-
-                                                        <p className="slider-subtitle" style={{ fontSize: "14px" }}>15 Commits</p>
-                                                    </div>
-
-                                                </a>
-                                            </li>
-
-                                            <li className="slider-item">
-                                                <a href="#" className="slider-card">
-                                                    <figure className="slider-banner img-holder" >
-                                                        <img src={topic5} width="507" height="618" loading="lazy" alt="Lifestyle"
-                                                            className="img-cover" />
-                                                    </figure>
-
-                                                    <div className="slider-content">
-                                                        <span className="slider-title" style={{ fontSize: "18px" }}>Dhruv Bharuka</span>
-
-                                                        <p className="slider-subtitle" style={{ fontSize: "14px" }}>25 Commits</p>
-                                                    </div>
-
-                                                </a>
-                                            </li>
 
                                         </ul>
                                     </div>
@@ -402,7 +404,7 @@ const AboutUs = () => {
                                                 <div className="card-wrapper">
 
                                                     <div className="profile-card">
-                                                        <img src="./assets/images/author-1.png" width="48" height="48" loading="lazy" alt="Joseph"
+                                                        <img src={SAyush} width="48" height="48" loading="lazy" alt="Joseph"
                                                             className="profile-banner" />
 
                                                         <div>
@@ -454,7 +456,7 @@ const AboutUs = () => {
                                                 <div className="card-wrapper">
 
                                                     <div className="profile-card">
-                                                        <img src="./assets/images/author-1.png" width="48" height="48" loading="lazy" alt="Joseph"
+                                                        <img src={SAkshat} width="48" height="48" loading="lazy" alt="Joseph"
                                                             className="profile-banner" />
 
                                                         <div>
@@ -472,6 +474,58 @@ const AboutUs = () => {
 
                                         </div>
                                     </li>
+                                    <li>
+                                        <div className="card feature-card">
+                                            {/* style="--width: 507; --height: 618;" */}
+                                            <figure className="card-banner img-holder">
+                                                <img src={insta7} width="1602" height="903" loading="lazy"
+                                                    alt="Self-observation is the first step of inner unfolding" className="img-cover" />
+                                            </figure>
+
+                                            <div className="card-content">
+
+                                                <div className="card-wrapper" style={{ fontSize: "14px" }}>
+                                                    <div className="card-tag">
+                                                        <a href="#" className="span hover-2">#frontend</a>
+                                                        <a href="#" className="span hover-2">#design</a>
+
+                                                    </div>
+
+                                                    <div className="wrapper">
+                                                        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                                                        <span className="span">Devoted 30 hrs</span>
+                                                    </div>
+                                                </div>
+
+                                                <h3 className="headline headline-3">
+                                                    <a href="#" className="card-title hover-2" style={{ fontSize: "20px", fontWeight: "bolder" }}>
+                                                        Life is a journey, not a destination. Be braced.
+                                                    </a>
+                                                </h3>
+
+                                                <div className="card-wrapper">
+
+                                                    <div className="profile-card">
+                                                        <img src={SRaghu} width="48" height="48" loading="lazy" alt="Joseph"
+                                                            className="profile-banner" />
+
+                                                        <div>
+                                                            <p className="card-title" style={{ fontSize: "17px" }}>Raghunandan</p>
+
+                                                            <p className="card-subtitle" style={{ fontSize: "14px" }}>Member</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <a href="#dhruv" className="card-btn" style={{ fontSize: "14px" }}>Read more</a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </li>
+
 
                                     <li>
                                         <div className="card feature-card">
@@ -506,7 +560,7 @@ const AboutUs = () => {
                                                 <div className="card-wrapper">
 
                                                     <div className="profile-card">
-                                                        <img src="./assets/images/author-1.png" width="48" height="48" loading="lazy" alt="Joseph"
+                                                        <img src={SAarjav} width="48" height="48" loading="lazy" alt="Joseph"
                                                             className="profile-banner" />
 
                                                         <div>
@@ -525,56 +579,6 @@ const AboutUs = () => {
                                         </div>
                                     </li>
 
-                                    <li>
-                                        <div className="card feature-card">
-                                            {/* style="--width: 507; --height: 618;" */}
-                                            <figure className="card-banner img-holder">
-                                                <img src={insta7} width="1602" height="903" loading="lazy"
-                                                    alt="Self-observation is the first step of inner unfolding" className="img-cover" />
-                                            </figure>
-
-                                            <div className="card-content">
-
-                                                <div className="card-wrapper" style={{ fontSize: "14px" }}>
-                                                    <div className="card-tag">
-                                                        <a href="#" className="span hover-2">#frontend</a>
-
-                                                    </div>
-
-                                                    <div className="wrapper">
-                                                        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
-
-                                                        <span className="span">Devoted 25 hrs</span>
-                                                    </div>
-                                                </div>
-
-                                                <h3 className="headline headline-3">
-                                                    <a href="#" className="card-title hover-2" style={{ fontSize: "20px", fontWeight: "bolder" }}>
-                                                        Life is a journey, not a destination.
-                                                    </a>
-                                                </h3>
-
-                                                <div className="card-wrapper">
-
-                                                    <div className="profile-card">
-                                                        <img src="./assets/images/author-1.png" width="48" height="48" loading="lazy" alt="Joseph"
-                                                            className="profile-banner" />
-
-                                                        <div>
-                                                            <p className="card-title" style={{ fontSize: "17px" }}>Raghunandan</p>
-
-                                                            <p className="card-subtitle" style={{ fontSize: "14px" }}>Member</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <a href="#dhruv" className="card-btn" style={{ fontSize: "14px" }}>Read more</a>
-
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </li>
 
                                     <li>
                                         <div className="card feature-card">
@@ -588,7 +592,8 @@ const AboutUs = () => {
 
                                                 <div className="card-wrapper" style={{ fontSize: "14px" }}>
                                                     <div className="card-tag">
-                                                        <a href="#" className="span hover-2">#frontend</a>
+                                                        <a href="#" className="span hover-2">#backend</a>
+                                                        <a href="#" className="span hover-2">#API</a>
 
                                                     </div>
 
@@ -608,7 +613,7 @@ const AboutUs = () => {
                                                 <div className="card-wrapper">
 
                                                     <div className="profile-card">
-                                                        <img src="./assets/images/author-1.png" width="48" height="48" loading="lazy" alt="Joseph"
+                                                        <img src={SDhruv} width="48" height="48" loading="lazy" alt="Joseph"
                                                             className="profile-banner" />
 
                                                         <div>
@@ -833,7 +838,7 @@ const AboutUs = () => {
                                             <div className="recent-post-card">
                                                 {/* style="--width: 271; --height: 258;" */}
                                                 <figure className="card-banner img-holder">
-                                                    <img src="./assets/images/recent-post-2.jpg" width="271" height="258" loading="lazy"
+                                                    <img src={SAyush} width="271" height="258" loading="lazy"
                                                         alt="Helpful Tips for Working from Home as a Freelancer" className="img-cover" />
                                                 </figure>
 
@@ -873,7 +878,7 @@ const AboutUs = () => {
                                             <div className="recent-post-card">
                                                 {/* style="--width: 271; --height: 258;" */}
                                                 <figure className="card-banner img-holder">
-                                                    <img src="./assets/images/recent-post-3.jpg" width="271" height="258" loading="lazy"
+                                                    <img src={SAarjav} width="271" height="258" loading="lazy"
                                                         alt="Helpful Tips for Working from Home as a Freelancer" className="img-cover" />
                                                 </figure>
 
@@ -882,7 +887,7 @@ const AboutUs = () => {
                                                     <a href="#" className="card-badge" style={{ fontSize: "14px" }}>Aarjav Jain</a>
 
                                                     <h3 className="headline headline-3 card-title" style={{ fontSize: "23px", fontWeight: "bolder" }}>
-                                                        <a href="#" className="link hover-2">Backend Developer , Member</a>
+                                                        <a href="#" className="link hover-2">Backend Developer </a>
                                                     </h3>
 
                                                     <p className="card-text" style={{ fontSize: "14px" }}>
@@ -908,52 +913,11 @@ const AboutUs = () => {
 
                                             </div>
                                         </li>
-
-                                        <li id="akshat">
-                                            <div className="recent-post-card">
-                                                {/* style="--width: 271; --height: 258;" */}
-                                                <figure className="card-banner img-holder">
-                                                    <img src="./assets/images/recent-post-4.jpg" width="271" height="258" loading="lazy"
-                                                        alt="Helpful Tips for Working from Home as a Freelancer" className="img-cover" />
-                                                </figure>
-
-                                                <div className="card-content">
-
-                                                    <a href="#" className="card-badge" style={{ fontSize: "14px" }}>Akshat Bhansali</a>
-
-                                                    <h3 className="headline headline-3 card-title" style={{ fontSize: "23px", fontWeight: "bolder" }}>
-                                                        <a href="#" className="link hover-2">Backend Developer, Member</a>
-                                                    </h3>
-
-                                                    <p className="card-text" style={{ fontSize: "14px" }}>
-                                                        Gosh jaguar ostrich quail one excited dear hello and bound and the and bland moral misheard
-                                                        roadrunner flapped lynx far that and jeepers giggled far and far
-                                                    </p>
-
-                                                    <div className="card-wrapper" style={{ fontSize: "14px" }}>
-                                                        <div className="card-tag">
-                                                            <a href="#" className="span hover-2"># springBoot</a>
-
-                                                            <a href="#" className="span hover-2"># materialUI</a>
-                                                        </div>
-
-                                                        <div className="wrapper">
-                                                            <ion-icon name="time-outline" aria-hidden="true" style={{ fontSize: "14px" }}></ion-icon>
-
-                                                            <span className="span">3 mins read</span>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        </li>
-
                                         <li id="dhruv">
                                             <div className="recent-post-card">
                                                 {/* style="--width: 271; --height: 258;" */}
                                                 <figure className="card-banner img-holder">
-                                                    <img src="./assets/images/recent-post-5.jpg" width="271" height="258" loading="lazy"
+                                                    <img src={SDhruv} width="271" height="258" loading="lazy"
                                                         alt="Helpful Tips for Working from Home as a Freelancer" className="img-cover" />
                                                 </figure>
 
@@ -962,7 +926,7 @@ const AboutUs = () => {
                                                     <a href="#" className="card-badge" style={{ fontSize: "14px" }}>Dhruv Bharuka</a>
 
                                                     <h3 className="headline headline-3 card-title" style={{ fontSize: "23px", fontWeight: "bolder" }}>
-                                                        <a href="#" className="link hover-2">Frontend Developer</a>
+                                                        <a href="#" className="link hover-2">Backend Developer</a>
                                                     </h3>
 
                                                     <p className="card-text" style={{ fontSize: "14px" }}>
@@ -989,11 +953,53 @@ const AboutUs = () => {
                                             </div>
                                         </li>
 
+                                        <li id="akshat">
+                                            <div className="recent-post-card">
+                                                {/* style="--width: 271; --height: 258;" */}
+                                                <figure className="card-banner img-holder">
+                                                    <img src={SAkshat} width="271" height="258" loading="lazy"
+                                                        alt="Helpful Tips for Working from Home as a Freelancer" className="img-cover" />
+                                                </figure>
+
+                                                <div className="card-content">
+
+                                                    <a href="#" className="card-badge" style={{ fontSize: "14px" }}>Akshat Bhansali</a>
+
+                                                    <h3 className="headline headline-3 card-title" style={{ fontSize: "23px", fontWeight: "bolder" }}>
+                                                        <a href="#" className="link hover-2">Backend Developer</a>
+                                                    </h3>
+
+                                                    <p className="card-text" style={{ fontSize: "14px" }}>
+                                                        Gosh jaguar ostrich quail one excited dear hello and bound and the and bland moral misheard
+                                                        roadrunner flapped lynx far that and jeepers giggled far and far
+                                                    </p>
+
+                                                    <div className="card-wrapper" style={{ fontSize: "14px" }}>
+                                                        <div className="card-tag">
+                                                            <a href="#" className="span hover-2"># springBoot</a>
+
+                                                            <a href="#" className="span hover-2"># materialUI</a>
+                                                        </div>
+
+                                                        <div className="wrapper">
+                                                            <ion-icon name="time-outline" aria-hidden="true" style={{ fontSize: "14px" }}></ion-icon>
+
+                                                            <span className="span">3 mins read</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </li>
+
+
+
                                         <li id="raghunandan">
                                             <div className="recent-post-card">
                                                 {/* style="--width: 271; --height: 258;" */}
                                                 <figure className="card-banner img-holder">
-                                                    <img src="./assets/images/recent-post-5.jpg" width="271" height="258" loading="lazy"
+                                                    <img src={SRaghu} width="271" height="258" loading="lazy"
                                                         alt="Helpful Tips for Working from Home as a Freelancer" className="img-cover" />
                                                 </figure>
 
@@ -1002,7 +1008,7 @@ const AboutUs = () => {
                                                     <a href="#" className="card-badge" style={{ fontSize: "14px" }}>Raghunandan</a>
 
                                                     <h3 className="headline headline-3 card-title" style={{ fontSize: "23px", fontWeight: "bolder" }}>
-                                                        <a href="#" className="link hover-2">Frontend Developer, Member</a>
+                                                        <a href="#" className="link hover-2">Frontend Developer</a>
                                                     </h3>
 
                                                     <p className="card-text" style={{ fontSize: "14px" }}>
@@ -1052,7 +1058,7 @@ const AboutUs = () => {
                                                     <figure className="card-banner text-center" >
                                                         {/* <img src="./assets/images/popular-post-1.jpg" width="64" height="64" loading="lazy"
                                                             alt="Creating is a privilege but it’s also a gift" className="img-cover" /> */}
-                                                            <CalendarMonthIcon/>
+                                                        <CalendarMonthIcon />
                                                     </figure>
 
                                                     <div className="card-content">
@@ -1064,7 +1070,7 @@ const AboutUs = () => {
                                                         <div className="warpper" style={{ fontSize: "14px" }}>
                                                             <p className="card-subtitle">Monark</p>
 
-                                                            <time className="publish-date" dateTime="2022-04-15">~ Team Lead</time>
+                                                            <time className="publish-date" dateTime="2022-04-15"></time>
                                                         </div>
 
                                                     </div>
@@ -1079,7 +1085,7 @@ const AboutUs = () => {
                                                     <figure className="card-banner text-center" >
                                                         {/* <img src="./assets/images/popular-post-2.jpg" width="64" height="64" loading="lazy"
                                                             alt="Being unique is better than being perfect" className="img-cover" /> */}
-                                                            <GitHubIcon/>
+                                                        <GitHubIcon />
                                                     </figure>
 
                                                     <div className="card-content">
@@ -1091,7 +1097,7 @@ const AboutUs = () => {
                                                         <div className="warpper" style={{ fontSize: "14px" }}>
                                                             <p className="card-subtitle">Monark</p>
 
-                                                            <time className="publish-date" dateTime="2022-04-15">~ Team Lead</time>
+                                                            <time className="publish-date" dateTime="2022-04-15"></time>
                                                         </div>
 
                                                     </div>
@@ -1106,7 +1112,7 @@ const AboutUs = () => {
                                                     <figure className="card-banner text-center" >
                                                         {/* <img src="./assets/images/popular-post-2.jpg" width="64" height="64" loading="lazy"
                                                             alt="Being unique is better than being perfect" className="img-cover" /> */}
-                                                            <FormatListNumberedRtlIcon/>
+                                                        <FormatListNumberedRtlIcon />
                                                     </figure>
 
                                                     <div className="card-content">
@@ -1118,7 +1124,7 @@ const AboutUs = () => {
                                                         <div className="warpper" style={{ fontSize: "14px" }}>
                                                             <p className="card-subtitle">Akshat</p>
 
-                                                            <time className="publish-date" dateTime="2022-04-15">~ Member</time>
+                                                            <time className="publish-date" dateTime="2022-04-15"></time>
                                                         </div>
 
                                                     </div>
@@ -1133,7 +1139,7 @@ const AboutUs = () => {
                                                     <figure className="card-banner text-center" >
                                                         {/* <img src="./assets/images/popular-post-3.jpg" width="64" height="64" loading="lazy"
                                                             alt="Every day, in every city and town across the country" className="img-cover" /> */}
-                                                            <Groups2Outlined/>
+                                                        <Groups2Outlined />
                                                     </figure>
 
                                                     <div className="card-content">
@@ -1145,14 +1151,14 @@ const AboutUs = () => {
                                                         <div className="warpper" style={{ fontSize: "14px" }}>
                                                             <p className="card-subtitle">Ayush</p>
 
-                                                            <time className="publish-date" dateTime="2022-04-15">~ Co-Leader</time>
+                                                            <time className="publish-date" dateTime="2022-04-15"></time>
                                                         </div>
 
                                                     </div>
 
                                                 </div>
                                             </li>
-        
+
                                             <li>
                                                 <div className="popular-card">
 
@@ -1160,7 +1166,7 @@ const AboutUs = () => {
                                                     <figure className="card-banner text-center " >
                                                         {/* <img src="./assets/images/popular-post-4.jpg" width="64" height="64" loading="lazy"
                                                             alt="Your voice, your mind, your story, your vision" className="img-cover" /> */}
-                                                            <SchoolIcon/>
+                                                        <SchoolIcon />
                                                     </figure>
 
                                                     <div className="card-content">
@@ -1172,7 +1178,7 @@ const AboutUs = () => {
                                                         <div className="warpper" style={{ fontSize: "14px" }}>
                                                             <p className="card-subtitle">Aarjav</p>
 
-                                                            <time className="publish-date" dateTime="2022-04-15">~ Member</time>
+                                                            <time className="publish-date" dateTime="2022-04-15"></time>
                                                         </div>
 
                                                     </div>
@@ -1191,6 +1197,29 @@ const AboutUs = () => {
                                         </h3>
 
                                         <ul className="comment-list">
+
+                                            <li>
+                                                <div className="comment-card">
+
+                                                    <blockquote className="card-text" style={{ fontSize: "14px" }}>
+                                                        “ One significant hurdle was utilizing module CSS and having to modify the syntax for each className
+                                                        individually. “
+                                                    </blockquote>
+
+                                                    <div className="profile-card">
+                                                        <figure className="profile-banner img-holder">
+                                                            <img src={SDhruv} width="32" height="32" loading="lazy" alt="Katen Doe" />
+                                                        </figure>
+
+                                                        <div style={{ fontSize: "14px" }}>
+                                                            <p className="card-title">Dhruv</p>
+
+                                                            <time className="card-date" dateTime="2022-04-15" style={{ fontSize: "14px" }}></time>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
                                             <li>
                                                 <div className="comment-card">
 
@@ -1205,9 +1234,9 @@ const AboutUs = () => {
                                                         </figure>
 
                                                         <div style={{ fontSize: "14px" }}>
-                                                            <p className="card-title">Monark Jain</p>
+                                                            <p className="card-title">Monark</p>
 
-                                                            <time className="card-date" dateTime="2022-04-15" style={{ fontSize: "14px" }}>Team-Lead</time>
+                                                            <time className="card-date" dateTime="2022-04-15" style={{ fontSize: "14px" }}></time>
                                                         </div>
                                                     </div>
 
@@ -1224,41 +1253,19 @@ const AboutUs = () => {
 
                                                     <div className="profile-card">
                                                         <figure className="profile-banner img-holder">
-                                                            <img src="./assets/images/author-6.png" width="32" height="32" loading="lazy" alt="Jane Cooper" />
+                                                            <img src={SAarjav} width="32" height="32" loading="lazy" alt="Jane Cooper" />
                                                         </figure>
 
                                                         <div style={{ fontSize: "14px" }}>
-                                                            <p className="card-title">Aarjav Jain</p>
+                                                            <p className="card-title">Aarjav</p>
 
-                                                            <time className="card-date" dateTime="2022-04-15" style={{ fontSize: "14px" }}>Member</time>
+                                                            <time className="card-date" dateTime="2022-04-15" style={{ fontSize: "14px" }}></time>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                             </li>
 
-                                            <li>
-                                                <div className="comment-card">
-
-                                                    <blockquote className="card-text" style={{ fontSize: "14px" }}>
-                                                        “ One significant hurdle was utilizing module CSS and having to modify the syntax for each className
-                                                        individually. “
-                                                    </blockquote>
-
-                                                    <div className="profile-card">
-                                                        <figure className="profile-banner img-holder">
-                                                            <img src="./assets/images/author-7.png" width="32" height="32" loading="lazy" alt="Katen Doe" />
-                                                        </figure>
-
-                                                        <div style={{ fontSize: "14px" }}>
-                                                            <p className="card-title">Dhruv Bharuka</p>
-
-                                                            <time className="card-date" dateTime="2022-04-15" style={{ fontSize: "14px" }}>Member</time>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </li>
                                         </ul>
 
                                     </div>
