@@ -56,6 +56,7 @@ import StudentML from "./scenes/ml/StudentML";
 import StudentFoss from "./scenes/foss/StudentFoss";
 import StudentDesign from "./scenes/design/StudentDesign";
 import StudentInfosec from "./scenes/infosec/StudentInfosec";
+import HomeApp from "./src/App";
 
 
 
@@ -78,11 +79,14 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<>
-            <NavLatest />
+            {/* <NavLatest />
             <br /><br /><br /><br />
             <div>This Is HOME PAGE</div>
             <CardList />
-            <Footer />
+            <Footer /> */}
+            <NavLatest />
+            <HomeApp/>
+            
           </>} />
           {/* <Route path="/dashboard" element={<><Dashboard /></>}> </Route> */}
           <Route path="/alumni_app" element={<><NavLatest /><AlumniApp /></>}> </Route>
