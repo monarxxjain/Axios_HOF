@@ -79,13 +79,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<>
-            {/* <NavLatest />
-            <br /><br /><br /><br />
-            <div>This Is HOME PAGE</div>
-            <CardList />
-            <Footer /> */}
             <NavLatest />
             <HomeApp/>
+            
             
           </>} />
           {/* <Route path="/dashboard" element={<><Dashboard /></>}> </Route> */}
