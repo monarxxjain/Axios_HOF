@@ -78,12 +78,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<>
-            {/* <NavLatest/> */}
             <NavLatest />
             <br /><br /><br /><br />
             <div>This Is HOME PAGE</div>
-            {/* <Background /> */}
-            {/* <Hero /> */}
             <CardList />
             <Footer />
           </>} />
